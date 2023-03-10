@@ -3,4 +3,6 @@ from . import views
 
 app_name = "order"
 
-urlpatterns = []
+urlpatterns = [
+    path('', views.home)
+]
