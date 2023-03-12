@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% load static %}{% load crispy_forms_tags %} {% block content %}
+
+
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>ایجاد حساب کاربری</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">ایجاد حساب کاربری</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="register-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>ایجاد حساب کاربری</h3>
+                <div class="theme-card">
+                    <form action="" method="post" class="theme-form">
+                        <div class="form-row row">
+                            <div class="col-md-6">
+                                <label for="email">نام کوچک</label>
+                                <input type="text" class="form-control" id="fname" placeholder="نام کوچک" required="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">نام خانوادگی </label>
+                                <input type="password" class="form-control" id="lname" placeholder="نام خانوادگی" required="">
+                            </div>
+                        </div>
+                        <div class="form-row row">
+                            <div class="col-md-6">
+                                <label for="email">ایمیل</label>
+                                <input type="text" class="form-control" id="email" placeholder="ایمیل" required="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">پسورد </label>
+                                <input type="password" class="form-control" id="review" placeholder="پسورد را وارد کنید" required="">
+                            </div><a href="#" class="btn btn-solid w-auto">ایجاد حساب کاربری</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

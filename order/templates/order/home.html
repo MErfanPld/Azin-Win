@@ -1,25 +1,168 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %} {% load static %}{% load crispy_forms_tags %} {% block content %}
 
 <!-- Home slider -->
-<section class="pt-0">
-  <div class="container-lg container">
-    <div class="full-banner custom-space p-right text-end">
-      <img
-        src="{% static 'images/fashion/bottom-banner.jpg' %}"
-        alt=""
-        class="bg-img blur-up lazyload"
-      />
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-11">
-            <div class="banner-contain custom-size">
-              <h2>2022</h2>
-              <h3>مد های روز</h3>
-              <h4>پیشنهاد ویژه</h4>
+
+<section class="small-slider pt-0 home-fashion mt-0">
+  <div class="container container-lg">
+    <div class="slider-animate home-slider slick-initialized slick-slider">
+      <button
+        class="slick-prev slick-arrow"
+        aria-label="Previous"
+        type="button"
+        style="display: block"
+      >
+        Previous
+      </button>
+      <div class="slick-list draggable">
+        <div class="slick-track" style="opacity: 1; width: 2232px">
+          <div
+            class="slick-slide"
+            data-slick-index="0"
+            aria-hidden="true"
+            style="
+              width: 1116px;
+              position: relative;
+              right: 0px;
+              top: 0px;
+              z-index: 998;
+              opacity: 0;
+              transition: opacity 800ms ease 0s;
+            "
+            tabindex="-1"
+          >
+            <div>
+              <div style="width: 100%; display: inline-block">
+                <div
+                  class="home bg-size blur-up lazyloaded"
+                  style="
+                    background-image: url('{% static 'images/home-banner/58.jpg' %} ');
+                    background-size: cover;
+                    background-position: center center;
+                    display: block;
+                  "
+                >
+                  <img
+                    src="{% static 'images/home-banner/56.jpg' %} "
+                    alt=""
+                    class="bg-img blur-up lazyloaded"
+                    style="display: none"
+                  />
+                  <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <div class="slider-contain px-padding">
+                          <div>
+                            <h4
+                              class=""
+                              data-animation-in="fadeInUp"
+                              style="opacity: 0"
+                            >
+                              30% ذخیره
+                            </h4>
+                            <h1
+                              class=""
+                              data-animation-in="fadeInUp"
+                              data-delay-in="0.3"
+                              style="opacity: 0; animation-delay: 0.3s"
+                            >
+                              قیمت ویژه
+                            </h1>
+                            <a
+                              href="#"
+                              class="btn btn-solid"
+                              data-animation-in="fadeInUp"
+                              data-delay-in="0.5"
+                              tabindex="-1"
+                              style="opacity: 0; animation-delay: 0.5s"
+                              >خرید کنید
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="slick-slide slick-current slick-active"
+            data-slick-index="1"
+            aria-hidden="false"
+            style="
+              width: 1116px;
+              position: relative;
+              right: -1116px;
+              top: 0px;
+              z-index: 999;
+              opacity: 1;
+            "
+          >
+            <div>
+              <div style="width: 100%; display: inline-block">
+                <div
+                  class="home bg-size blur-up lazyloaded"
+                  style="
+                    background-image: url('{% static 'images/home-banner/57.jpg' %} ');
+                    background-size: cover;
+                    background-position: center center;
+                    display: block;
+                  "
+                >
+                  <img
+                    src="{% static 'images/home-banner/57.jpg' %} "
+                    alt=""
+                    class="bg-img blur-up lazyloaded"
+                    style="display: none"
+                  />
+                  <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <div class="slider-contain px-padding">
+                          <div>
+                            <h4
+                              class="fadeInUp animated"
+                              data-animation-in="fadeInUp"
+                              style="opacity: 1"
+                            >
+                              30% ذخیره
+                            </h4>
+                            <h1
+                              class="fadeInUp animated"
+                              data-animation-in="fadeInUp"
+                              data-delay-in="0.3"
+                              style="opacity: 1; animation-delay: 0.3s"
+                            >
+                              قیمت ویژه
+                            </h1>
+                            <a
+                              href="#"
+                              class="btn btn-solid fadeInUp animated"
+                              data-animation-in="fadeInUp"
+                              data-delay-in="0.5"
+                              tabindex="0"
+                              style="opacity: 1; animation-delay: 0.5s"
+                              >خرید کنید
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <button
+        class="slick-next slick-arrow"
+        aria-label="Next"
+        type="button"
+        style="display: block"
+      >
+        Next
+      </button>
     </div>
   </div>
 </section>
@@ -31,47 +174,17 @@
       <div class="title2">
         <h2 class="title-inner2">ثبت درخواست</h2>
       </div>
-      <form class="theme-form">
+      <form class="theme-form" action="" method="post">
+        {% csrf_token %}
+
         <div class="form-row row">
-          <div class="col-md-4">
-            <label for="name">نام</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="نام خود را وارد کنید "
-              required=""
-            />
-          </div>
-          <div class="col-md-4">
-            <label for="email">ایمیل</label>
-            <input
-              type="text"
-              class="form-control"
-              id="email"
-              placeholder="ایمیل"
-              required=""
-            />
-          </div>
-          <div class="col-md-4">
-            <label for="email">ایمیل</label>
-            <input
-              type="text"
-              class="form-control"
-              id="email"
-              placeholder="ایمیل"
-              required=""
-            />
-          </div>
-          <div class="col-md-12">
-            <label for="exampleFormControlTextarea1">نظر</label>
-            <textarea
-              class="form-control"
-              placeholder="نظر خود را بنویسید"
-              id="exampleFormControlTextarea1"
-              rows="6"
-            ></textarea>
-          </div>
+          <div class="col-md-4">{{form.type_window|as_crispy_field }}</div>
+          <div class="col-md-4">{{form.type_project|as_crispy_field }}</div>
+          <div class="col-md-4">{{form.number|as_crispy_field }}</div>
+          <div class="col-md-4">{{form.number_units|as_crispy_field }}</div>
+          <div class="col-md-4">{{form.phone_number|as_crispy_field }}</div>
+          <div class="col-md-4">{{form.full_name|as_crispy_field }}</div>
+          <div class="col-md-6">{{form.addr|as_crispy_field }}</div>
           <div class="col-md-12 p-3">
             <button class="btn btn-solid" type="submit">ثبت درخواست</button>
           </div>
@@ -80,6 +193,70 @@
     </div>
   </div>
 </div>
+
+<section class="banner-goggles banner-padding ratio2_1">
+  <div class="container container-lg">
+    <div class="row partition3">
+      <div class="col-md-4">
+        <a href="#">
+          <div class="collection-banner p-right text-end">
+            <div class="img-part">
+              <img
+                src="{% static 'images/fashion/banner/38.jpg' %}"
+                class="img-fluid blur-up lazyload bg-img"
+                alt=""
+              />
+            </div>
+            <div class="contain-banner banner-3">
+              <div>
+                <h4>50 درصد تخفیف</h4>
+                <h2>speaker</h2>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="#">
+          <div class="collection-banner p-right text-end">
+            <div class="img-part">
+              <img
+                src="{% static 'images/fashion/banner/39.jpg' %}"
+                class="img-fluid blur-up lazyload bg-img"
+                alt=""
+              />
+            </div>
+            <div class="contain-banner banner-3">
+              <div>
+                <h4>50 درصد تخفیف</h4>
+                <h2>earplug</h2>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="#">
+          <div class="collection-banner p-right text-end">
+            <div class="img-part">
+              <img
+                src="{% static 'images/fashion/banner/40.jpg' %}"
+                class="img-fluid blur-up lazyload bg-img"
+                alt=""
+              />
+            </div>
+            <div class="contain-banner banner-3">
+              <div>
+                <h4>50 درصد تخفیف</h4>
+                <h2>best deal</h2>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- instagram section -->
 <section class="instagram ratio_square">

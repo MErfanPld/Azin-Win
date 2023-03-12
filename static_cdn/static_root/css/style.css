@@ -1,14 +1,14 @@
 .theme-color-1 {
-    --theme-color: #ff4c3b;
+    --theme-color: #ffa229;
 }
 .theme-color-2 {
-    --theme-color: #f0583d;
+    --theme-color: #ffa229;
 }
 .theme-color-3 {
-    --theme-color: #f0b54d;
+    --theme-color: #ffa229;
 }
 .theme-color-4 {
-    --theme-color: #e4604a;
+    --theme-color: #ffa229;
 }
 .theme-color-5 {
     --theme-color: #d4b196;
@@ -32,7 +32,7 @@
     --theme-color: #81ba00;
 }
 .theme-color-12 {
-    --theme-color: #fe816d;
+    --theme-color: #ffa229;
 }
 .theme-color-13 {
     --theme-color: #01effc;
@@ -43,7 +43,7 @@
     --theme-color2: #203f15;
 }
 .theme-color-15 {
-    --theme-color: #ff9944;
+    --theme-color: #ffa229;
 }
 .theme-color-16 {
     --theme-color: #5fcbc4;
@@ -97,7 +97,7 @@
     --theme-color: #ee7a63;
 }
 :root {
-    --theme-color: #ff4c3b;
+    --theme-color: #ffa229;
 }
 @-webkit-keyframes textNoise1 {
     0% {

@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'django_google_maps',
+
     'accounts',
     'order',
 ]
@@ -145,5 +149,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static_cdn", "media_root")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+
+# CRISPY
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# Google Map
+# GOOGLE_MAPS_API_KEY = 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

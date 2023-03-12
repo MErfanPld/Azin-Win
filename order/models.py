@@ -20,8 +20,12 @@ class Order(models.Model):
         ('A', 'نوساز'),
         ('B', 'بازسازی'),
     )
+    status_CHOICES = (
+        ('A', 'پیگیری شده'),
+        ('B', 'پیگیره نشده'),
+    )
     type_window = models.ForeignKey(
-        to=TypeWindow, on_delete=models.CASCADE, related_name="orders"
+        to=TypeWindow, on_delete=models.CASCADE, related_name="orders", verbose_name="نوع پنجره"
     )
     type_project = models.CharField(
         max_length=2, choices=type_project_CHOICES, blank=True, null=True, verbose_name="نوع پروژه")
@@ -32,6 +36,8 @@ class Order(models.Model):
         max_length=11, unique=True, null=True, blank=True, verbose_name="شماره تماس")
     full_name = models.CharField(
         max_length=100, null=True, blank=True, verbose_name="نام و نام خانوادگی")
+    status = models.CharField(
+        max_length=2, choices=status_CHOICES, blank=True, null=True, verbose_name="وضعیت درخواست")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")
 
     def __str__(self):
