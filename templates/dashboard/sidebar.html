@@ -1,0 +1,418 @@
+{% load static %}
+
+<div class="page-sidebar">
+    <div class="main-header-left d-none d-lg-block">
+        <div class="logo-wrapper">
+            <a href="index.html">
+                <img class="d-none d-lg-block blur-up lazyloaded" src="{% static '' %}admin/images/dashboard/multikart-logo.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="sidebar custom-scrollbar">
+        <a href="javascript:void(0)" class="sidebar-back d-lg-none d-block"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <div class="sidebar-user">
+            <img class="img-60" src="{% static 'admin/images/dashboard/user3.jpg' %}" alt="#">
+            <div>
+                <h6 class="f-14">ستین </h6>
+                <p>مدیر کل </p>
+            </div>
+        </div>
+        <ul class="sidebar-menu">
+            <li>
+                <a class="sidebar-header" href="index.html">
+                    <i data-feather="home"></i>
+                    <span>داشبورد </span>
+                </a>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="box"></i>
+                    <span>محصولات </span>
+                    <i class="fa fa-angle-left  pull-right"></i>
+                </a>
+
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-circle"></i>
+                            <span>فیزیکی</span>
+                            <i class="fa fa-angle-left  pull-right"></i>
+                        </a>
+
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="category.html">
+                                    <i class="fa fa-circle"></i>دسته بندی 
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="category-sub.html">
+                                    <i class="fa fa-circle"></i>زیر دسته بندی</a>
+                            </li>
+
+                            <li>
+                                <a href="product-list.html">
+                                    <i class="fa fa-circle"></i>لیست محصولات </a>
+                            </li>
+
+                            <li>
+                                <a href="product-detail.html">
+                                    <i class="fa fa-circle"></i>جزئیات محصولات </a>
+                            </li>
+
+                            <li>
+                                <a href="add-product.html">
+                                    <i class="fa fa-circle"></i>درج محصول 
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-circle"></i>
+                            <span>دیجیتالی</span>
+                            <i class="fa fa-angle-left  pull-right"></i>
+                        </a>
+
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="category-digital.html">
+                                    <i class="fa fa-circle"></i>دسته بندی 
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="category-digitalsub.html">
+                                    <i class="fa fa-circle"></i>زیر دسته بندی
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="product-listdigital.html">
+                                    <i class="fa fa-circle"></i>لیست محصولات 
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="add-digital-product.html">
+                                    <i class="fa fa-circle"></i>درج محصول 
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="product-review.html">
+                            <i class="fa fa-circle"></i>
+                            <span>نظر محصولات</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="archive"></i>
+                    <span>سفارشات</span>
+                    <i class="fa fa-angle-left  pull-right"></i>
+                </a>
+
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="order-list.html">
+                            <i class="fa fa-circle"></i>
+                            <span>لیست سفارشات</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="order-tracking.html">
+                            <i class="fa fa-circle"></i>
+                            <span>پیگیری سفارش</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="order-detail.html">
+                            <i class="fa fa-circle"></i>
+                            <span>جزئیات سفارش</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="dollar-sign"></i>
+                    <span>فروش</span>
+                    <i class="fa fa-angle-left  pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="order.html">
+                            <i class="fa fa-circle"></i>سفارشات
+                        </a>
+                    </li>
+                    <li>
+                        <a href="transactions.html">
+                            <i class="fa fa-circle"></i>معاملات
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="tag"></i>
+                    <span>تخفیف </span>
+                    <i class="fa fa-angle-left  pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="coupon-list.html">
+                            <i class="fa fa-circle"></i>لیست تخفیف
+                        </a>
+                    </li>
+                    <li>
+                        <a href="coupon-create.html">
+                            <i class="fa fa-circle"></i>درج تخفیف
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="clipboard"></i>
+                    <span>صفحات</span>
+                    <i class="fa fa-angle-left  pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="pages-list.html">
+                            <i class="fa fa-circle"></i>لیست صفحات
+                        </a>
+                    </li>
+                    <li>
+                        <a href="page-create.html">
+                            <i class="fa fa-circle"></i>درج صفحه
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="media.html">
+                    <i data-feather="camera"></i>
+                    <span>مدیا</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="align-left"></i>
+                    <span>منو</span>
+                    <i class="fa fa-angle-left  pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="menu-list.html">
+                            <i class="fa fa-circle"></i>لیست منو
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-menu.html">
+                            <i class="fa fa-circle"></i>درج منو
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="user-plus"></i>
+                    <span>کاربران </span>
+                    <i class="fa fa-angle-left  pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="user-list.html">
+                            <i class="fa fa-circle"></i>لیست کاربران 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-user.html">
+                            <i class="fa fa-circle"></i>درج کاربر
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="users"></i>
+                    <span>فروشنده</span>
+                    <i class="fa fa-angle-left  pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="list-vendor.html">
+                            <i class="fa fa-circle"></i>لیست فروشنده
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-vendors.html">
+                            <i class="fa fa-circle"></i>درج فروشنده
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="chrome"></i>
+                    <span>بومی سازی</span>
+                    <i class="fa fa-angle-left  pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="translations.html"><i class="fa fa-circle"></i>ترجمه ها
+                        </a>
+                    </li>
+                    <li>
+                        <a href="currency-rates.html"><i class="fa fa-circle"></i>نرخ ارز
+                        </a>
+                    </li>
+                    <li>
+                        <a href="taxes.html"><i class="fa fa-circle"></i>مالیات 
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="support-ticket.html"><i data-feather="phone"></i><span>تیکت پشتیبانی</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="reports.html"><i data-feather="bar-chart"></i><span>گزارش ها</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)"><i data-feather="settings"></i><span>تنظیمات</span><i class="fa fa-angle-left  pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="profile.html"><i class="fa fa-circle"></i>پروفایل 
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="invoice.html"><i data-feather="archive"></i><span>فاکتور</span></a>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="forgot-password.html">
+                    <i data-feather="key"></i>
+                    <span>فراموشی پسورد</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="sidebar-header" href="login.html">
+                    <i data-feather="log-in"></i>
+                    <span>ورود</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="right-sidebar" id="right_side_bar">
+    <div>
+        <div class="container p-0">
+            <div class="modal-header p-l-20 p-r-20">
+                <div class="col-sm-8 p-0">
+                    <h6 class="modal-title font-weight-bold">لیست دوستان</h6>
+                </div>
+                <div class="col-sm-4 text-end p-0">
+                    <i class="me-2" data-feather="settings"></i>
+                </div>
+            </div>
+        </div>
+        <div class="friend-list-search mt-0">
+            <input type="text" placeholder="جستجوی دوست ">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="p-l-30 p-r-30 friend-list-name">
+            <div class="chat-box">
+                <div class="people-list friend-list">
+                    <ul class="list">
+                        <li class="clearfix">
+                            <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user.jpg' %}" alt="">
+                            <div class="status-circle online"></div>
+                            <div class="about">
+                                <div class="name">اریکا هیوز</div>
+                                <div class="status">آنلاین </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user1.jpg' %}" alt="">
+                            <div class="status-circle away"></div>
+                            <div class="about">
+                                <div class="name">اریکا هیوز</div>
+                                <div class="status">20 دقیقه قبل </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user2.jpg' %}" alt="">
+                            <div class="status-circle online"></div>
+                            <div class="about">
+                                <div class="name">اریکا هیوز</div>
+                                <div class="status">آنلاین </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user3.jpg' %}" alt="">
+                            <div class="status-circle online"></div>
+                            <div class="about">
+                                <div class="name">عین چاوز</div>
+                                <div class="status">آنلاین </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user3.jpg' %}" alt="">
+                            <div class="status-circle offline"></div>
+                            <div class="about">
+                                <div class="name">عین چاوز</div>
+                                <div class="status">20 دقیقه قبل </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user5.jpg' %}" alt="">
+                            <div class="status-circle away"></div>
+                            <div class="about">
+                                <div class="name">عین چاوز</div>
+                                <div class="status">20 دقیقه قبل </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/designer.jpg' %}" alt="">
+                            <div class="status-circle online"></div>
+                            <div class="about">
+                                <div class="name">عین چاوز</div>
+                                <div class="status">آنلاین </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
