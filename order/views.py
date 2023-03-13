@@ -10,6 +10,7 @@ from sms.sms_texts import SMS_TEXTS
 from .models import Order
 from .forms import OrderForm
 
+
 # Create your views here.
 
 
@@ -29,7 +30,11 @@ class OrderCreateView(View):
         if form.is_valid():
             new_order = form.save(commit=False)
             new_order.save()
+
             sms_text = SMS_TEXTS['order_message'].format(new_order.full_name)
             send_sms(new_order.phone_number, sms_text)
-            return redirect('order:order_home', new_order.id)
+            messages.success(request,
+                             f"کاربر گرامی درخواست شما با موفقیت ثبت شد و پس از بررسی با شما تماس گرفته خواهد شد.")
+
+            return redirect('order:order_home')
         return render(request, 'order/home.html', {'form': form})
