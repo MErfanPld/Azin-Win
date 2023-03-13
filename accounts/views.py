@@ -94,11 +94,4 @@ class VerifyCodeView(AnonymousUserMixin, FormView):
         if resolve(self.request.path_info).url_name == 'password-reset-confirm':
             return HttpResponseRedirect(reverse_lazy('password-reset-enter'))
 
-        if self.request.user.role_code == 'student':
-            return HttpResponseRedirect(reverse_lazy("student-profile"))
-        elif self.request.user.role_code == 'teacher':
-            return HttpResponseRedirect(reverse_lazy("teacher-profile"))
-        elif self.request.user.role_code == 'teacher':
-            return HttpResponseRedirect(reverse_lazy("dashboard"))
-
-        return HttpResponseRedirect(reverse_lazy("dashboard"))
+        return HttpResponseRedirect(reverse_lazy("order:order_home"))

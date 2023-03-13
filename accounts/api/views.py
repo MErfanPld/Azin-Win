@@ -21,7 +21,7 @@ class UserAuthVS(GenericViewSet):
     )
     def code_send(self, request):
         serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(True)
+        serializer.is_valid()
         serializer.save()
         phone_number = serializer.data['phone_number']
         user = User.objects.filter(phone_number=phone_number).first()

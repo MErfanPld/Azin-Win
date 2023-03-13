@@ -3,11 +3,6 @@
 
 {% block title %}تایید کد{% endblock %}
 
-{% block Styles %}
-    <link rel="stylesheet" href="{% static 'front/styles/login.css' %}">
-    <link rel="stylesheet" href="{% static 'front/styles/signIn.css' %}">
-{% endblock %}
-
 {% block content %}
     <div class="cotainer" ng-init="init()">
         <div class="log-in w-75 w-sm-50">
@@ -32,7 +27,7 @@
             <form method="post" id="frm">
                 {% csrf_token %}
 
-                <input type="hidden" name="phone" value="{{ request.session.verify_phone }}">
+                <input type="hidden" name="phone_number" value="{{ request.session.verify_phone_number }}">
 
                 {% for field in form.visible_fields %}
                     <div class=" mx-5 d-flex justify-content-center d-sm-flex justify-content-end">
@@ -66,11 +61,11 @@
             $scope.phone = null;
 
             $scope.init = function () {
-                $scope.phone = '{{ request.session.verify_phone }}'
+                $scope.phone = '{{ request.session.verify_phone_number }}'
             }
 
             $scope.SendNewCode = function () {
-                $http.post(`/api/auth/code/send/`, {'phone': $scope.phone}).then(res => {
+                $http.post(`/api/auth/code/send/`, {'phone_number': $scope.phone}).then(res => {
                     createToast('success', res.data['message']);
                 }).catch(err => {
                     parseError(err, 'خطایی رخ داد. لطفا دوباره امتحان کنید');

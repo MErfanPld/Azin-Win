@@ -61,7 +61,7 @@ class AnonymousUserMixin:
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect(reverse_lazy('dashboard'))
+            return redirect(reverse_lazy('order:order_home'))
         else:
             return super().dispatch(request, *args, **kwargs)
 
