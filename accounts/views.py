@@ -61,7 +61,7 @@ class ResetPasswordEnterView(AnonymousUserMixin, CheckPasswordResetExpirationMix
     success_url = reverse_lazy("login")
 
     def get_current_user(self):
-        code = get_object_or_404(Code, code=self.request.session['reset_password_code'])
+        code = get_object_or_404(OtpCode, code=self.request.session['reset_password_code'])
         user = get_object_or_404(User, pk=code.user_id)
         return user
 
