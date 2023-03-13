@@ -28,3 +28,4 @@ class OrderCreateView(View):
             new_order = form.save(commit=False)
             new_order.save()
             return redirect('order:order_home', new_order.id)
+        return render(request, 'order/home.html', {'form': form})
