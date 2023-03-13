@@ -1,0 +1,133 @@
+{% extends "dashboard/base.html" %} {% block content %}
+
+<div class="container-fluid">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="page-header-left">
+          <h3>
+            جزئیات درخواست
+            <small>پنل مدیریت آذین وین</small>
+          </h3>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <ol class="breadcrumb pull-right">
+          <li class="breadcrumb-item">
+            <a href="index.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-home"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </a>
+          </li>
+          <li class="breadcrumb-item">درخواست</li>
+          <li class="breadcrumb-item active">جزئیات درخواست</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="bg-inner cart-section order-details-table">
+            <div class="row g-12">
+              <div class="col-xl-12">
+                <div class="table-responsive table-details">
+                  <table class="table cart-table table-borderless">
+                    <thead>
+                      <tr>
+                        <th colspan="2">جزئیات</th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                        <th colspan="2"></th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr class="table-order">
+                        <td>
+                          <p>نام و نام خانوادگی</p>
+                          <h5>{{order.full_name}}</h5>
+                        </td>
+                        <td>
+                          <p>شماره تلفن</p>
+                          <h5>{{order.phone_number}}</h5>
+                        </td>
+                        <td>
+                          <p>نوع پنجره</p>
+                          <h5>{{order.type_window}}</h5>
+                        </td>
+                        <td>
+                          <p>نوع پروژه</p>
+                          <h5>{{order.type_project}}</h5>
+                        </td>
+                        <td>
+                          <p>تعداد واحد</p>
+                          <h5>{{order.number}}</h5>
+                        </td>
+                        <td>
+                          <p>تعداد units</p>
+                          <h5>{{order.number_units}}</h5>
+                        </td>
+                        <td>
+                          <p>ادرس محل</p>
+                          <h5>{{order.addr}}</h5>
+                        </td>
+                        <td>
+                          <p>تاریخ ثبت</p>
+                          <h5>{{order.created}}</h5>
+                        </td>
+
+                        <td>
+                          <p>وضعیت</p>
+                        {% if order.status == 'A' %}
+                        <h5 class="order-success">
+                          <span>{{order.status}}</span>
+                        </h5>
+                        {% else %}
+                        <h5 class="order-cancle">
+                          <span>{{order.status}}</span>
+                        </h5>
+                        {% endif %}
+                      </td>
+                        
+                      </tr>
+                    </tbody>
+
+                    <tfoot>
+                      <tr class="table-order">
+                        <td colspan="3">
+                          <a href="tel:{{order.phone_number}}" class="btn btn-solid hover-solid btn-animation me-3">تماس با مشتری</a>
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- section end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

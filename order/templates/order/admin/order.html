@@ -1,0 +1,102 @@
+{% extends "dashboard/base.html" %} {% block content %}
+
+<div class="page-body">
+  <!-- Container-fluid starts-->
+  <div class="container-fluid">
+    <div class="page-header">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="page-header-left">
+            <h3>
+              داشبورد
+              <small>پنل مدیریت آذین وین</small>
+            </h3>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <ol class="breadcrumb pull-right">
+            <li class="breadcrumb-item">
+              <a href="index.html">
+                <i data-feather="home"></i>
+              </a>
+            </li>
+            <li class="breadcrumb-item active">داشبورد</li>
+            <li class="breadcrumb-item active">درخواست</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <form class="form-inline search-form search-box">
+              <div class="form-group">
+                <input
+                  class="form-control-plaintext"
+                  type="search"
+                  placeholder="جستجو..."
+                />
+              </div>
+            </form>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive table-desi">
+              <table class="table all-package" id="editableTable">
+                <thead>
+                  <tr>
+                    <th>شناسه درخواست</th>
+                    <th>شماره موبایل</th>
+                    <th>نام و نام خانوادگی</th>
+                    <th>نوع پنجره</th>
+                    <th>نوع پروژه</th>
+                    <th>وضعیت</th>
+                    <th>عملیات</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {% for order in orders %}
+                  <tr>
+                    <td data-field="date">{{order.id}}</td>
+                    <td data-field="number">{{order.phone_number}}</td>
+                    <td data-field="text">{{order.full_name}}</td>
+                    <td data-field="text">{{order.type_window}}</td>
+                    <td data-field="text">{{order.type_project}}</td>
+                    {% if order.status == 'A' %}
+                    <td class="order-success">
+                      <span>{{order.status}}</span>
+                    </td>
+                    {% else %}
+                    <td class="order-cancle">
+                      <span>{{order.status}}</span>
+                    </td>
+                    {% endif %}
+                    <td>
+                      <a
+                        href="{% url 'order:dashboard_order_detail' order.id %}"
+                      >
+                        <i class="fa fa-eye" title="جزییات درخواست"></i>
+                      </a>
+
+                      <a href="">
+                        <i class="fa fa-trash" title="حذف"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

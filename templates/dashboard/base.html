@@ -80,7 +80,9 @@
     <!-- page-wrapper Start-->
     <div class="page-wrapper">
       <!-- Page Header Start-->
+
       {% include './header.html' %}
+
       <!-- Page Header Ends -->
 
       <!-- Page Body Start-->
@@ -88,14 +90,15 @@
         <!-- Page Sidebar Start-->
 
         <!-- Page Sidebar Ends-->
+
         {% include './sidebar.html' %}
+
         <!-- Right sidebar Start-->
 
         <!-- Right sidebar Ends-->
-
-        {% block content %}{% endblock content %}
-
-
+        <div class="page-body">
+          {% include 'inc/messages.html' %}{% block content %}{% endblock content %}
+        </div>
       </div>
     </div>
 

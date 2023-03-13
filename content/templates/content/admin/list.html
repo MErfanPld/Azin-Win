@@ -1,0 +1,110 @@
+{% extends "dashboard/base.html" %} {% load crispy_forms_tags %} 
+{% block content %}
+
+<div class="container-fluid">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="page-header-left">
+          <h3>لیست محتوا</h3>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <ol class="breadcrumb pull-right">
+          <li class="breadcrumb-item">
+            <a href="index.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-home"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </a>
+          </li>
+          <li class="breadcrumb-item">محتوا</li>
+          <li class="breadcrumb-item active">لیست محتوا</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <form class="form-inline search-form search-box">
+            <div class="form-group">
+              <input
+                class="form-control-plaintext"
+                type="search"
+                placeholder="جستجو..."
+              />
+            </div>
+          </form>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive table-desi">
+            <table class="table all-package" id="editableTable">
+              <thead>
+                <tr>
+                  <th>شناسه محتوا</th>
+                  <th>نوع محتوا</th>
+                  <th>عنوان</th>
+                  <th>ادرس</th>
+                  <th>وضعیت</th>
+                  <th>عملیات</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for content in contents %}
+                <tr>
+                  <td data-field="date">{{content.id}}</td>
+                  <td data-field="number">{{content.type_content}}</td>
+                  <td data-field="text">{{content.title}}</td>
+                  <td data-field="text">{{content.slug}}</td>
+
+                  {% if content.status == 'A' %}
+                  <td class="order-success">
+                    <span>{{content.status}}</span>
+                  </td>
+                  {% else %}
+                  <td class="order-cancle">
+                    <span>{{content.status}}</span>
+                  </td>
+                  {% endif %}
+                  <td>
+                    <a href="{% url 'content:update_content' content.id %}">
+                      <i class="fa fa-eye" title="جزییات محتوا"></i>
+                    </a>
+
+                    <a href="{% url 'content:update_content' content.id %}">
+                      <i class="fa fa-edit" title="ویرایش"></i>
+                    </a>
+
+                    <a href="">
+                      <i class="fa fa-trash" title="حذف"></i>
+                    </a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
