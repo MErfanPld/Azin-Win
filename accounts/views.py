@@ -11,7 +11,7 @@ from unidecode import unidecode
 
 
 class RegisterView(AnonymousUserMixin, CreateView):
-    template_name = "auth/register.html"
+    template_name = "accounts/register.html"
     model = User
     form_class = RegisterForm
     success_url = reverse_lazy("verify-code")
@@ -29,7 +29,7 @@ class RegisterView(AnonymousUserMixin, CreateView):
 
 
 class LoginView(LoginViewAuto):
-    template_name = 'auth/login.html'
+    template_name = 'accounts/login.html'
     redirect_authenticated_user = True
     next_page = reverse_lazy('index')
     success_url = reverse_lazy('index')
@@ -41,7 +41,7 @@ class LoginView(LoginViewAuto):
 
 
 class ResetPasswordView(AnonymousUserMixin, CreateView):
-    template_name = "auth/reset_password/form.html"
+    template_name = "accounts/reset_password/form.html"
     form_class = PasswordResetForm
     success_url = reverse_lazy("password-reset-confirm")
 
@@ -57,7 +57,7 @@ class ResetPasswordView(AnonymousUserMixin, CreateView):
 
 
 class ResetPasswordEnterView(AnonymousUserMixin, CheckPasswordResetExpirationMixin, CreateView):
-    template_name = "auth/reset_password/form.html"
+    template_name = "accounts/reset_password/form.html"
     form_class = SetPasswordForm
     success_url = reverse_lazy("login")
 
@@ -81,7 +81,7 @@ class ResetPasswordEnterView(AnonymousUserMixin, CheckPasswordResetExpirationMix
 
 
 class VerifyCodeView(AnonymousUserMixin, FormView):
-    template_name = "auth/verify_code.html"
+    template_name = "accounts/verify_code.html"
     form_class = OtpCodeForm
 
     def get_form_kwargs(self):

@@ -2,8 +2,8 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from ACL.rest_mixin import RestPermissionMixin
-from Sms.api.serializers import SmsGroupSerializer
+from acl.rest_mixin import RestPermissionMixin
+from sms.api.serializers import SmsGroupSerializer
 
 
 class SmsViewSet(viewsets.GenericViewSet):

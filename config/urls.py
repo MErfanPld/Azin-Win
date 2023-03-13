@@ -25,10 +25,15 @@ urlpatterns = [
     path('', include('order.urls', namespace='order')),
 ]
 
+urlpatterns += [
+    path('api/auth/', include('accounts.api.urls')),
+    path('api/sms/', include('sms.api.urls')),
+]
+
 if settings.DEBUG:
     # add root static files
     urlpatterns = urlpatterns + \
-        static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     # add media static files
     urlpatterns = urlpatterns + \
-        static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
