@@ -30,6 +30,8 @@ class Order(models.Model):
         max_length=11, unique=True, null=True, blank=True, verbose_name="شماره تماس")
     full_name = models.CharField(
         max_length=100, null=True, blank=True, verbose_name="نام و نام خانوادگی")
+    lat = models.TextField(null=True, verbose_name='latitude')
+    long = models.TextField(null=True, verbose_name='longitude')
     status = models.CharField(
         max_length=2, choices=status_CHOICES, blank=True, null=True, verbose_name="وضعیت درخواست")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")

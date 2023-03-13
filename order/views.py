@@ -18,6 +18,9 @@ from content.models import Content
 # Create your views here.
 
 
+def test_map_ir(request):
+    return render(request, 'test_map_ir.html')
+
 def home(request):
     return render(request, 'order/home.html')
 
