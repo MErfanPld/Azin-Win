@@ -1,11 +1,17 @@
 from django.urls import path, include
-from . import views
+from .views import *
+from django.contrib.auth.views import LogoutView
+from django.conf import settings
 
-app_name = "accounts"
+# app_name = "accounts"
 
 urlpatterns = [
-    # path('register/', views.UserRegister.as_view(), name="register"),
-    # path('verify/', views.UserRegisterVerifyCodeView.as_view(), name='verify_code'),
-    # path('login/', views.UserLoginView.as_view(), name='login'),
-    # path('logout/', views.UserLogoutView.as_view(), name='logout'),
+    path('register/', RegisterView.as_view(), name='register'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('verify/', VerifyCodeView.as_view(), name='verify-code'),
+    path('logout/', LogoutView.as_view(next_page=settings.LOGIN_URL), name='logout'),
+
+    path('password/reset/', ResetPasswordView.as_view(), name='password-reset'),
+    path('password/reset/confirm/', VerifyCodeView.as_view(), name='password-reset-confirm'),
+    path('password/reset/enter/', ResetPasswordEnterView.as_view(), name='password-reset-enter'),
 ]

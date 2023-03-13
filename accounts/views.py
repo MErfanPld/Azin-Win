@@ -31,8 +31,8 @@ class RegisterView(AnonymousUserMixin, CreateView):
 class LoginView(LoginViewAuto):
     template_name = 'accounts/login.html'
     redirect_authenticated_user = True
-    next_page = reverse_lazy('index')
-    success_url = reverse_lazy('index')
+    next_page = reverse_lazy('order:order_home')
+    success_url = reverse_lazy('order:order_home')
 
     def post(self, request, *args, **kwargs):
         request.POST._mutable = True
