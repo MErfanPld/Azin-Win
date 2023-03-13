@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'accounts',
     'order',
     'content',
+    'acl',
+    'utils',
+    'sms',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +89,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # * ======================= Postgres =======================#
 
@@ -160,3 +162,13 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # GOOGLE_MAPS_API_KEY = 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = config('LOGIN_URL')
+LOGIN_REDIRECT_URL = config('LOGIN_URL')
+AUTH_USER_MODEL = 'accounts.User'
+
+# SMS
+SMS_USERNAME = config('SMS_USERNAME')
+SMS_PASSWORD = config('SMS_PASSWORD')
+SMS_FROM_NUMBER = config('SMS_FROM_NUMBER')
+SMS_CONSOLE_TOKEN = config('SMS_CONSOLE_TOKEN')

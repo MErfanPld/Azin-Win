@@ -1,10 +1,10 @@
+from datetime import datetime, timedelta
+from django.contrib.auth import login, get_user_model
 from django.db import models
 from django.contrib.auth.models import AbstractUser, AbstractBaseUser
 from .managers import UserManager
 from django.contrib.auth.models import PermissionsMixin
 
-
-# Create your models here.
 
 class User(AbstractBaseUser):
     email = models.EmailField(
@@ -21,7 +21,7 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
     USERNAME_FIELD = 'phone_number'
-    REQUIRED_FIELDS = ['email', 'phone_number']
+    REQUIRED_FIELDS = ['email']
 
     def __str__(self):
         return self.email
@@ -41,15 +41,51 @@ class User(AbstractBaseUser):
         verbose_name_plural = 'حساب های کاربری'
 
 
-class OtpCode(models.Model):
-    phone_number = models.CharField(
-        max_length=11, unique=True, verbose_name="شماره تماس")
-    code = models.PositiveSmallIntegerField(verbose_name="کد")
-    created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")
+class OtpCodeManager(models.Manager):
+    def create_new_code(self, user):
+        from accounts.helpers import create_code
 
-    def __str__(self):
-        return f'{self.phone_number} - {self.code} - {self.created}'
+        user.codes.all().update(is_used=True)
+        return OtpCode.objects.create(code=create_code(), user=user)
+
+
+class OtpCode(models.Model):
+    code = models.CharField(verbose_name='کد', max_length=6)
+    user = models.ForeignKey(verbose_name='کاربر', to=User, on_delete=models.CASCADE, related_name='codes', null=True)
+    is_used = models.BooleanField(verbose_name='آیا استفاده شده است', default=False)
+    created_at = models.DateTimeField(
+        auto_now_add=True, null=True,
+        verbose_name="تاریخ ثبت"
+    )
 
     class Meta:
-        verbose_name = 'کد اعتبارسنجی'
-        verbose_name_plural = 'کدهای اعتبارسنجی'
+        verbose_name = 'کد یکبار مصرف'
+        verbose_name_plural = 'کد ها یکبار مصرف'
+
+    EXPIRE_TIME = 2
+
+    objects = OtpCodeManager()
+
+    def __str__(self):
+        return f"{self.user}-{self.code}"
+
+    def check_expire(self):
+        expire_time = self.created_at.now() + timedelta(minutes=self.EXPIRE_TIME)
+        if datetime.now() > expire_time:
+            self.is_used = True
+            self.save()
+            return False
+        return True
+
+    def verify_code(self, request, is_login=False):
+        self.is_used = True
+        self.user.is_active = True
+        self.user.save()
+        self.save()
+
+        if is_login:
+            login(request, self.user)
+            try:
+                del request.session['verify_phone']
+            except:
+                pass
