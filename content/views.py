@@ -26,6 +26,7 @@ class ContentCreateView(View):
             new_content.save()
             messages.success(request, 'محتوا با موفقیت ثبت شد.', 'success')
             return redirect('content:list_content')
+        return render(request, 'content/admin/create_edit.html', {'form': form})
 
 
 class ContentUpdateView(LoginRequiredMixin, UpdateView):
@@ -53,6 +54,7 @@ class ContentUpdateView(LoginRequiredMixin, UpdateView):
             new_content.user = request.user
             new_content.save()
             return redirect('content:list_content')
+        return render(request, 'content/admin/create_edit.html', {'form': form})
 
 
 class ContentDashboardList(LoginRequiredMixin, View):

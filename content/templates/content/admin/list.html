@@ -71,17 +71,17 @@
                 {% for content in contents %}
                 <tr>
                   <td data-field="date">{{content.id}}</td>
-                  <td data-field="number">{{content.type_content}}</td>
+                  <td data-field="number">{{content.get_type_content | default:'---'}}</td>
                   <td data-field="text">{{content.title}}</td>
                   <td data-field="text">{{content.slug}}</td>
 
                   {% if content.status == 'A' %}
                   <td class="order-success">
-                    <span>{{content.status}}</span>
+                    <span>{{content.get_status | default:'---'}}</span>
                   </td>
                   {% else %}
                   <td class="order-cancle">
-                    <span>{{content.status}}</span>
+                    <span>{{content.get_status | default:'---'}}</span>
                   </td>
                   {% endif %}
                   <td>

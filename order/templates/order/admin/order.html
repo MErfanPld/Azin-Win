@@ -66,14 +66,14 @@
                     <td data-field="number">{{order.phone_number}}</td>
                     <td data-field="text">{{order.full_name}}</td>
                     <td data-field="text">{{order.type_window}}</td>
-                    <td data-field="text">{{order.type_project}}</td>
+                    <td data-field="text">{{order.get_type_project}}</td>
                     {% if order.status == 'A' %}
                     <td class="order-success">
-                      <span>{{order.status}}</span>
+                      <span>{{order.get_status | default:'---'}}</span>
                     </td>
                     {% else %}
                     <td class="order-cancle">
-                      <span>{{order.status}}</span>
+                      <span>{{order.get_status | default:'---'}}</span>
                     </td>
                     {% endif %}
                     <td>

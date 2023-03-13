@@ -1,7 +1,9 @@
 from django.db import models
 from accounts.models import User
 
+
 # Create your models here.
+from order.helpers import type_project_CHOICES, status_CHOICES
 
 
 class TypeWindow(models.Model):
@@ -16,14 +18,6 @@ class TypeWindow(models.Model):
 
 
 class Order(models.Model):
-    type_project_CHOICES = (
-        ('A', 'نوساز'),
-        ('B', 'بازسازی'),
-    )
-    status_CHOICES = (
-        ('A', 'پیگیری شده'),
-        ('B', 'پیگیره نشده'),
-    )
     type_window = models.ForeignKey(
         to=TypeWindow, on_delete=models.CASCADE, related_name="orders", verbose_name="نوع پنجره"
     )
@@ -46,3 +40,11 @@ class Order(models.Model):
     class Meta:
         verbose_name = "درخواست"
         verbose_name_plural = "درخواست ها"
+
+    @property
+    def get_type_project(self):
+        return dict(type_project_CHOICES).get(self.type_project, '')
+
+    @property
+    def get_status(self):
+        return dict(status_CHOICES).get(self.status, '')
