@@ -19,7 +19,6 @@ class RegisterView(AnonymousUserMixin, CreateView):
     def post(self, request, *args, **kwargs):
         request.POST._mutable = True
         request.POST['phone_number'] = unidecode(request.POST.get('phone_number'))
-        request.POST['national_id'] = unidecode(request.POST.get('national_id'))
         return super().post(request, *args, **kwargs)
 
     def get_form_kwargs(self):

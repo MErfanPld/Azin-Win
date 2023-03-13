@@ -43,3 +43,18 @@
           document.getElementById("search-overlay").style.display = "none";
         }
       </script>
+
+<script src="{% static 'js/jquery.toast.min.js' %}"></script>
+<script src="{% static 'js/angular.min.js' %}"></script>
+<script src="{% static 'js/helpers.js' %}"></script>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.config(function ($interpolateProvider, $httpProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+</script>
