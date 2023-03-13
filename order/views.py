@@ -5,6 +5,8 @@ from django.conf import settings
 from django.contrib import messages
 from django.utils.text import slugify
 
+from sms.helpers import send_sms
+from sms.sms_texts import SMS_TEXTS
 from .models import Order
 from .forms import OrderForm
 
@@ -27,5 +29,7 @@ class OrderCreateView(View):
         if form.is_valid():
             new_order = form.save(commit=False)
             new_order.save()
+            sms_text = SMS_TEXTS['order_message'].format(new_order.full_name)
+            send_sms(new_order.phone_number, sms_text)
             return redirect('order:order_home', new_order.id)
         return render(request, 'order/home.html', {'form': form})
