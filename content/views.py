@@ -16,6 +16,8 @@ class ContentListView(View):
 
     def get(self, request, *args, **kwargs):
         contents = Content.objects.filter(status='A')
+        if request.GET.get('type_content'):
+            contents = contents.filter(type_content=request.GET.get('type_content'))
         context = {'contents': contents}
         return render(request, self.template_name, context)
 
