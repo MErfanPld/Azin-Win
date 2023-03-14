@@ -19,7 +19,10 @@ from content.models import Content
 
 
 def test_map_ir(request):
-    return render(request, 'test_map_ir.html')
+    context = {
+        'form': OrderForm()
+    }
+    return render(request, 'test_map_ir.html', context)
 
 def home(request):
     return render(request, 'order/home.html')

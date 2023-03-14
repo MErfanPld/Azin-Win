@@ -8,5 +8,7 @@ class OrderForm(forms.ModelForm):
         model = Order
         exclude = ['created']
         widgets = {
-            'body': forms.Textarea(attrs={'class': 'form-control'})
+            'body': forms.Textarea(attrs={'class': 'form-control'}),
+            'lat': forms.HiddenInput(),
+            'long': forms.HiddenInput(),
         }
