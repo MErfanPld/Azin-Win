@@ -76,7 +76,7 @@
                         </td>
                         <td>
                           <p>نوع پروژه</p>
-                          <h5>{{order.type_project}}</h5>
+                          <h5>{{order.get_type_project | default:'---'}}</h5>
                         </td>
                         <td>
                           <p>تعداد واحد</p>
@@ -99,11 +99,11 @@
                           <p>وضعیت</p>
                         {% if order.status == 'A' %}
                         <h5 class="order-success">
-                          <span>{{order.status}}</span>
+                          <span>{{order.get_status | default:'---'}}</span>
                         </h5>
                         {% else %}
                         <h5 class="order-cancle">
-                          <span>{{order.status}}</span>
+                          <span>{{order.get_status | default:'---'}}</span>
                         </h5>
                         {% endif %}
                       </td>

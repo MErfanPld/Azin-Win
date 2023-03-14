@@ -63,10 +63,18 @@
                   <tr>
                     <td>{{order.id}}</td>
                     <td class="digits">{{order.type_window}}</td>
-                    <td class="digits">{{order.type_project}}</td>
+                    <td class="digits">{{content.get_type_project | default:'---'}}</td>
                     <td class="digits">{{order.phone_number}}</td>
                     <td class="digits">{{order.full_name}}</td>
-                    <td class="digits">{{order.status}}</td>
+                    {% if order.status == 'A' %}
+                    <td class="order-success">
+                      <span>{{order.get_status | default:'---'}}</span>
+                    </td>
+                    {% else %}
+                    <td class="order-cancle">
+                      <span>{{order.get_status | default:'---'}}</span>
+                    </td>
+                    {% endif %}
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -115,10 +123,10 @@
                   {% for content in contents %}
                   <tr>
                     <td>{{content.id}}</td>
-                    <td class="digits">{{content.type_content}}</td>
+                    <td class="digits">{{content.get_type_content | default:'---'}}</td>
                     <td class="digits">{{content.title}}</td>
                     <td class="digits">{{content.slug}}</td>
-                    <td class="digits">{{content.status}}</td>
+                    <td class="digits">{{content.get_status | default:'---'}}</td>
                     <td class="digits">{{content.created}}</td>
                   </tr>
                   {% endfor %}

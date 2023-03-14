@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% load static %}{% load crispy_forms_tags %} {% block content %}
+
+
+
+
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>جزئیات {{content.title | truncatewords:10}} </h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">{{content.get_type_content}}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{content.title | truncatewords:10}}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="blog-detail-page section-b-space ratio2_3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 blog-detail">
+                    <img src="{{content.cover.url}}" class="img-fluid blur-up lazyloaded" alt="">
+                    <h3>{{content.title}}</h3>
+                    <ul class="post-social">
+                        <li>{{content.created}}</li>
+                    </ul>
+                    <p>{{content.body}}</p>
+                </div>
+        </div>
+</section>
+
+
+
+{% endblock content %}
+
+{% block Scripts %}
+    {% if messages %}
+        {% for item in messages %}
+            <script>
+                Swal.fire({
+                    title: "تبریک ! 🥳",
+                    icon: 'success',
+                    text: '{{ item }}',
+                    type: "success",
+                    cancelButtonColor: 'var(--primary)',
+                    confirmButtonText: 'اوکی',
+                })
+            </script>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
