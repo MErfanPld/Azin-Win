@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 
-
+from .helpers import type_content_CHOICES
 from .models import Content
 from .forms import ContentForm
 
@@ -16,9 +16,13 @@ class ContentListView(View):
 
     def get(self, request, *args, **kwargs):
         contents = Content.objects.filter(status='A')
-        if request.GET.get('type_content'):
-            contents = contents.filter(type_content=request.GET.get('type_content'))
-        context = {'contents': contents}
+        context = {}
+
+        type_content = request.GET.get('type_content')
+        if type_content:
+            contents = contents.filter(type_content=type_content)
+            context['type_content_name'] = dict(type_content_CHOICES).get(type_content, '')
+        context['contents'] = contents
         return render(request, self.template_name, context)
 
 

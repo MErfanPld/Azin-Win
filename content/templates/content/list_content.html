@@ -14,7 +14,13 @@
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                        <li class="breadcrumb-item active"></li>
+                        <li class="breadcrumb-item active">
+                            {% if type_content_name %}
+                                {{ type_content_name }}
+                            {% else %}
+                                لیست ها محتوا
+                            {% endif %}
+                        </li>
                     </ol>
                 </nav>
             </div>
