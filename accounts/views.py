@@ -4,8 +4,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.views import LoginView as LoginViewAuto
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, FormView
-from acl.mixins import AnonymousUserMixin, CheckPasswordResetExpirationMixin
+from django.views.generic import CreateView, FormView, UpdateView
+from acl.mixins import AnonymousUserMixin, CheckPasswordResetExpirationMixin, VerifiedUserMixin
 from .forms import *
 from unidecode import unidecode
 
@@ -95,3 +95,28 @@ class VerifyCodeView(AnonymousUserMixin, FormView):
             return HttpResponseRedirect(reverse_lazy('password-reset-enter'))
 
         return HttpResponseRedirect(reverse_lazy("order:order_home"))
+
+
+class ProfileView(VerifiedUserMixin, UpdateView):
+    template_name = "accounts/admin/profile.html"
+    model = User
+    fields = ['email', 'full_name']
+    success_url = reverse_lazy("profile")
+
+    # def get_form(self, form_class=None):
+    #     form = super().get_form(form_class)
+    #     form.fields['phone_number'].widget.attrs['readonly'] = True
+    #     return form
+
+    # def post(self, request, *args, **kwargs):
+    #     request.POST._mutable = True
+    #     request.POST['phone_number'] = request.user.phone
+    #     messages.success(request, 'اطلاعات شما با موفقیت ویرایش شد.')
+    #     return super().post(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        messages.success(self.request, 'اطلاعات شما با موفقیت ویرایش شد.')
+        return super(ProfileView, self).form_valid(form)
+
+    def get_object(self, queryset=None):
+        return self.request.user
