@@ -11,7 +11,7 @@ from django.utils.text import slugify
 from sms.helpers import send_sms
 from sms.sms_texts import SMS_TEXTS
 from .filters import OrderFilters
-from .helpers import type_project_CHOICES
+from .helpers import type_project_CHOICES, status_CHOICES
 from .models import Order, TypeWindow
 from .forms import OrderForm
 from content.models import Content
@@ -81,7 +81,8 @@ class OrderDashboardList(LoginRequiredMixin, View):
         orders = OrderFilters(data=self.request.GET, queryset=orders).qs
         type_windows = TypeWindow.objects.all()
         type_projects = type_project_CHOICES
-        context = {'orders': orders, 'type_windows': type_windows, 'type_projects': type_projects}
+        status_types = status_CHOICES
+        context = {'orders': orders, 'type_windows': type_windows, 'type_projects': type_projects, 'status_types': status_types}
         return render(request, self.template_name, context)
 
 

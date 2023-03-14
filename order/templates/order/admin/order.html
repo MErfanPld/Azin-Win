@@ -64,6 +64,17 @@
                                         {% endfor %}
                                     </select>
                                 </div>
+
+                                <div class=" mt-2" style="width: 100%!important;">
+                                    <select name="status" onchange="submit()" class="form-control">
+                                        <option value="">انتخاب وضعیت</option>
+                                        {% for item in status_types %}
+                                            <option {% if item.0 == request.GET.status %}
+                                                selected {% endif %}
+                                                value="{{ item.0 }}">{{ item.1 }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </form>
                         </div>
                         <div class="card-body">

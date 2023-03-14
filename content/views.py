@@ -5,7 +5,8 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 
-from .helpers import type_content_CHOICES
+from .filters import ContentFilters
+from .helpers import type_content_CHOICES, status_content_CHOICES
 from .models import Content
 from .forms import ContentForm
 
@@ -93,7 +94,12 @@ class ContentDashboardList(LoginRequiredMixin, View):
     template_name = 'content/admin/list.html'
 
     def get(self, request, *args, **kwargs):
+        context = {}
+
         contents = Content.objects.all()
-        context = {'contents': contents}
+        contents = ContentFilters(data=self.request.GET, queryset=contents).qs
+        context['type_contents'] = type_content_CHOICES
+        context['status_types'] = status_content_CHOICES
+        context['contents'] = contents
         return render(request, self.template_name, context)
 
