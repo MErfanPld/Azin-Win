@@ -1,196 +1,200 @@
 {% load static %}
 
 <header>
-  <div class="mobile-fix-option"></div>
-  <div class="top-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="header-contact">
-            <ul>
-              <li>خوش آمدید به فروشگاه مالتی کارت</li>
-              <li>
-                <i class="fa fa-phone" aria-hidden="true"></i>شماره تماس :
-                125-520-6520-550
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6 text-end">
-          <ul class="header-dropdown">
-            <li class="onhover-dropdown mobile-account">
-              <i class="fa fa-user" aria-hidden="true"></i>
-               ثبت نام
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="main-menu">
-          <div class="menu-left">
-            <div class="brand-logo">
-              <a href="index.html"><img src="{% static 'images/icon/logo.png' %}" class="img-fluid blur-up lazyloaded" alt=""></a>
-          </div>
-          </div>
-          <div class="menu-right pull-right">
-            <div>
-              <nav id="main-nav">
-                <div class="toggle-nav">
-                  <i class="fa fa-bars sidebar-bar"></i>
+    <div class="mobile-fix-option"></div>
+    <div class="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="header-contact">
+                        <ul>
+                            <li>خوش آمدید به فروشگاه مالتی کارت</li>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>شماره تماس :
+                                125-520-6520-550
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <ul
-                  id="main-menu"
-                  class="sm pixelstrap sm-horizontal hover-unset"
-                  data-smartmenus-id="16784786105365483"
-                >
-                  <li>
-                    <div class="mobile-back text-start ltr">
-                      برگشت<i
-                        class="fa fa-angle-right ps-2"
-                        aria-hidden="true"
-                      ></i>
-                    </div>
-                  </li>
-                  <li><a href="{% url 'order:order_home' %}">خانه</a></li>
-                  <li><a href="{% url 'order:order_home' %}">ثبت درخواست
-                  </a></li>
-                  <li><a href="{% url 'content:home_list_content' %}?type_content=A">یو پی وی سی
-                  </a></li>
-                  <li><a href="{% url 'content:home_list_content' %}?type_content=B">آلومینیوم ترمال بریک
-                  </a></li>
-                  <li><a href="index.html">پروژه های برتر
-                  </a></li>
-                  <li><a href="index.html">درباره ما
-                  </a></li>
-                  <li><a href="index.html">تماس با ما
-                  </a></li>
-                </ul>
-              </nav>
-            </div>
-            <div>
-              <div class="icon-nav">
-                <ul>
-                  <li class="onhover-div mobile-search">
-                    
-                    <div>
-                      <img
-                        src="{% static 'images/icon/search.png' %}"
-                        onclick="openSearch()"
-                        class="img-fluid blur-up lazyloaded"
-                        alt=""
-                      />
-                      <i class="ti-search" onclick="openSearch()"></i>
-                    </div>
-                    <div id="search-overlay" class="search-overlay">
-                      <div>
-                        <span
-                          class="closebtn"
-                          onclick="closeSearch()"
-                          title="Close Overlay"
-                          >×</span
-                        >
-                        <div class="overlay-content">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-xl-12">
-                                <form>
-                                  <div class="form-group">
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      id="exampleInputPassword1"
-                                      placeholder="جستجو محصول "
-                                    />
-                                  </div>
-                                  <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-search"></i>
-                                  </button>
-                                </form>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="onhover-div mobile-cart">
-                    <div>
-                      <img
-                        src="{% static 'images/icon/cart.png' %}"
-                        class="img-fluid blur-up lazyloaded"
-                        alt=""
-                      />
-                      <i class="ti-shopping-cart"></i>
-                    </div>
-                    <span class="cart_qty_cls">2</span>
-                    <ul class="show-div shopping-cart">
-                      <li>
-                        <div class="media">
-                          <a href="#"
-                            ><img
-                              alt=""
-                              class="me-3"
-                              src="../assets/images/fashion/product/1.jpg"
-                          /></a>
-                          <div class="media-body">
-                            <a href="#">
-                              <h4>نام محصول</h4>
-                            </a>
-                            <h4><span>1 عدد 290000</span></h4>
-                          </div>
-                        </div>
-                        <div class="close-circle">
-                          <a href="#"
-                            ><i class="fa fa-times" aria-hidden="true"></i
-                          ></a>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="media">
-                          <a href="#"
-                            ><img
-                              alt=""
-                              class="me-3"
-                              src="../assets/images/fashion/product/2.jpg"
-                          /></a>
-                          <div class="media-body">
-                            <a href="#">
-                              <h4>نام محصول</h4>
-                            </a>
-                            <h4><span>1 عدد 290000</span></h4>
-                          </div>
-                        </div>
-                        <div class="close-circle">
-                          <a href="#"
-                            ><i class="fa fa-times" aria-hidden="true"></i
-                          ></a>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="total">
-                          <h5>جمع کل : <span>299000</span></h5>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="buttons">
-                          <a href="cart.html" class="view-cart"
-                            >دیدن سبد خرید</a
-                          >
-                          <a href="#" class="checkout">بررسی </a>
-                        </div>
-                      </li>
+                <div class="col-lg-6 text-end">
+                    <ul class="header-dropdown">
+                        <li class="onhover-dropdown mobile-account">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            ثبت نام
+                        </li>
                     </ul>
-                  </li>
-                </ul>
-              </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="main-menu">
+                    <div class="menu-left">
+                        <div class="brand-logo">
+                            <a href="index.html"><img src="{% static 'images/icon/logo.png' %}"
+                                                      class="img-fluid blur-up lazyloaded" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="menu-right pull-right">
+                        <div>
+                            <nav id="main-nav">
+                                <div class="toggle-nav">
+                                    <i class="fa fa-bars sidebar-bar"></i>
+                                </div>
+                                <ul
+                                        id="main-menu"
+                                        class="sm pixelstrap sm-horizontal hover-unset"
+                                        data-smartmenus-id="16784786105365483"
+                                >
+                                    <li>
+                                        <div class="mobile-back text-start ltr">
+                                            برگشت<i
+                                                class="fa fa-angle-right ps-2"
+                                                aria-hidden="true"
+                                        ></i>
+                                        </div>
+                                    </li>
+                                    <li><a href="{% url 'order:order_home' %}">خانه</a></li>
+                                    <li><a href="{% url 'order:order_home' %}">ثبت درخواست
+                                    </a></li>
+                                    <li><a href="{% url 'content:home_list_content' %}?type_content=A">یو پی وی سی
+                                    </a></li>
+                                    <li><a href="{% url 'content:home_list_content' %}?type_content=B">آلومینیوم ترمال
+                                        بریک
+                                    </a></li>
+                                    <li><a href="index.html">پروژه های برتر
+                                    </a></li>
+                                    <li><a href="index.html">درباره ما
+                                    </a></li>
+                                    <li><a href="index.html">تماس با ما
+                                    </a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div>
+                            <div class="icon-nav">
+                                <ul>
+                                    <li class="onhover-div mobile-search">
+
+                                        <div>
+                                            <img
+                                                    src="{% static 'images/icon/search.png' %}"
+                                                    onclick="openSearch()"
+                                                    class="img-fluid blur-up lazyloaded"
+                                                    alt=""
+                                            />
+                                            <i class="ti-search" onclick="openSearch()"></i>
+                                        </div>
+                                        <div id="search-overlay" class="search-overlay">
+                                            <div>
+                        <span
+                                class="closebtn"
+                                onclick="closeSearch()"
+                                title="Close Overlay"
+                        >×</span
+                        >
+                                                <div class="overlay-content">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <form action="{% url 'content:home_list_content' %}">
+                                                                    <div class="form-group">
+                                                                        <input
+                                                                                name="search"
+                                                                                value="{{ request.GET.search }}"
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="exampleInputPassword1"
+                                                                                placeholder="جستجو محصول "
+                                                                        />
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-primary">
+                                                                        <i class="fa fa-search"></i>
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="onhover-div mobile-cart">
+                                        <div>
+                                            <img
+                                                    src="{% static 'images/icon/cart.png' %}"
+                                                    class="img-fluid blur-up lazyloaded"
+                                                    alt=""
+                                            />
+                                            <i class="ti-shopping-cart"></i>
+                                        </div>
+                                        <span class="cart_qty_cls">2</span>
+                                        <ul class="show-div shopping-cart">
+                                            <li>
+                                                <div class="media">
+                                                    <a href="#"
+                                                    ><img
+                                                            alt=""
+                                                            class="me-3"
+                                                            src="../assets/images/fashion/product/1.jpg"
+                                                    /></a>
+                                                    <div class="media-body">
+                                                        <a href="#">
+                                                            <h4>نام محصول</h4>
+                                                        </a>
+                                                        <h4><span>1 عدد 290000</span></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="close-circle">
+                                                    <a href="#"
+                                                    ><i class="fa fa-times" aria-hidden="true"></i
+                                                    ></a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="media">
+                                                    <a href="#"
+                                                    ><img
+                                                            alt=""
+                                                            class="me-3"
+                                                            src="../assets/images/fashion/product/2.jpg"
+                                                    /></a>
+                                                    <div class="media-body">
+                                                        <a href="#">
+                                                            <h4>نام محصول</h4>
+                                                        </a>
+                                                        <h4><span>1 عدد 290000</span></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="close-circle">
+                                                    <a href="#"
+                                                    ><i class="fa fa-times" aria-hidden="true"></i
+                                                    ></a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="total">
+                                                    <h5>جمع کل : <span>299000</span></h5>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="buttons">
+                                                    <a href="cart.html" class="view-cart"
+                                                    >دیدن سبد خرید</a
+                                                    >
+                                                    <a href="#" class="checkout">بررسی </a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>

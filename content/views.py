@@ -23,6 +23,7 @@ class ContentListView(View):
         if type_content:
             contents = contents.filter(type_content=type_content)
             context['type_content_name'] = dict(type_content_CHOICES).get(type_content, '')
+        contents = ContentFilters(data=self.request.GET, queryset=contents).qs
         context['contents'] = contents
         return render(request, self.template_name, context)
 
