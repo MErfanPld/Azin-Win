@@ -24,6 +24,14 @@ def test_map_ir(request):
     }
     return render(request, 'test_map_ir.html', context)
 
+
+def test_show_map_ir(request):
+    context = {
+        'form': OrderForm(instance=Order.objects.last())
+    }
+    return render(request, 'test_map_ir.html', context)
+
+
 def home(request):
     return render(request, 'order/home.html')
 

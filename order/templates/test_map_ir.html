@@ -44,13 +44,13 @@
 
 <div class="row" style="height: 100%">
     <div class="col-6">
-        <form method="post">
+        <form method="post" id="frm" action="{% url 'order:order_home' %}">
             {% csrf_token %}
 
             {{ form }}
         </form>
 
-        <button type="submit">Save</button>
+        <button onclick="$('#frm').submit()" type="button">Save</button>
     </div>
 
     <div class="col-6">
@@ -71,41 +71,43 @@
             element: '#app',
             presets: {
                 latlng: {
-                    lat: 35.73249,
-                    lng: 51.42268
+                    {% if form.lat.value %}
+                        lat: '{{ form.lat.value }}',
+                    {% else %}
+                        lat: 35.73249,
+                    {% endif %}
+
+                    {% if form.long.value %}
+                        lng: '{{ form.long.value }}',
+                    {% else %}
+                        lng: 51.42268
+                    {% endif %}
                 },
-                zoom: 10
+
+                {% if form.lat.value and form.long.value %}
+                    zoom: 16
+                {% else %}
+                    zoom: 7
+                {% endif %}
             },
             apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIn0.eyJhdWQiOiIyMTQ5MSIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIiwiaWF0IjoxNjc4NzQ5OTY0LCJuYmYiOjE2Nzg3NDk5NjQsImV4cCI6MTY4MTE2OTE2NCwic3ViIjoiIiwic2NvcGVzIjpbImJhc2ljIl19.AobDdWKizuV0DAL8IFyUb8jLBrx8AzVu21HEOxAUTD8WhMZ-riaPX53e6_A7oj1NbwCBpTc8Jm3w2QAsYsTae2lCDoZB05X2pEcjoAYXpzRV2z-tBLgwairxtJunrKDSjKTIg9LpGzFu93xBQGmUnOfOho-Se4s_vIdUlrl19tdEPaKO763sHFQPnqf4Fbwh-L_ARuKaUV8j8aseg9n-vGbQ4w5juRbtMeNMm9adtt1ZVGWGUOJAHUD83IM4-FCiA7-P3Xincar-BXTY0PN1EK9Yvhn7akGQRudPYBsnU5NGe8ABmAFfXzdMwbSWnx1YO8fSfTmiQc2tHAqf1JmiIg'
         });
         app.addLayers();
+
+        // Show selected location as a marker
+        {% if form.lat.value and form.long.value %}
+            ShowMarker(app, '{{ form.lat.value }}', '{{ form.long.value }}');
+        {% endif %}
+
+        // Implement location picker
         app.map.on('click', function (e) {
             // آدرس یابی و نمایش نتیجه در یک باکس مشخص
-            app.showReverseGeocode({
-                state: {
-                    latlng: {
-                        lat: e.latlng.lat,
-                        lng: e.latlng.lng
-                    },
-                    zoom: 16
-                }
-            });
-            app.addMarker({
-                name: 'advanced-marker',
-                latlng: {
-                    lat: e.latlng.lat, {# ## TODO we should use these properties to save user selected point #}
-                    lng: e.latlng.lng {# ## TODO we should use these properties to save user selected point #}
-                },
-                icon: app.icons.red,
-                popup: false
-            });
-
-            console.log('sssssssssssssssssss');
-            console.log(e.latlng.lat);
-            console.log(e.latlng.lng);
+            ShowMarker(app, e.latlng.lat, e.latlng.lng);
 
             $('#id_lat').val(e.latlng.lat);
+            {# ## TODO we should use these properties to save user selected point #}
             $('#id_long').val(e.latlng.lng);
+            {# ## TODO we should use these properties to save user selected point #}
 
             // برای سفارشی سازی نمایش نتیجه به جای متد بالا از متد زیر میتوان استفاده کرد
 
@@ -140,6 +142,28 @@
             // });
         });
     });
+
+    function ShowMarker(app, lat, long) {
+        app.showReverseGeocode({
+            state: {
+                latlng: {
+                    lat: lat,
+                    lng: long,
+                },
+                zoom: 16
+            }
+        });
+
+        app.addMarker({
+            name: 'advanced-marker',
+            latlng: {
+                lat: lat,
+                lng: long,
+            },
+            icon: app.icons.red,
+            popup: false
+        });
+    }
 
 </script>
 </body>
