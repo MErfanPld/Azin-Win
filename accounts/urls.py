@@ -9,6 +9,7 @@ urlpatterns = [
     path('dashboard/user/list', UserDashboardList.as_view(), name='list_user'),
     path('dashboard/user/create', UserCreateView.as_view(), name='create_user'),
     path('dashboard/user/edit/<int:pk>', UserUpdateView.as_view(), name='update_user'),
+    path('dashboard/user/delete/<int:pk>', UserDeleteView.as_view(), name='delete_user'),
 
     path('profile/', ProfileView.as_view(), name='profile'),
 

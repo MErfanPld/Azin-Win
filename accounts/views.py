@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.views import LoginView as LoginViewAuto
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import CreateView, FormView, UpdateView
+from django.views.generic import CreateView, FormView, UpdateView, DeleteView
 from acl.mixins import AnonymousUserMixin, CheckPasswordResetExpirationMixin, VerifiedUserMixin, StaffUserRequiredMixin
 from .filters import UserFilters
 from .forms import *
@@ -40,6 +40,17 @@ class UserUpdateView(StaffUserRequiredMixin, UpdateView):
     template_name = 'accounts/admin/create_edit.html'
     model = User
     success_url = reverse_lazy('list_user')
+
+
+class UserDeleteView(StaffUserRequiredMixin, DeleteView):
+    model = User
+    template_name = 'accounts/admin/list.html'
+    success_url = reverse_lazy("list_user")
+
+    def dispatch(self, *args, **kwargs):
+        resp = super().dispatch(*args, **kwargs)
+        messages.success(self.request, 'آیتم مورد نظر با موفقیت حدف شد.')
+        return resp
 
 
 # Auth
