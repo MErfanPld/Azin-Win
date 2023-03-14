@@ -45,10 +45,22 @@
 
                                 <div class=" mt-2" style="width: 100%!important;">
                                     <select name="type_window" onchange="submit()" class="form-control">
-                                        <option value="">همه</option>
+                                        <option value="">انتخاب نوع پنجره</option>
                                         {% for item in type_windows %}
-                                            <option {% if item.id == request.GET.type_window|add:0 %} selected {% endif %}
-                                                                                                value="{{ item.id }}">{{ item.name }}</option>
+                                            <option {% if item.id == request.GET.type_window|add:0 %}
+                                                selected {% endif %}
+                                                value="{{ item.id }}">{{ item.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <div class=" mt-2" style="width: 100%!important;">
+                                    <select name="type_project" onchange="submit()" class="form-control">
+                                        <option value="">انتخاب نوع پروژه</option>
+                                        {% for item in type_projects %}
+                                            <option {% if item.0 == request.GET.type_project %}
+                                                selected {% endif %}
+                                                value="{{ item.0 }}">{{ item.1 }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
