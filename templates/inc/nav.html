@@ -55,12 +55,12 @@
                       ></i>
                     </div>
                   </li>
-                  <li><a href="index.html">خانه</a></li>
-                  <li><a href="index.html">ثبت درخواست
+                  <li><a href="{% url 'order:order_home' %}">خانه</a></li>
+                  <li><a href="{% url 'order:order_home' %}">ثبت درخواست
                   </a></li>
-                  <li><a href="index.html">یو پی وی سی
+                  <li><a href="{% url 'content:home_list_content' %}?type_content=A">یو پی وی سی
                   </a></li>
-                  <li><a href="index.html">آلومینیوم ترمال بریک
+                  <li><a href="{% url 'content:home_list_content' %}?type_content=B">آلومینیوم ترمال بریک
                   </a></li>
                   <li><a href="index.html">پروژه های برتر
                   </a></li>
