@@ -57,6 +57,12 @@ class SuperUserRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
         return self.request.user.is_superuser
 
 
+class StaffUserRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
 class AnonymousUserMixin:
 
     def dispatch(self, request, *args, **kwargs):

@@ -4,11 +4,45 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.views import LoginView as LoginViewAuto
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import CreateView, FormView, UpdateView
-from acl.mixins import AnonymousUserMixin, CheckPasswordResetExpirationMixin, VerifiedUserMixin
+from acl.mixins import AnonymousUserMixin, CheckPasswordResetExpirationMixin, VerifiedUserMixin, StaffUserRequiredMixin
+from .filters import UserFilters
 from .forms import *
 from unidecode import unidecode
 
+
+# Dashboard
+
+class UserDashboardList(StaffUserRequiredMixin, View):
+    template_name = 'accounts/admin/list.html'
+
+    def get(self, request, *args, **kwargs):
+        context = {}
+        users = User.objects.all()
+        users = UserFilters(data=self.request.GET, queryset=users).qs
+        context['users'] = users
+        return render(request, self.template_name, context)
+
+
+class UserCreateView(StaffUserRequiredMixin, CreateView):
+    form_class = UserForm
+    template_name = 'accounts/admin/create_edit.html'
+    success_url = reverse_lazy('list_user')
+
+    def form_valid(self, form):
+        messages.success(self.request, 'کاربر با موفقیت ثبت شد.', 'success')
+        return super().form_valid(form)
+
+
+class UserUpdateView(StaffUserRequiredMixin, UpdateView):
+    form_class = UserForm
+    template_name = 'accounts/admin/create_edit.html'
+    model = User
+    success_url = reverse_lazy('list_user')
+
+
+# Auth
 
 class RegisterView(AnonymousUserMixin, CreateView):
     template_name = "accounts/register.html"

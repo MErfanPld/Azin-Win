@@ -1,0 +1,142 @@
+{% extends "dashboard/base.html" %} {% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="page-header-left">
+                        <h3>لیست کاربران</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ol class="breadcrumb pull-right">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">
+                                <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="feather feather-home"
+                                >
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">کاربران</li>
+                        <li class="breadcrumb-item active">لیست کاربران</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <form class="form-inline search-form search-box">
+                            <div class="form-group">
+                                <input name="search" value="{{ request.GET.search }}"
+                                       class="form-control-plaintext"
+                                       type="search"
+                                       placeholder="جستجو..."
+                                />
+                            </div>
+
+                            <div class=" mt-2" style="width: 100%!important;">
+                                <select name="admin" onchange="submit()" class="form-control">
+                                    <option value="">انتخاب نقش</option>
+                                    <option {% if request.GET.admin == '1' %}
+                                        selected {% endif %} value="1">مدیر
+                                    </option>
+                                    <option {% if request.GET.admin == '0' %}
+                                        selected {% endif %}value="0">کاربر
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class=" mt-2" style="width: 100%!important;">
+                                <select name="status" onchange="submit()" class="form-control">
+                                    <option value="">انتخاب وضعیت</option>
+                                    <option {% if request.GET.status == '1' %}
+                                        selected {% endif %} value="1">فعال
+                                    </option>
+                                    <option {% if request.GET.status == '0' %}
+                                        selected {% endif %} value="0">غیر فعال
+                                    </option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive table-desi">
+                            <table class="table all-package" id="editableTable">
+                                <thead>
+                                <tr>
+                                    <th>شناسه کاربران</th>
+                                    <th>شماره موبایل</th>
+                                    <th>ایمیل</th>
+                                    <th>نام و نام خانوادگی</th>
+                                    <th>وضعیت</th>
+                                    <th>نقش</th>
+                                    <th>عملیات</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                {% for user in users %}
+                                    <tr>
+                                        <td data-field="date">{{ user.id }}</td>
+                                        <td data-field="number">{{ user.phone_number | default:'---' }}</td>
+                                        <td data-field="number">{{ user.full_name | default:'---' }}</td>
+                                        <td data-field="number">{{ user.email | default:'---' }}</td>
+
+                                        {% if user.is_active %}
+                                            <td class="order-success">
+                                                <span>فعال</span>
+                                            </td>
+                                        {% else %}
+                                            <td class="order-cancle">
+                                                <span>غیر فعال</span>
+                                            </td>
+                                        {% endif %}
+
+                                        {% if user.is_admin %}
+                                            <td class="order-success">
+                                                <span>مدیر</span>
+                                            </td>
+                                        {% else %}
+                                            <td class="order-cancle">
+                                                <span>کاربر</span>
+                                            </td>
+                                        {% endif %}
+
+                                        <td>
+                                            <a href="{% url 'update_user' user.id %}">
+                                                <i class="fa fa-edit" title="ویرایش"></i>
+                                            </a>
+
+                                            <a href="">
+                                                <i class="fa fa-trash" title="حذف"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

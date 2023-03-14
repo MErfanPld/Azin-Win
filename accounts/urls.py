@@ -6,6 +6,10 @@ from django.conf import settings
 # app_name = "accounts"
 
 urlpatterns = [
+    path('dashboard/user/list', UserDashboardList.as_view(), name='list_user'),
+    path('dashboard/user/create', UserCreateView.as_view(), name='create_user'),
+    path('dashboard/user/edit/<int:pk>', UserUpdateView.as_view(), name='update_user'),
+
     path('profile/', ProfileView.as_view(), name='profile'),
 
     path('register/', RegisterView.as_view(), name='register'),

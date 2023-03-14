@@ -13,6 +13,29 @@ from utils.validator import mobile_regex
 User = get_user_model()
 
 
+class UserForm(forms.ModelForm):
+    password = forms.CharField(label='رمز عبور', required=True)
+
+    class Meta:
+        model = User
+        fields = ['phone_number', 'email', 'full_name', 'is_admin', 'password']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.instance.id:
+            self.fields.pop('password')
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        password = self.cleaned_data.pop('password', None)
+        if password:
+            user.set_password(password)
+        user.is_active = True
+        if commit:
+            user.save()
+        return user
+
+
 class RegisterForm(forms.ModelForm):
     password2 = forms.CharField(max_length=100, required=True, widget=forms.PasswordInput(), label='تکرار رمز عبور')
 
@@ -53,7 +76,7 @@ class RegisterForm(forms.ModelForm):
 
 class PasswordResetForm(forms.ModelForm):
     phone_number = forms.CharField(label='شماره موبایل کاربر', required=True, min_length=11,
-                            max_length=11, validators=[mobile_regex])
+                                   max_length=11, validators=[mobile_regex])
 
     class Meta:
         model = OtpCode
@@ -87,7 +110,7 @@ class OtpCodeForm(forms.Form):
         message="کد تایید باید عددی باشد.",
     )])
     phone_number = forms.CharField(label='شماره موبایل کاربر', required=True, widget=forms.HiddenInput, min_length=11,
-                            max_length=11, validators=[mobile_regex])
+                                   max_length=11, validators=[mobile_regex])
 
     class Meta:
         model = OtpCode
@@ -108,7 +131,8 @@ class OtpCodeForm(forms.Form):
         return super().clean()
 
     def save(self, commit=True):
-        code = OtpCode.objects.filter(user__phone_number=self.cleaned_data['phone_number'], code=self.cleaned_data['code']).first()
+        code = OtpCode.objects.filter(user__phone_number=self.cleaned_data['phone_number'],
+                                      code=self.cleaned_data['code']).first()
 
         if resolve(self.request.path_info).url_name == 'password-reset-confirm':
             code.verify_code(self.request, False)
