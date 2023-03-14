@@ -42,13 +42,15 @@
 </head>
 <body>
 
-<div class="row" style="height: 70%">
+<div class="row" style="height: 100%">
     <div class="col-6">
         <form method="post">
             {% csrf_token %}
 
             {{ form }}
         </form>
+
+        <button type="submit">Save</button>
     </div>
 
     <div class="col-6">
@@ -56,8 +58,6 @@
     </div>
 </div>
 
-
-<button type="submit">Save</button>
 
 <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>
