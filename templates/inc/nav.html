@@ -20,7 +20,7 @@
                     <ul class="header-dropdown">
                         <li class="onhover-dropdown mobile-account">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            ثبت نام
+                            <a href="{% url 'login' %}">ثبت نام</a>
                         </li>
                     </ul>
                 </div>
@@ -101,9 +101,9 @@
                                                             <div class="col-xl-12">
                                                                 <form action="{% url 'content:home_list_content' %}">
                                                                     {% if request.GET.type_content %}
-                                                                        <input type="hidden"
-                                                                               value="{{ request.GET.type_content }}"
-                                                                               name="type_content">
+                                                                    <input type="hidden"
+                                                                           value="{{ request.GET.type_content }}"
+                                                                           name="type_content">
                                                                     {% endif %}
 
                                                                     <div class="form-group">
@@ -113,7 +113,7 @@
                                                                                 type="text"
                                                                                 class="form-control"
                                                                                 id="exampleInputPassword1"
-                                                                                placeholder="جستجو محصول "
+                                                                                placeholder="جستجو ... "
                                                                         />
                                                                     </div>
                                                                     <button type="submit" class="btn btn-primary">
@@ -127,74 +127,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="onhover-div mobile-cart">
-                                        <div>
-                                            <img
-                                                    src="{% static 'images/icon/cart.png' %}"
-                                                    class="img-fluid blur-up lazyloaded"
-                                                    alt=""
-                                            />
-                                            <i class="ti-shopping-cart"></i>
-                                        </div>
-                                        <span class="cart_qty_cls">2</span>
-                                        <ul class="show-div shopping-cart">
-                                            <li>
-                                                <div class="media">
-                                                    <a href="#"
-                                                    ><img
-                                                            alt=""
-                                                            class="me-3"
-                                                            src="../assets/images/fashion/product/1.jpg"
-                                                    /></a>
-                                                    <div class="media-body">
-                                                        <a href="#">
-                                                            <h4>نام محصول</h4>
-                                                        </a>
-                                                        <h4><span>1 عدد 290000</span></h4>
-                                                    </div>
-                                                </div>
-                                                <div class="close-circle">
-                                                    <a href="#"
-                                                    ><i class="fa fa-times" aria-hidden="true"></i
-                                                    ></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="media">
-                                                    <a href="#"
-                                                    ><img
-                                                            alt=""
-                                                            class="me-3"
-                                                            src="../assets/images/fashion/product/2.jpg"
-                                                    /></a>
-                                                    <div class="media-body">
-                                                        <a href="#">
-                                                            <h4>نام محصول</h4>
-                                                        </a>
-                                                        <h4><span>1 عدد 290000</span></h4>
-                                                    </div>
-                                                </div>
-                                                <div class="close-circle">
-                                                    <a href="#"
-                                                    ><i class="fa fa-times" aria-hidden="true"></i
-                                                    ></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="total">
-                                                    <h5>جمع کل : <span>299000</span></h5>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="buttons">
-                                                    <a href="cart.html" class="view-cart"
-                                                    >دیدن سبد خرید</a
-                                                    >
-                                                    <a href="#" class="checkout">بررسی </a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>

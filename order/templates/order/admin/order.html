@@ -1,135 +1,137 @@
 {% extends "dashboard/base.html" %} {% block content %}
 
-    <div class="page-body">
-        <!-- Container-fluid starts-->
-        <div class="container-fluid">
-            <div class="page-header">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="page-header-left">
-                            <h3>
-                                داشبورد
-                                <small>پنل مدیریت آذین وین</small>
-                            </h3>
-                        </div>
+<div class="page-body">
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="page-header-left">
+                        <h3>
+                            داشبورد
+                            <small>پنل مدیریت آذین وین</small>
+                        </h3>
                     </div>
-                    <div class="col-lg-6">
-                        <ol class="breadcrumb pull-right">
-                            <li class="breadcrumb-item">
-                                <a href="index.html">
-                                    <i data-feather="home"></i>
-                                </a>
-                            </li>
-                            <li class="breadcrumb-item active">داشبورد</li>
-                            <li class="breadcrumb-item active">درخواست</li>
-                        </ol>
-                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ol class="breadcrumb pull-right">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">
+                                <i data-feather="home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active">داشبورد</li>
+                        <li class="breadcrumb-item active">درخواست</li>
+                    </ol>
                 </div>
             </div>
         </div>
-        <!-- Container-fluid Ends-->
+    </div>
+    <!-- Container-fluid Ends-->
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <form class="form-inline search-form search-box">
-                                <div class="form-group">
-                                    <input name="search" value="{{ request.GET.search }}"
-                                           class="form-control-plaintext"
-                                           type="search"
-                                           placeholder="جستجو..."
-                                    />
-                                </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <form class="form-inline search-form search-box">
 
-                                <div class=" mt-2" style="width: 100%!important;">
+
+
+                            <div class="d-flex">
+                                <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
                                     <select name="type_window" onchange="submit()" class="form-control">
                                         <option value="">انتخاب نوع پنجره</option>
                                         {% for item in type_windows %}
-                                            <option {% if item.id == request.GET.type_window|add:0 %}
+                                        <option {% if item.id == request.GET.type_window|add:0 %}
                                                 selected {% endif %}
-                                                value="{{ item.id }}">{{ item.name }}</option>
+                                                value="{{ item.id }}">{{ item.name }}
+                                        </option>
                                         {% endfor %}
                                     </select>
                                 </div>
 
-                                <div class=" mt-2" style="width: 100%!important;">
+                                <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
                                     <select name="type_project" onchange="submit()" class="form-control">
                                         <option value="">انتخاب نوع پروژه</option>
                                         {% for item in type_projects %}
-                                            <option {% if item.0 == request.GET.type_project %}
+                                        <option {% if item.0 == request.GET.type_project %}
                                                 selected {% endif %}
-                                                value="{{ item.0 }}">{{ item.1 }}</option>
+                                                value="{{ item.0 }}">{{ item.1 }}
+                                        </option>
                                         {% endfor %}
                                     </select>
                                 </div>
 
-                                <div class=" mt-2" style="width: 100%!important;">
+                                <div class=" mt-2 d-flex w-auto" style="width: 150px!important; margin-left:2%">
                                     <select name="status" onchange="submit()" class="form-control">
                                         <option value="">انتخاب وضعیت</option>
                                         {% for item in status_types %}
-                                            <option {% if item.0 == request.GET.status %}
+                                        <option {% if item.0 == request.GET.status %}
                                                 selected {% endif %}
-                                                value="{{ item.0 }}">{{ item.1 }}</option>
+                                                value="{{ item.0 }}">{{ item.1 }}
+                                        </option>
                                         {% endfor %}
                                     </select>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive table-desi">
-                                <table class="table all-package" id="editableTable">
-                                    <thead>
-                                    <tr>
-                                        <th>شناسه درخواست</th>
-                                        <th>شماره موبایل</th>
-                                        <th>نام و نام خانوادگی</th>
-                                        <th>نوع پنجره</th>
-                                        <th>نوع پروژه</th>
-                                        <th>وضعیت</th>
-                                        <th>عملیات</th>
-                                    </tr>
-                                    </thead>
-
-                                    <tbody>
-                                    {% for order in orders %}
-                                        <tr>
-                                            <td data-field="date">{{ order.id }}</td>
-                                            <td data-field="number">{{ order.phone_number }}</td>
-                                            <td data-field="text">{{ order.full_name }}</td>
-                                            <td data-field="text">{{ order.type_window }}</td>
-                                            <td data-field="text">{{ order.get_type_project }}</td>
-                                            {% if order.status == 'A' %}
-                                                <td class="order-success">
-                                                    <span>{{ order.get_status | default:'---' }}</span>
-                                                </td>
-                                            {% else %}
-                                                <td class="order-cancle">
-                                                    <span>{{ order.get_status | default:'---' }}</span>
-                                                </td>
-                                            {% endif %}
-                                            <td>
-                                                <a
-                                                        href="{% url 'order:dashboard_order_detail' order.id %}"
-                                                >
-                                                    <i class="fa fa-eye" title="جزییات درخواست"></i>
-                                                </a>
-
-                                                <a href="">
-                                                    <i class="fa fa-trash" title="حذف"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    {% endfor %}
-                                    </tbody>
-                                </table>
                             </div>
+
+
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive table-desi">
+                            <table class="table all-package" id="editableTable">
+                                <thead>
+                                <tr>
+                                    <th>شناسه درخواست</th>
+                                    <th>شماره موبایل</th>
+                                    <th>نام و نام خانوادگی</th>
+                                    <th>نوع پنجره</th>
+                                    <th>نوع پروژه</th>
+                                    <th>وضعیت</th>
+                                    <th>عملیات</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <td data-field="date">{{ order.id }}</td>
+                                    <td data-field="number">{{ order.phone_number }}</td>
+                                    <td data-field="text">{{ order.full_name }}</td>
+                                    <td data-field="text">{{ order.type_window }}</td>
+                                    <td data-field="text">{{ order.get_type_project }}</td>
+                                    {% if order.status == 'A' %}
+                                    <td class="order-success">
+                                        <span>{{ order.get_status | default:'---' }}</span>
+                                    </td>
+                                    {% else %}
+                                    <td class="order-cancle">
+                                        <span>{{ order.get_status | default:'---' }}</span>
+                                    </td>
+                                    {% endif %}
+                                    <td>
+                                        <a
+                                                href="{% url 'order:dashboard_order_detail' order.id %}"
+                                        >
+                                            <i class="fa fa-eye" title="جزییات درخواست"></i>
+                                        </a>
+
+                                        <a href="">
+                                            <i class="fa fa-trash" title="حذف"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock content %}
