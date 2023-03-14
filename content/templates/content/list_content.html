@@ -1,0 +1,72 @@
+
+{% extends "base.html" %} {% load static %}{% load crispy_forms_tags %} {% block content %}
+
+
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>{{contents.get_type_content}}</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+                        <li class="breadcrumb-item active">{{contents.get_type_content}}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="section-b-space blog-page ratio2_3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% for content in contents %}
+                <div class="row blog-media">
+                    <div class="col-xl-6">
+                        <div class="blog-left">
+                            <a href="#" class="bg-size blur-up lazyloaded" style="background-image: url(&quot;{{content.cover.url}}&quot;); background-size: cover; background-position: center center; display: block;"><img src="{{content.cover.url}}" class="img-fluid blur-up bg-img lazyloaded" alt="" style="display: none;"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="blog-right">
+                            <div>
+                                <h6>{{content.created}}</h6> <a href="{% url 'content:home_detail_content' content.id %}">
+                                    <h4>{{content.title}}</h4>
+                                </a>
+                                <p>{{content.body | truncatewords:50}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block Scripts %}
+    {% if messages %}
+        {% for item in messages %}
+            <script>
+                Swal.fire({
+                    title: "تبریک ! 🥳",
+                    icon: 'success',
+                    text: '{{ item }}',
+                    type: "success",
+                    cancelButtonColor: 'var(--primary)',
+                    confirmButtonText: 'اوکی',
+                })
+            </script>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

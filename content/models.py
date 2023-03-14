@@ -24,6 +24,7 @@ class Content(models.Model):
     class Meta:
         verbose_name = "محتوا"
         verbose_name_plural = "محتوا ها"
+        
 
     @property
     def get_type_content(self):
