@@ -100,6 +100,12 @@
                                                         <div class="row">
                                                             <div class="col-xl-12">
                                                                 <form action="{% url 'content:home_list_content' %}">
+                                                                    {% if request.GET.type_content %}
+                                                                        <input type="hidden"
+                                                                               value="{{ request.GET.type_content }}"
+                                                                               name="type_content">
+                                                                    {% endif %}
+
                                                                     <div class="form-group">
                                                                         <input
                                                                                 name="search"
