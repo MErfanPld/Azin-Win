@@ -14,8 +14,8 @@
             <div class="col-sm-6">
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                        <li class="breadcrumb-item"><a href="index.html">{{content.get_type_content}}</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'order:order_home' %}">خانه</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'content:home_list_content' %}">{{content.get_type_content}}</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{content.title | truncatewords:10}}</li>
                     </ol>
                 </nav>
@@ -33,7 +33,7 @@
                     <img src="{{content.cover.url}}" class="img-fluid blur-up lazyloaded" alt="">
                     <h3>{{content.title}}</h3>
                     <ul class="post-social">
-                        <li>{{content.created}}</li>
+                        <li>{{content.jcreated}}</li>
                     </ul>
                     <p>{{content.body}}</p>
                 </div>

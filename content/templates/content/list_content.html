@@ -7,13 +7,17 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="page-title">
-                    <h2></h2>
+                    {% if type_content_name %}
+                    <h2>{{ type_content_name }}</h2>
+                    {% else %}
+                         لیست ها محتوا
+                    {% endif %}
                 </div>
             </div>
             <div class="col-sm-6">
                 <nav aria-label="breadcrumb" class="theme-breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'order:order_home' %}">خانه</a></li>
                         <li class="breadcrumb-item active">
                             {% if type_content_name %}
                                 {{ type_content_name }}
@@ -38,13 +42,13 @@
                 <div class="row blog-media">
                     <div class="col-xl-6">
                         <div class="blog-left">
-                            <a href="#" class="bg-size blur-up lazyloaded" style="background-image: url(&quot;{{content.cover.url}}&quot;); background-size: cover; background-position: center center; display: block;"><img src="{{content.cover.url}}" class="img-fluid blur-up bg-img lazyloaded" alt="" style="display: none;"></a>
+                            <a href="#" class="bg-size blur-up lazyloaded" style="background-image: url(&quot;{{content.thumnail.url}}&quot;); background-size: cover; background-position: center center; display: block;"><img src="{{content.thumnail.url}}" class="img-fluid blur-up bg-img lazyloaded" alt="" style="display: none;"></a>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="blog-right">
                             <div>
-                                <h6>{{content.created}}</h6> <a href="{% url 'content:home_detail_content' content.id content.slug %}">
+                                <h6>{{content.jcreated}}</h6> <a href="{% url 'content:home_detail_content' content.id content.slug %}">
                                     <h4>{{content.title}}</h4>
                                 </a>
                                 <p>{{content.body | truncatewords:50}}</p>

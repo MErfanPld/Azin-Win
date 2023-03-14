@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 from content.helpers import type_content_CHOICES, status_content_CHOICES
+from extenstions.utils import jalali_converter
 
 
 class Content(models.Model):
@@ -25,6 +26,9 @@ class Content(models.Model):
         verbose_name = "محتوا"
         verbose_name_plural = "محتوا ها"
         
+    def jcreated(self):
+        return jalali_converter(self.created)
+
 
     @property
     def get_type_content(self):

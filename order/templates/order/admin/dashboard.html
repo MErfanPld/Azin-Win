@@ -55,6 +55,7 @@
                     <th scope="col">نوع پروژه</th>
                     <th scope="col">شماره تماس</th>
                     <th scope="col">نام و نام خانوادگی</th>
+                    <th scope="col">تاریخ ثبت</th>
                     <th scope="col">وضعیت</th>
                   </tr>
                 </thead>
@@ -66,6 +67,7 @@
                     <td class="digits">{{content.get_type_project | default:'---'}}</td>
                     <td class="digits">{{order.phone_number}}</td>
                     <td class="digits">{{order.full_name}}</td>
+                    <td class="digits">{{order.jcreated}}</td>
                     {% if order.status == 'A' %}
                     <td class="order-success">
                       <span>{{order.get_status | default:'---'}}</span>
@@ -115,8 +117,8 @@
                     <th scope="col">نوع محتوا</th>
                     <th scope="col">عنوان</th>
                     <th scope="col">ادرس</th>
-                    <th scope="col">وضعیت</th>
                     <th scope="col">تاریخ ثبت</th>
+                    <th scope="col">وضعیت</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -126,8 +128,8 @@
                     <td class="digits">{{content.get_type_content | default:'---'}}</td>
                     <td class="digits">{{content.title}}</td>
                     <td class="digits">{{content.slug}}</td>
+                    <td class="digits">{{content.jcreated}}</td>
                     <td class="digits">{{content.get_status | default:'---'}}</td>
-                    <td class="digits">{{content.created}}</td>
                   </tr>
                   {% endfor %}
                 </tbody>

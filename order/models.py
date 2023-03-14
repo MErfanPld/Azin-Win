@@ -1,5 +1,6 @@
 from django.db import models
 from accounts.models import User
+from extenstions.utils import jalali_converter
 
 
 # Create your models here.
@@ -42,6 +43,9 @@ class Order(models.Model):
     class Meta:
         verbose_name = "درخواست"
         verbose_name_plural = "درخواست ها"
+
+    def jcreated(self):
+        return jalali_converter(self.created)
 
     @property
     def get_type_project(self):
