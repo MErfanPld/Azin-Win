@@ -118,9 +118,14 @@
                                             <i class="fa fa-eye" title="جزییات درخواست"></i>
                                         </a>
 
-                                        <a href="">
-                                            <i class="fa fa-trash" title="حذف"></i>
-                                        </a>
+                                    <form action="{% url 'order:dashboard_order_delete' order.id %}" style="display: none"
+                                          id="delete_form_{{ order.id }}"
+                                          method="post">
+                                        {% csrf_token %}
+                                    </form>
+                                    <a onclick="DeleteConfirm('{{ order.id }}')">
+                                        <i class="fa fa-trash" title="حذف"></i>
+                                    </a>
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -135,3 +140,27 @@
 </div>
 
 {% endblock content %}
+
+
+{% block Scripts %}
+<script>
+        function DeleteConfirm(id) {
+            Swal.fire({
+                title: "هشدار ! ",
+                icon: 'warning',
+                text: "آیا از حذف این آیتم اطمینان دارید؟",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#00aced',
+                cancelButtonColor: '#e6294b',
+                confirmButtonText: 'حذف',
+                cancelButtonText: 'انصراف'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $('#delete_form_' + id).submit();
+                }
+            })
+        }
+
+</script>
+{% endblock %}

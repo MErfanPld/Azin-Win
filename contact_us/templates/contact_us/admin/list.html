@@ -6,13 +6,13 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="page-header-left">
-                    <h3>لیست محتوا</h3>
+                    <h3>لیست پیام ها</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <ol class="breadcrumb pull-right">
                     <li class="breadcrumb-item">
-                        <a href="index.html">
+                        <a href="/dashboard">
                             <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -30,8 +30,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="breadcrumb-item">محتوا</li>
-                    <li class="breadcrumb-item active">لیست محتوا</li>
+                    <li class="breadcrumb-item">پیام ها</li>
                 </ol>
             </div>
         </div>
@@ -46,7 +45,7 @@
                     <form class="form-inline search-form search-box">
                         <div class="d-flex">
 
-                           <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
+                            <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
                                 <select name="status" onchange="submit()" class="form-control">
                                     <option value="">انتخاب وضعیت</option>
                                     {% for item in status_types %}
@@ -97,7 +96,12 @@
                                 </td>
                                 {% endif %}
                                 <td>
-                                    <a href="{% url 'contact_us:dashboard_contact_us_delete' item.id %}">
+                                    <form action="{% url 'contact_us:dashboard_contact_us_delete' item.id %}" style="display: none"
+                                          id="delete_form_{{ item.id }}"
+                                          method="post">
+                                        {% csrf_token %}
+                                    </form>
+                                    <a onclick="DeleteConfirm('{{ item.id }}')">
                                         <i class="fa fa-trash" title="حذف"></i>
                                     </a>
                                 </td>
@@ -112,3 +116,26 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block Scripts %}
+<script>
+        function DeleteConfirm(id) {
+            Swal.fire({
+                title: "هشدار ! ",
+                icon: 'warning',
+                text: "آیا از حذف این آیتم اطمینان دارید؟",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#00aced',
+                cancelButtonColor: '#e6294b',
+                confirmButtonText: 'حذف',
+                cancelButtonText: 'انصراف'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $('#delete_form_' + id).submit();
+                }
+            })
+        }
+
+</script>
+{% endblock %}

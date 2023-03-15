@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import UpdateView, DetailView
+from django.views.generic import UpdateView, DetailView, DeleteView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
@@ -103,3 +104,14 @@ class ContentDashboardList(LoginRequiredMixin, View):
         context['status_types'] = status_content_CHOICES
         context['contents'] = contents
         return render(request, self.template_name, context)
+
+
+class ContentDashboardDelete(DeleteView):
+    model = Content
+    template_name = 'content/admin/list.html'
+    success_url = reverse_lazy('contact_us:list_content')
+
+    def dispatch(self, *args, **kwargs):
+        resp = super().dispatch(*args, **kwargs)
+        messages.success(self.request, 'آیتم مورد نظر با موفقیت حدف شد.')
+        return resp

@@ -60,3 +60,8 @@ class ContactDashboardDelete(DeleteView):
     model = ContactUs
     template_name = 'contact_us/admin/list.html'
     success_url = reverse_lazy('contact_us:dashboard_contact_us')
+
+    def dispatch(self, *args, **kwargs):
+        resp = super().dispatch(*args, **kwargs)
+        messages.success(self.request, 'آیتم مورد نظر با موفقیت حدف شد.')
+        return resp

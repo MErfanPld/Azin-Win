@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
-from django.views.generic import DetailView
+from django.views.generic import DetailView, DeleteView
 
 from django.urls import reverse_lazy
 from django.conf import settings
@@ -87,7 +87,8 @@ class OrderDashboardList(LoginRequiredMixin, View):
         type_windows = TypeWindow.objects.all()
         type_projects = type_project_CHOICES
         status_types = status_CHOICES
-        context = {'orders': orders, 'type_windows': type_windows, 'type_projects': type_projects, 'status_types': status_types}
+        context = {'orders': orders, 'type_windows': type_windows, 'type_projects': type_projects,
+                   'status_types': status_types}
         return render(request, self.template_name, context)
 
 
@@ -102,3 +103,14 @@ class OrderDashboardDetail(DetailView):
         orders = Order.objects.all()
         return render(request, 'order/admin/detail_order.html',
                       {'order': self.order_instance})
+
+
+class OrderDashboardDelete(DeleteView):
+    model = Content
+    template_name = 'order/admin/order.html'
+    success_url = reverse_lazy('order:dashboard_order_list')
+
+    def dispatch(self, *args, **kwargs):
+        resp = super().dispatch(*args, **kwargs)
+        messages.success(self.request, 'آیتم مورد نظر با موفقیت حدف شد.')
+        return resp
