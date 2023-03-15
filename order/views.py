@@ -116,16 +116,3 @@ class OrderPDFView(LoginRequiredMixin, ListView):
     model = Order
     template_name = 'order/pdf.html'
     queryset = Order.objects.all()
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['base_dir'] = BASE_DIR
-    #     return context
-
-    # def get_template_names(self):
-    #     if self.object.type == 'ttc':
-    #         self.template_name = 'report_cards/pdf_files/ttc.html'
-    #     elif self.object.type == 'mock':
-    #         self.template_name = 'report_cards/pdf_files/mock.html'
-    #
-    #     return self.template_name

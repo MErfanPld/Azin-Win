@@ -44,16 +44,18 @@
                 <div class="card">
                     <div class="card-header">
                         <form class="form-inline search-form search-box">
-                            <div class="form-group">
-                                <input name="search" value="{{ request.GET.search }}"
-                                       class="form-control-plaintext"
-                                       type="search"
-                                       placeholder="جستجو..."
-                                />
-                            </div>
+                            <div class="d-flex">
+                                <div class=" mt-2 d-flex w-25" style="width: 250px!important; margin-left:2%">
+                                    <input name="search" value="{{ request.GET.search }}"
+                                           class="form-control-plaintext"
+                                           type="search"
+                                           placeholder="جستجو..."
+                                    />
+                                </div>
 
-                            <div class=" mt-2" style="width: 100%!important;">
-                                <select name="admin" onchange="submit()" class="form-control">
+                                <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
+                                    <select
+                                        name="admin" onchange="submit()" class="form-control">
                                     <option value="">انتخاب نقش</option>
                                     <option {% if request.GET.admin == '1' %}
                                         selected {% endif %} value="1">مدیر
@@ -62,10 +64,10 @@
                                         selected {% endif %}value="0">کاربر
                                     </option>
                                 </select>
-                            </div>
+                                </div>
 
-                            <div class=" mt-2" style="width: 100%!important;">
-                                <select name="status" onchange="submit()" class="form-control">
+                                <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%"><select
+                                        name="status" onchange="submit()" class="form-control">
                                     <option value="">انتخاب وضعیت</option>
                                     <option {% if request.GET.status == '1' %}
                                         selected {% endif %} value="1">فعال
@@ -74,6 +76,7 @@
                                         selected {% endif %} value="0">غیر فعال
                                     </option>
                                 </select>
+                                </div>
                             </div>
                         </form>
                     </div>
