@@ -45,17 +45,6 @@
                 <div class="card-header">
                     <form class="form-inline search-form search-box">
                         <div class="d-flex">
-                            <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
-                                <select name="type_content" onchange="submit()" class="form-control">
-                                    <option value="">انتخاب نوع محتوا</option>
-                                    {% for item in type_contents %}
-                                    <option {% if item.0 == request.GET.type_content %}
-                                            selected {% endif %}
-                                            value="{{ item.0 }}">{{ item.1 }}
-                                    </option>
-                                    {% endfor %}
-                                </select>
-                            </div>
 
                            <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
                                 <select name="status" onchange="submit()" class="form-control">
@@ -71,47 +60,44 @@
                         </div>
                     </form>
                 </div>
+
                 <div class="card-body">
                     <div class="table-responsive table-desi">
                         <table class="table all-package" id="editableTable">
                             <thead>
                             <tr>
-                                <th>شناسه محتوا</th>
-                                <th>نوع محتوا</th>
-                                <th>عنوان</th>
-                                <th>ادرس</th>
+                                <th>شناسه پیام</th>
+                                <th>نام ونام خانوادگی</th>
+                                <th>ایمیل</th>
+                                <th>شماره تلفن</th>
+                                <th>متن</th>
+                                <th>تاریخ</th>
                                 <th>وضعیت</th>
                                 <th>عملیات</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            {% for content in contents %}
+                            {% for item in contact_us %}
                             <tr>
-                                <td data-field="date">{{ content.id }}</td>
-                                <td data-field="number">{{ content.get_type_content | default:'---' }}</td>
-                                <td data-field="text">{{ content.title }}</td>
-                                <td data-field="text">{{ content.slug }}</td>
+                                <td data-field="date">{{ item.id }}</td>
+                                <td data-field="number">{{ item.full_name }}</td>
+                                <td data-field="text">{{ item.email }}</td>
+                                <td data-field="text">{{ item.phone_number }}</td>
+                                <td data-field="text">{{ item.body }}</td>
+                                <td data-field="text">{{ item.jcreated }}</td>
 
-                                {% if content.status == 'A' %}
+                                {% if item.status == 'A' %}
                                 <td class="order-success">
-                                    <span>{{ content.get_status | default:'---' }}</span>
+                                    <span>{{ item.get_status | default:'---' }}</span>
                                 </td>
                                 {% else %}
                                 <td class="order-cancle">
-                                    <span>{{ content.get_status | default:'---' }}</span>
+                                    <span>{{ item.get_status | default:'---' }}</span>
                                 </td>
                                 {% endif %}
                                 <td>
-                                    <a href="{% url 'content:update_content' content.id %}">
-                                        <i class="fa fa-eye" title="جزییات محتوا"></i>
-                                    </a>
-
-                                    <a href="{% url 'content:update_content' content.id %}">
-                                        <i class="fa fa-edit" title="ویرایش"></i>
-                                    </a>
-
-                                    <a href="">
+                                    <a href="{% url 'contact_us:dashboard_contact_us_delete' item.id %}">
                                         <i class="fa fa-trash" title="حذف"></i>
                                     </a>
                                 </td>

@@ -1,0 +1,82 @@
+{% extends "base.html" %} {% load static %}{% load crispy_forms_tags %}
+
+{% block Styles %}
+    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/mapp.min.css">
+    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/fa/style.css">
+
+    <style>
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>تماس با ما</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'order:order_home' %}">خانه</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">تماس با ما</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        <div class="banner-padding banner-furniture ratio2_1">
+            <div class="col-sm-12">
+                <div class="title2">
+                    <h2 class="title-inner2">تماس با ما </h2>
+                </div>
+                <form class="theme-form" action="" method="post">
+                    {% csrf_token %}
+
+                    <div class="form-row row">
+                        <div class="col-md-4">{{ form.full_name|as_crispy_field }}</div>
+                        <div class="col-md-4">{{ form.email|as_crispy_field }}</div>
+                        <div class="col-md-4">{{ form.phone_number|as_crispy_field }}</div>
+                        <div class="col-md-6">{{ form.body|as_crispy_field }}</div>
+                        <div class="col-md-12 p-3">
+                            <button class="btn btn-solid" type="submit">ثبت درخواست</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block Scripts %}
+    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>
+    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.min.js"></script>
+
+
+    {% if messages %}
+        {% for item in messages %}
+            <script>
+                Swal.fire({
+                    title: "تبریک ! 🥳",
+                    icon: 'success',
+                    text: '{{ item }}',
+                    type: "success",
+                    cancelButtonColor: 'var(--primary)',
+                    confirmButtonText: 'اوکی',
+                })
+            </script>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
