@@ -24,6 +24,7 @@ urlpatterns = [
     path('content/', include('content.urls', namespace='content')),
     path('top/projects/', include('top_projects.urls', namespace='top_projects')),
     path('', include('order.urls', namespace='order')),
+    path('', include('about_us.urls', namespace='about_us')),
 ]
 
 urlpatterns += [

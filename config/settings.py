@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'utils',
     'sms',
     'top_projects',
+    'about_us',
 ]
 
 MIDDLEWARE = [
