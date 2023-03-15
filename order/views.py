@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
-from django.views.generic import DetailView, DeleteView
+from django.views.generic import DetailView, DeleteView, ListView
 
 from django.urls import reverse_lazy
 from django.conf import settings
@@ -101,7 +101,7 @@ class OrderDashboardDetail(DetailView):
 
 
 class OrderDashboardDelete(DeleteView):
-    model = Content
+    model = Order
     template_name = 'order/admin/order.html'
     success_url = reverse_lazy('order:dashboard_order_list')
 
@@ -109,3 +109,23 @@ class OrderDashboardDelete(DeleteView):
         resp = super().dispatch(*args, **kwargs)
         messages.success(self.request, 'آیتم مورد نظر با موفقیت حدف شد.')
         return resp
+
+
+# PDF
+class OrderPDFView(LoginRequiredMixin, ListView):
+    model = Order
+    template_name = 'order/pdf.html'
+    queryset = Order.objects.all()
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['base_dir'] = BASE_DIR
+    #     return context
+
+    # def get_template_names(self):
+    #     if self.object.type == 'ttc':
+    #         self.template_name = 'report_cards/pdf_files/ttc.html'
+    #     elif self.object.type == 'mock':
+    #         self.template_name = 'report_cards/pdf_files/mock.html'
+    #
+    #     return self.template_name

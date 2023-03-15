@@ -13,4 +13,5 @@ urlpatterns = [
     path('dashboard/order/list/', views.OrderDashboardList.as_view(), name='dashboard_order_list'),
     path('dashboard/order/<int:o_id>/', views.OrderDashboardDetail.as_view(), name='dashboard_order_detail'),
     path('dashboard/order/delete/<int:pk>', views.OrderDashboardDelete.as_view(), name='dashboard_order_delete'),
+    path('dashboard/order/pdf/', views.OrderPDFView.as_view(), name='dashboard_order_pdf'),
 ]
