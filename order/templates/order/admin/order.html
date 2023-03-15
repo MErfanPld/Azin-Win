@@ -1,149 +1,255 @@
-{% extends "dashboard/base.html" %} {% block content %}
+{% extends "dashboard/base.html" %}
+{% load crispy_forms_tags %}
 
-<div class="page-body">
-    <!-- Container-fluid starts-->
-    <div class="container-fluid">
-        <div class="page-header">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="page-header-left">
-                        <h3>
-                            داشبورد
-                            <small>پنل مدیریت آذین وین</small>
-                        </h3>
+{% block Styles %}
+    <style>
+        .order-success span {
+            cursor: pointer;
+        }
+
+        .order-cancle span {
+            cursor: pointer;
+        }
+
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/mapp.min.css">
+    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/fa/style.css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-body">
+        <!-- Container-fluid starts-->
+        <div class="container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="page-header-left">
+                            <h3>
+                                داشبورد
+                                <small>پنل مدیریت آذین وین</small>
+                            </h3>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <ol class="breadcrumb pull-right">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">
-                                <i data-feather="home"></i>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item active">داشبورد</li>
-                        <li class="breadcrumb-item active">درخواست</li>
-                    </ol>
+                    <div class="col-lg-6">
+                        <ol class="breadcrumb pull-right">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">
+                                    <i data-feather="home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active">داشبورد</li>
+                            <li class="breadcrumb-item active">درخواست</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Container-fluid Ends-->
+        <!-- Container-fluid Ends-->
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <form class="form-inline search-form search-box">
-
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <form class="form-inline search-form search-box">
 
 
-                            <div class="d-flex">
-                                <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
-                                    <select name="type_window" onchange="submit()" class="form-control">
-                                        <option value="">انتخاب نوع پنجره</option>
-                                        {% for item in type_windows %}
-                                        <option {% if item.id == request.GET.type_window|add:0 %}
-                                                selected {% endif %}
-                                                value="{{ item.id }}">{{ item.name }}
-                                        </option>
-                                        {% endfor %}
-                                    </select>
+                                <div class="d-flex">
+                                    <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
+                                        <select name="type_window" onchange="submit()" class="form-control">
+                                            <option value="">انتخاب نوع پنجره</option>
+                                            {% for item in type_windows %}
+                                                <option {% if item.id == request.GET.type_window|add:0 %}
+                                                    selected {% endif %}
+                                                    value="{{ item.id }}">{{ item.name }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+                                    <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
+                                        <select name="type_project" onchange="submit()" class="form-control">
+                                            <option value="">انتخاب نوع پروژه</option>
+                                            {% for item in type_projects %}
+                                                <option {% if item.0 == request.GET.type_project %}
+                                                    selected {% endif %}
+                                                    value="{{ item.0 }}">{{ item.1 }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+                                    <div class=" mt-2 d-flex w-auto" style="width: 150px!important; margin-left:2%">
+                                        <select name="status" onchange="submit()" class="form-control">
+                                            <option value="">انتخاب وضعیت</option>
+                                            {% for item in status_types %}
+                                                <option {% if item.0 == request.GET.status %}
+                                                    selected {% endif %}
+                                                    value="{{ item.0 }}">{{ item.1 }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
                                 </div>
 
-                                <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
-                                    <select name="type_project" onchange="submit()" class="form-control">
-                                        <option value="">انتخاب نوع پروژه</option>
-                                        {% for item in type_projects %}
-                                        <option {% if item.0 == request.GET.type_project %}
-                                                selected {% endif %}
-                                                value="{{ item.0 }}">{{ item.1 }}
-                                        </option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
 
-                                <div class=" mt-2 d-flex w-auto" style="width: 150px!important; margin-left:2%">
-                                    <select name="status" onchange="submit()" class="form-control">
-                                        <option value="">انتخاب وضعیت</option>
-                                        {% for item in status_types %}
-                                        <option {% if item.0 == request.GET.status %}
-                                                selected {% endif %}
-                                                value="{{ item.0 }}">{{ item.1 }}
-                                        </option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
+                            </form>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table-desi">
+                                <table class="table all-package" id="editableTable">
+                                    <thead>
+                                    <tr>
+                                        <th>شناسه درخواست</th>
+                                        <th>شماره موبایل</th>
+                                        <th>نام و نام خانوادگی</th>
+                                        <th>نوع پنجره</th>
+                                        <th>نوع پروژه</th>
+                                        <th>موقعیت</th>
+                                        <th>وضعیت</th>
+                                        <th>عملیات</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    {% for order in orders %}
+                                        <tr>
+                                            <td data-field="date">{{ order.id }}</td>
+                                            <td data-field="number">{{ order.phone_number }}</td>
+                                            <td data-field="text">{{ order.full_name }}</td>
+                                            <td data-field="text">{{ order.type_window }}</td>
+                                            <td data-field="text">{{ order.get_type_project }}</td>
+                                            <td class="order-success">
+                                                <span ng-click="ShowLocationModal('{{ order.lat }}', '{{ order.long }}')">نمایش</span>
+                                            </td>
+                                            {% if order.status == 'A' %}
+                                                <td class="order-success">
+                                                    <span ng-click="ChangeStatusModal({{ order.id }}, '{{ order.status }}')">{{ order.get_status | default:'---' }}</span>
+                                                </td>
+                                            {% else %}
+                                                <td class="order-cancle">
+                                                    <span ng-click="ChangeStatusModal({{ order.id }}, '{{ order.status }}')">{{ order.get_status | default:'---' }}</span>
+                                                </td>
+                                            {% endif %}
+                                            <td>
+                                                <a
+                                                        href="{% url 'order:dashboard_order_detail' order.id %}"
+                                                >
+                                                    <i class="fa fa-eye" title="جزییات درخواست"></i>
+                                                </a>
+
+                                                <form action="{% url 'order:dashboard_order_delete' order.id %}"
+                                                      style="display: none"
+                                                      id="delete_form_{{ order.id }}"
+                                                      method="post">
+                                                    {% csrf_token %}
+                                                </form>
+                                                <a onclick="DeleteConfirm('{{ order.id }}')">
+                                                    <i class="fa fa-trash" title="حذف"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
                             </div>
-
-
-                        </form>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive table-desi">
-                            <table class="table all-package" id="editableTable">
-                                <thead>
-                                <tr>
-                                    <th>شناسه درخواست</th>
-                                    <th>شماره موبایل</th>
-                                    <th>نام و نام خانوادگی</th>
-                                    <th>نوع پنجره</th>
-                                    <th>نوع پروژه</th>
-                                    <th>وضعیت</th>
-                                    <th>عملیات</th>
-                                </tr>
-                                </thead>
-
-                                <tbody>
-                                {% for order in orders %}
-                                <tr>
-                                    <td data-field="date">{{ order.id }}</td>
-                                    <td data-field="number">{{ order.phone_number }}</td>
-                                    <td data-field="text">{{ order.full_name }}</td>
-                                    <td data-field="text">{{ order.type_window }}</td>
-                                    <td data-field="text">{{ order.get_type_project }}</td>
-                                    {% if order.status == 'A' %}
-                                    <td class="order-success">
-                                        <span>{{ order.get_status | default:'---' }}</span>
-                                    </td>
-                                    {% else %}
-                                    <td class="order-cancle">
-                                        <span>{{ order.get_status | default:'---' }}</span>
-                                    </td>
-                                    {% endif %}
-                                    <td>
-                                        <a
-                                                href="{% url 'order:dashboard_order_detail' order.id %}"
-                                        >
-                                            <i class="fa fa-eye" title="جزییات درخواست"></i>
-                                        </a>
-
-                                    <form action="{% url 'order:dashboard_order_delete' order.id %}" style="display: none"
-                                          id="delete_form_{{ order.id }}"
-                                          method="post">
-                                        {% csrf_token %}
-                                    </form>
-                                    <a onclick="DeleteConfirm('{{ order.id }}')">
-                                        <i class="fa fa-trash" title="حذف"></i>
-                                    </a>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="changeStatusModal" tabindex="-1" role="dialog"
+         aria-labelledby="changeStatusModalTitle" aria-hidden="true" dir="rtl"
+         style="text-align: right !important;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+            <div class="modal-content">
+                <div class="modal-header" style="width: 100%!important;">
+                    <h5 class="modal-title"
+                        id="exampleModalLongTitle">تغییر وضعیت</h5>
+                </div>
+
+                {% for field in change_status_form %}
+                    <div class="modal-body">
+                        {#                        <label class="form-label"#}
+                        {#                               for="id_{{ field.name }}">{{ field.label }}:</label>#}
+
+                        <div>
+                            {{ field | as_crispy_field }}
+
+                            {% if field.help_text %}
+                                <p><small style="font-size: 14px">{{ field.help_text|safe }} </small></p>
+                            {% endif %}
+                            {% if field.errors %}
+                                <p><small class="text-danger" style="font-size: 14px"
+                                          style="color:red">{{ field.errors.0|safe }}</small></p>
+                            {% endif %}
+                            {% if field.non_field_errors %}
+                                <p><small class="text-danger" style="font-size: 20px"
+                                          style="color:red">{{ field.non_field_errors.0|safe }}</small></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+                <div class="modal-footer">
+                    <button type="button" onclick="  $('#changeStatusModal').modal('toggle');" class="btn btn-danger"
+                            data-dismiss="modal" ng-disabled="is_submited">
+                        بستن
+                    </button>&nbsp;
+                    <button type="button" ng-click="ChangeStatus();" ng-disabled="is_submited"
+                            class="btn btn-primary">ذخیره
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="showLocationModal" tabindex="-1" role="dialog"
+         aria-labelledby="showLocationModalTitle" aria-hidden="true" dir="rtl"
+         style="text-align: right !important;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+            <div class="modal-content" style="height: 500px !important;">
+                <div class="modal-header" style="width: 100%!important;">
+                    <h5 class="modal-title"
+                        id="exampleModalLongTitle">نمایش موقعیت</h5>
+                </div>
+
+                <div class="modal-body">
+                    <div id="app"></div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" onclick="  $('#showLocationModal').modal('toggle');" class="btn btn-danger"
+                            data-dismiss="modal" ng-disabled="is_submited">
+                        بستن
+                    </button>&nbsp;
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
 {% endblock content %}
 
 
 {% block Scripts %}
-<script>
+    <script>
         function DeleteConfirm(id) {
             Swal.fire({
                 title: "هشدار ! ",
@@ -162,5 +268,78 @@
             })
         }
 
-</script>
+    </script>
+
+    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>
+    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.min.js"></script>
+
+    <script>
+        var app
+
+        $(document).ready(function () {
+            app = new Mapp({
+                element: '#app',
+                presets: {
+                    latlng: {
+                        lat: 35.73249,
+                        lng: 51.42268
+                    },
+                    zoom: 16
+                },
+                apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIn0.eyJhdWQiOiIyMTQ5MSIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIiwiaWF0IjoxNjc4NzQ5OTY0LCJuYmYiOjE2Nzg3NDk5NjQsImV4cCI6MTY4MTE2OTE2NCwic3ViIjoiIiwic2NvcGVzIjpbImJhc2ljIl19.AobDdWKizuV0DAL8IFyUb8jLBrx8AzVu21HEOxAUTD8WhMZ-riaPX53e6_A7oj1NbwCBpTc8Jm3w2QAsYsTae2lCDoZB05X2pEcjoAYXpzRV2z-tBLgwairxtJunrKDSjKTIg9LpGzFu93xBQGmUnOfOho-Se4s_vIdUlrl19tdEPaKO763sHFQPnqf4Fbwh-L_ARuKaUV8j8aseg9n-vGbQ4w5juRbtMeNMm9adtt1ZVGWGUOJAHUD83IM4-FCiA7-P3Xincar-BXTY0PN1EK9Yvhn7akGQRudPYBsnU5NGe8ABmAFfXzdMwbSWnx1YO8fSfTmiQc2tHAqf1JmiIg'
+            });
+        })
+
+        function ShowLocation(app, lat, long) {
+            app.addLayers();
+            app.markReverseGeocode({
+                state: {
+                    latlng: {
+                        lat: lat,
+                        lng: long
+                    },
+                    zoom: 16,
+                },
+            });
+        }
+    </script>
+
+    <script>
+        app.controller('myCtrl', function ($scope, $http) {
+            $scope.id = null;
+            $scope.status = {};
+            $scope.is_submited = false;
+
+            $scope.ChangeStatusModal = function (id, status) {
+                $scope.id = id;
+                $scope.status = status;
+                $('#changeStatusModal').modal('show');
+            }
+
+            $scope.ShowLocationModal = function (lat, long) {
+                ShowLocation(app, lat, long);
+                $('#showLocationModal').modal('show');
+            }
+
+            $scope.ChangeStatus = function () {
+                $scope.is_submited = true;
+
+                var data = {
+                    "status": $scope.status
+                };
+
+                $http.patch(`/api/order/${$scope.id}/`, data).then(res => {
+                    createToast('success', 'وضعیت آیتم مورد نظر با موفقیت تغییر کرد.');
+                    $scope.is_submited = false;
+                    setTimeout(() => {
+                        location.reload()
+                    }, 100)
+                }).catch(err => {
+                    $scope.loading = false;
+                    parseError(err, 'خطایی رخ داد');
+                });
+            }
+        });
+    </script>
 {% endblock %}

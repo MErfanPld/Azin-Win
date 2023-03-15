@@ -31,6 +31,7 @@ urlpatterns = [
 urlpatterns += [
     path('api/auth/', include('accounts.api.urls')),
     path('api/sms/', include('sms.api.urls')),
+    path('api/order/', include('order.api.urls')),
 ]
 
 if settings.DEBUG:

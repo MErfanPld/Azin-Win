@@ -13,7 +13,7 @@ from sms.sms_texts import SMS_TEXTS
 from .filters import OrderFilters
 from .helpers import type_project_CHOICES, status_CHOICES
 from .models import Order, TypeWindow
-from .forms import OrderForm
+from .forms import OrderForm, OrderChangeStatusForm
 from content.models import Content
 
 
@@ -88,7 +88,7 @@ class OrderDashboardList(LoginRequiredMixin, View):
         type_projects = type_project_CHOICES
         status_types = status_CHOICES
         context = {'orders': orders, 'type_windows': type_windows, 'type_projects': type_projects,
-                   'status_types': status_types}
+                   'status_types': status_types, 'change_status_form': OrderChangeStatusForm()}
         return render(request, self.template_name, context)
 
 
