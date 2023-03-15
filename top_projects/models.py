@@ -34,3 +34,23 @@ class TopProject(models.Model):
     @property
     def get_status(self):
         return dict(status_CHOICES).get(self.status, '')
+
+    @property
+    def get_images_1(self):
+        return self.images_1.url if self.images_1 else ''
+
+    @property
+    def get_images_2(self):
+        return self.images_2.url if self.images_2 else ''
+
+    @property
+    def get_images_3(self):
+        return self.images_3.url if self.images_3 else ''
+
+    @property
+    def get_images_4(self):
+        return self.images_4.url if self.images_4 else ''
+
+    @property
+    def get_images_5(self):
+        return self.images_5.url if self.images_5 else ''
