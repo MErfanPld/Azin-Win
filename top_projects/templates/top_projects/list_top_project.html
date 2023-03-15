@@ -1,0 +1,120 @@
+{% extends "base.html" %} {% load static %}{% load crispy_forms_tags %} {% block content %}
+
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>پروژه های برتر</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'order:order_home' %}">خانه</a></li>
+                        <li class="breadcrumb-item active">
+                            پروژه های برتر
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="faq-section section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="accordion theme-accordion" id="accordionExample">
+                    {% for top_project in top_projects %}
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    {{ top_project.project_name }}
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample" style="">
+                            <div class="card-body">
+                                <p>{{top_project.body}}</p>
+                                <section id="team" class="team section-b-space slick-default-margin ratio_asos">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3>تصاویر پروژه با نظارت جناب اقای {{top_project.eng_name}}</h3>
+                                                <div class="team-4 slick-initialized slick-slider">
+                                                    <button class="slick-prev slick-arrow" aria-label="Previous"
+                                                            type="button" style="display: block;">
+                                                        Previous
+                                                    </button>
+                                                    <div class="slick-list draggable">
+                                                        <div class="slick-track"
+                                                             style="opacity: 1; width: 3990px; transform: translate3d(1140px, 0px, 0px);">
+                                                            <div class="slick-slide slick-cloned" data-slick-index="-4"
+                                                                 aria-hidden="true" tabindex="-1"
+                                                                 style="width: 285px;">
+                                                                <div>
+                                                                    <div style="width: 100%; display: inline-block;">
+                                                                        <div class="bg-size blur-up lazyload"
+                                                                             style="background-image: url(&quot;{{top_project.images_1.url}}&quot;); background-size: cover; background-position: center center; display: block;">
+                                                                            <img src="{{top_project.images_1.url}}"
+                                                                                 class="img-fluid blur-up lazyload bg-img"
+                                                                                 alt=""
+                                                                                 style="display: none;">
+                                                                        </div>
+                                                                        <h4>هیلری کول</h4>
+                                                                        <h6>بنیانگذار شرکت</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button class="slick-next slick-arrow" aria-label="Next"
+                                                            type="button" style="display: block;">
+                                                        Next
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
+
+{% block Scripts %}
+{% if messages %}
+{% for item in messages %}
+<script>
+                Swal.fire({
+                    title: "تبریک ! 🥳",
+                    icon: 'success',
+                    text: '{{ item }}',
+                    type: "success",
+                    cancelButtonColor: 'var(--primary)',
+                    confirmButtonText: 'اوکی',
+                })
+
+
+
+
+
+</script>
+{% endfor %}
+{% endif %}
+{% endblock %}

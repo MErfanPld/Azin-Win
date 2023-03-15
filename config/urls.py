@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('content/', include('content.urls', namespace='content')),
+    path('top/projects/', include('top_projects.urls', namespace='top_projects')),
     path('', include('order.urls', namespace='order')),
 ]
 

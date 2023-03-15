@@ -2,7 +2,6 @@ from django.db import models
 from accounts.models import User
 from extenstions.utils import jalali_converter
 
-
 # Create your models here.
 from order.helpers import type_project_CHOICES, status_CHOICES
 
@@ -34,7 +33,7 @@ class Order(models.Model):
     lat = models.TextField(null=True, verbose_name='latitude')
     long = models.TextField(null=True, verbose_name='longitude')
     status = models.CharField(
-        max_length=2, choices=status_CHOICES, blank=True, null=True, verbose_name="وضعیت درخواست")
+        max_length=2, choices=status_CHOICES, blank=True, null=True, default='B', verbose_name="وضعیت درخواست")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")
 
     def __str__(self):

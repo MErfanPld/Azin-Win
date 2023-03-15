@@ -1,0 +1,111 @@
+{% extends "dashboard/base.html" %} {% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="page-header-left">
+                    <h3>لیست پروژه ها</h3>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <ol class="breadcrumb pull-right">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-home"
+                            >
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">پروژه</li>
+                    <li class="breadcrumb-item active">لیست پروژه ها</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <form class="form-inline search-form search-box">
+                        <div class="form-group">
+                            <input name="search" value="{{ request.GET.search }}"
+                                   class="form-control-plaintext"
+                                   type="search"
+                                   placeholder="جستجو..."
+                            />
+                        </div>
+
+                    </form>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive table-desi">
+                        <table class="table all-package" id="editableTable">
+                            <thead>
+                            <tr>
+                                <th>شناسه پروژه</th>
+                                <th>نام مهندس</th>
+                                <th>نام پروژه</th>
+                                <th>ادرس</th>
+                                <th>وضعیت</th>
+                                <th>عملیات</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for top_project in top_projects %}
+                            <tr>
+                                <td data-field="date">{{ top_project.id }}</td>
+                                <td data-field="number">{{ top_project.eng_name }}</td>
+                                <td data-field="text">{{ top_project.project_name }}</td>
+                                <td data-field="text">{{ top_project.slug }}</td>
+
+                                {% if top_project.status == 'A' %}
+                                <td class="order-success">
+                                    <span>{{ top_project.get_status | default:'---' }}</span>
+                                </td>
+                                {% else %}
+                                <td class="order-cancle">
+                                    <span>{{ top_project.get_status | default:'---' }}</span>
+                                </td>
+                                {% endif %}
+                                <td>
+                                    <a href="{% url 'top_projects:home_list_top_projects' %}">
+                                        <i class="fa fa-eye" title="جزییات پروژه"></i>
+                                    </a>
+
+                                    <a href="{% url 'top_projects:update_top_projects' top_project.id %}">
+                                        <i class="fa fa-edit" title="ویرایش"></i>
+                                    </a>
+
+                                    <a href="">
+                                        <i class="fa fa-trash" title="حذف"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

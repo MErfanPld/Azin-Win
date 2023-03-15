@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'acl',
     'utils',
     'sms',
+    'top_projects',
 ]
 
 MIDDLEWARE = [

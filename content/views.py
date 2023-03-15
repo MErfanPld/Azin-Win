@@ -10,6 +10,7 @@ from .helpers import type_content_CHOICES, status_content_CHOICES
 from .models import Content
 from .forms import ContentForm
 
+
 # Create your views here.
 
 class ContentListView(View):
@@ -40,7 +41,6 @@ class ContentDetailView(DetailView):
         contents = Content.objects.filter(status='A')
         return render(request, self.template_name,
                       {'content': self.content_instance})
-
 
 
 class ContentCreateView(View):
@@ -103,4 +103,3 @@ class ContentDashboardList(LoginRequiredMixin, View):
         context['status_types'] = status_content_CHOICES
         context['contents'] = contents
         return render(request, self.template_name, context)
-
