@@ -35,7 +35,7 @@ class TopProjectCreateView(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             new_top_projects = form.save(commit=False)
-            new_top_projects.slug = slugify(form.cleaned_data['title'][:30])
+            new_top_projects.slug = slugify(form.cleaned_data['project_name'])
             new_top_projects.save()
             messages.success(request, 'محتوا با موفقیت ثبت شد.', 'success')
             return redirect('top_projects:list_top_projects')

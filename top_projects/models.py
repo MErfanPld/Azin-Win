@@ -10,7 +10,7 @@ from order.helpers import status_CHOICES
 class TopProject(models.Model):
     eng_name = models.CharField(max_length=255, verbose_name="نام مهندس")
     project_name = models.CharField(max_length=255, verbose_name="نام پروژه")
-    slug = models.SlugField(max_length=200, unique=True, blank=True, verbose_name="ادرس")
+    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True, verbose_name="ادرس")
     body = models.TextField(verbose_name="توضیحاتی درباره پروژه")
     images_1 = models.ImageField(default='1.png', verbose_name="تصویر شماره 1")
     images_2 = models.ImageField(default='1.png', verbose_name="تصویر شماره 2")

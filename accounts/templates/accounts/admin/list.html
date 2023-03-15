@@ -167,4 +167,19 @@
             })
         }
     </script>
+
+    {% if messages %}
+        {% for item in messages %}
+            <script>
+                Swal.fire({
+                    title: "تبریک ! 🥳",
+                    icon: 'success',
+                    text: '{{ item }}',
+                    type: "success",
+                    cancelButtonColor: 'var(--primary)',
+                    confirmButtonText: 'اوکی',
+                })
+            </script>
+        {% endfor %}
+    {% endif %}
 {% endblock %}

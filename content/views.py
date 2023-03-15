@@ -109,7 +109,7 @@ class ContentDashboardList(LoginRequiredMixin, View):
 class ContentDashboardDelete(DeleteView):
     model = Content
     template_name = 'content/admin/list.html'
-    success_url = reverse_lazy('contact_us:list_content')
+    success_url = reverse_lazy('content:list_content')
 
     def dispatch(self, *args, **kwargs):
         resp = super().dispatch(*args, **kwargs)
