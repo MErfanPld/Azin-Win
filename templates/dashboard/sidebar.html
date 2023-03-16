@@ -17,15 +17,14 @@
         ></a>
         <div class="sidebar-user">
             <a href="{% url 'profile' %}">
-                <img
-                        class="img-60"
-                        src="{% static 'admin/images/dashboard/user3.jpg' %}"
-                        alt="#"
-                />
+                <!--                <img-->
+                <!--                        class="img-60"-->
+                <!--                        src="{% static 'admin/images/dashboard/user3.jpg' %}"-->
+                <!--                        alt="#"-->
+                <!--                />-->
             </a>
             <div>
-                <a href="{% url 'profile' %}"><h6 class="f-14">ستین</h6></a>
-                <p>مدیر کل</p>
+                <a href="{% url 'profile' %}"><h6 class="f-14">{{request.user.fullname}}</h6></a>
             </div>
         </div>
         <ul class="sidebar-menu">
@@ -168,14 +167,13 @@
                 </a>
             </li>
 
-
+            {% endif %}
             <li>
                 <a class="sidebar-header" href="{% url 'logout' %}">
                     <i data-feather="log-out"></i>
                     <span>خروج</span>
                 </a>
             </li>
-            {% endif %}
         </ul>
     </div>
 </div>

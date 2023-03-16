@@ -18,10 +18,17 @@
                 </div>
                 <div class="col-lg-6 text-end">
                     <ul class="header-dropdown">
+                        {% if request.user.authentication %}
+                        <li class="onhover-dropdown mobile-account">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <a href="{% url 'order:dashboard' %}">داشبورد</a>
+                        </li>
+                        {% else %}
                         <li class="onhover-dropdown mobile-account">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <a href="{% url 'login' %}">ثبت نام</a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

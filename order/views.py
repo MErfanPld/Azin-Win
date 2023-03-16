@@ -67,8 +67,8 @@ class Dashboard(LoginRequiredMixin, View):
     template_name = 'order/admin/dashboard.html'
 
     def get(self, request, *args, **kwargs):
-        orders = Order.objects.all()
-        contents = Content.objects.all()
+        orders = Order.objects.order_by('-id')
+        contents = Content.objects.order_by('-id')
         context = {'orders': orders, 'contents': contents}
         return render(request, self.template_name, context)
 
