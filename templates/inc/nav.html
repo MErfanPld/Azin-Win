@@ -25,8 +25,12 @@
                         </li>
                         {% else %}
                         <li class="onhover-dropdown mobile-account">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            <a href="{% url 'login' %}">ورود</a>
+                        </li>
+                        <li class="onhover-dropdown mobile-account">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            <a href="{% url 'login' %}">ثبت نام</a>
+                            <a href="{% url 'register' %}">ثبت نام</a>
                         </li>
                         {% endif %}
                     </ul>
