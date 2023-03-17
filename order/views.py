@@ -68,6 +68,8 @@ class Dashboard(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         orders = Order.objects.order_by('-id')
+        if not request.user.is_staff:
+            orders = orders.filter(phone_number=request.user.phone_number)
         contents = Content.objects.order_by('-id')
         context = {'orders': orders, 'contents': contents}
         return render(request, self.template_name, context)
@@ -78,6 +80,8 @@ class OrderDashboardList(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         orders = Order.objects.all()
+        if not request.user.is_staff:
+            orders = orders.filter(phone_number=request.user.phone_number)
         orders = OrderFilters(data=self.request.GET, queryset=orders).qs
         type_windows = TypeWindow.objects.all()
         type_projects = type_project_CHOICES

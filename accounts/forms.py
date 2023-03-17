@@ -67,9 +67,11 @@ class RegisterForm(forms.ModelForm):
 
         code = OtpCode.objects.create_new_code(user)
         self.request.session['verify_phone_number'] = user.phone_number
-        messages.success(self.request, 'ثبت نام شما با موفقیت انجام شد. کد تایید حساب کاربری برای شما پیامک شد.')
+        # messages.success(self.request, 'ثبت نام شما با موفقیت انجام شد. کد تایید حساب کاربری برای شما پیامک شد.')
+        messages.success(self.request, 'ثبت نام شما با موفقیت انجام شد. اکنون میتوانید وارد حساب کاربری خود شوید.')
 
-        sms_text = SMS_TEXTS['verify_code'].format(code.code)
+        # sms_text = SMS_TEXTS['verify_code'].format(code.code)
+        sms_text = SMS_TEXTS['welcome_message'].format(user.phone_number)
         send_sms(user.phone_number, sms_text)
         return user
 

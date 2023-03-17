@@ -59,7 +59,8 @@ class RegisterView(AnonymousUserMixin, CreateView):
     template_name = "accounts/register.html"
     model = User
     form_class = RegisterForm
-    success_url = reverse_lazy("verify-code")
+    # success_url = reverse_lazy("verify-code")
+    success_url = reverse_lazy("login")
 
     def post(self, request, *args, **kwargs):
         request.POST._mutable = True

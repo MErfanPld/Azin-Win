@@ -14,7 +14,7 @@ class User(AbstractBaseUser):
     full_name = models.CharField(
         max_length=100, null=True, blank=True, verbose_name="نام و نام خانوادگی")
     is_active = models.BooleanField(
-        default=False, verbose_name="فعال / غیرفعال")
+        default=True, verbose_name="فعال / غیرفعال")
     is_admin = models.BooleanField(
         default=False, verbose_name="ادمین هست / ادمین نیست")
 
