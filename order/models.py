@@ -1,5 +1,6 @@
 from django.db import models
 from accounts.models import User
+from common.models import City
 from extenstions.utils import jalali_converter
 
 # Create your models here.
@@ -24,7 +25,7 @@ class Order(models.Model):
     type_project = models.CharField(
         max_length=2, choices=type_project_CHOICES, null=True, verbose_name="نوع پروژه ")
     number = models.FloatField(max_length=1000, null=True, verbose_name="تعداد واحد ")
-    city = models.CharField(max_length=100, null=True, verbose_name="شهر ")
+    # city = models.CharField(max_length=100, null=True, verbose_name="شهر ")
     # addr = models.TextField(null=True, blank=True, verbose_name="ادرس محل ")
     phone_number = models.CharField(
         max_length=11, unique=True, null=True, verbose_name="شماره تماس")
@@ -32,6 +33,9 @@ class Order(models.Model):
         max_length=100, null=True, verbose_name="نام و نام خانوادگی ")
     # lat = models.TextField(null=True, blank=True, verbose_name='latitude')
     # long = models.TextField(null=True, blank=True, verbose_name='longitude')
+    city = models.ForeignKey(
+        to=City, on_delete=models.CASCADE, related_name="orders", null=True, verbose_name="شهر"
+    )
     status = models.CharField(
         max_length=2, choices=status_CHOICES, blank=True, null=True, default='B', verbose_name="وضعیت درخواست")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")

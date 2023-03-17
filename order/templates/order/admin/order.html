@@ -114,7 +114,7 @@
                                         <th>نام و نام خانوادگی</th>
                                         <th>نوع پنجره</th>
                                         <th>نوع پروژه</th>
-                                        <th>موقعیت</th>
+                                        <th>شهر</th>
                                         <th>وضعیت</th>
                                         <th>عملیات</th>
                                     </tr>
@@ -128,9 +128,10 @@
                                             <td data-field="text">{{ order.full_name }}</td>
                                             <td data-field="text">{{ order.type_window }}</td>
                                             <td data-field="text">{{ order.get_type_project }}</td>
-                                            <td class="order-success">
-                                                <span ng-click="ShowLocationModal('{{ order.lat }}', '{{ order.long }}')">نمایش</span>
-                                            </td>
+                                            <td data-field="text">{{ order.city }}</td>
+{#                                            <td class="order-success">#}
+{#                                                <span ng-click="ShowLocationModal('{{ order.lat }}', '{{ order.long }}')">نمایش</span>#}
+{#                                            </td>#}
                                             {% if order.status == 'A' %}
                                                 <td class="order-success">
                                                     <span ng-click="ChangeStatusModal({{ order.id }}, '{{ order.status }}')">{{ order.get_status | default:'---' }}</span>
