@@ -22,16 +22,16 @@ class Order(models.Model):
         to=TypeWindow, on_delete=models.CASCADE, related_name="orders", verbose_name="نوع پنجره"
     )
     type_project = models.CharField(
-        max_length=2, choices=type_project_CHOICES, blank=True, null=True, verbose_name="نوع پروژه")
-    number = models.FloatField(verbose_name="تعداد واحد")
-    number_units = models.FloatField(verbose_name=" units تعداد")
-    addr = models.TextField(verbose_name="ادرس محل")
+        max_length=2, choices=type_project_CHOICES, null=True, verbose_name="نوع پروژه ")
+    number = models.FloatField(max_length=1000, null=True, verbose_name="تعداد واحد ")
+    city = models.CharField(max_length=100, null=True, verbose_name="شهر ")
+    # addr = models.TextField(null=True, blank=True, verbose_name="ادرس محل ")
     phone_number = models.CharField(
-        max_length=11, unique=True, null=True, blank=True, verbose_name="شماره تماس")
+        max_length=11, unique=True, null=True, verbose_name="شماره تماس")
     full_name = models.CharField(
-        max_length=100, null=True, blank=True, verbose_name="نام و نام خانوادگی")
-    lat = models.TextField(null=True, verbose_name='latitude')
-    long = models.TextField(null=True, verbose_name='longitude')
+        max_length=100, null=True, verbose_name="نام و نام خانوادگی ")
+    # lat = models.TextField(null=True, blank=True, verbose_name='latitude')
+    # long = models.TextField(null=True, blank=True, verbose_name='longitude')
     status = models.CharField(
         max_length=2, choices=status_CHOICES, blank=True, null=True, default='B', verbose_name="وضعیت درخواست")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")

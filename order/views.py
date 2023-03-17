@@ -54,7 +54,7 @@ class OrderCreateView(View):
             sms_text = SMS_TEXTS['order_message'].format(new_order.full_name)
             send_sms(new_order.phone_number, sms_text)
             messages.success(request,
-                             f"کاربر گرامی درخواست شما با موفقیت ثبت شد و پس از بررسی با شما تماس گرفته خواهد شد.")
+                             f"کاربر گرامی درخواست شما با موفقیت ثبت شد و همکاران ما تا ساعاتی دیگر با شما تماس خواهند گرفت. برای مشاهده سفارشات خود ثبت نام بکنید.")
 
             return redirect('order:order_home')
         return render(request, 'order/front/home.html', {'form': form})

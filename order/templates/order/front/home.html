@@ -195,19 +195,10 @@
                         <div class="col-md-4">{{ form.type_window|as_crispy_field }}</div>
                         <div class="col-md-4">{{ form.type_project|as_crispy_field }}</div>
                         <div class="col-md-4">{{ form.number|as_crispy_field }}</div>
-                        <div class="col-md-4">{{ form.number_units|as_crispy_field }}</div>
+                        <div class="col-md-4">{{ form.city|as_crispy_field }}</div>
                         <div class="col-md-4">{{ form.phone_number|as_crispy_field }}</div>
                         <div class="col-md-4">{{ form.full_name|as_crispy_field }}</div>
-                        <div class="col-md-6">{{ form.addr|as_crispy_field }}</div>
-                        <div class="col-md-6">
-                            {{ form.lat|as_crispy_field }}
-                            {{ form.long|as_crispy_field }}
-                            <div id="app"></div>
 
-                            {% if form.lat.errors %}
-                                <p class="text-danger mt-3" style="font-size: 20px !important;">{{ form.lat.errors.0|escape }}</p>
-                            {% endif %}
-                        </div>
                         <div class="col-md-12 p-3">
                             <button class="btn btn-solid" type="submit">ثبت درخواست</button>
                         </div>
@@ -220,7 +211,7 @@
     <section class="banner-goggles banner-padding ratio2_1">
         <div class="container container-lg">
             <div class="row partition3">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <a href="#">
                         <div class="collection-banner p-right text-end">
                             <div class="img-part">
@@ -239,7 +230,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <a href="#">
                         <div class="collection-banner p-right text-end">
                             <div class="img-part">
@@ -258,7 +249,26 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="collection-banner p-right text-end">
+                            <div class="img-part">
+                                <img
+                                        src="{% static 'images/fashion/banner/40.jpg' %}"
+                                        class="img-fluid blur-up lazyload bg-img"
+                                        alt=""
+                                />
+                            </div>
+                            <div class="contain-banner banner-3">
+                                <div>
+                                    <h4>50 درصد تخفیف</h4>
+                                    <h2>best deal</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
                     <a href="#">
                         <div class="collection-banner p-right text-end">
                             <div class="img-part">
