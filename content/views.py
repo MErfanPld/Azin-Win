@@ -56,7 +56,7 @@ class ContentCreateView(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             new_content = form.save(commit=False)
-            new_content.slug = slugify(form.cleaned_data['title'][:30])
+            new_content.slug = slugify(form.cleaned_data['title'], True)
             new_content.save()
             messages.success(request, 'محتوا با موفقیت ثبت شد.', 'success')
             return redirect('content:list_content')
