@@ -18,10 +18,14 @@
                 </div>
                 <div class="col-lg-6 text-end">
                     <ul class="header-dropdown">
-                        {% if request.user.authentication %}
+                        {% if request.user.is_authenticated %}
                         <li class="onhover-dropdown mobile-account">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <a href="{% url 'order:dashboard' %}">داشبورد</a>
+                        </li>
+                        <li class="onhover-dropdown mobile-account">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            <a href="{% url 'logout' %}">خروج</a>
                         </li>
                         {% else %}
                         <li class="onhover-dropdown mobile-account">
