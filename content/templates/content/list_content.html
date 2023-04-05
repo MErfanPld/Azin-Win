@@ -42,14 +42,14 @@
                 <div class="row blog-media">
                     <div class="col-xl-6">
                         <div class="blog-left">
-                            <a href="#" class="bg-size blur-up lazyloaded" style="background-image: url(&quot;{{content.thumnail.url}}&quot;); background-size: cover; background-position: center center; display: block;"><img src="{{content.thumnail.url}}" class="img-fluid blur-up bg-img lazyloaded" alt="" style="display: none;"></a>
+                            <a href="{% url 'content:home_detail_content' content.id content.slug %}" class="bg-size blur-up lazyloaded" style="background-image: url(&quot;{{content.thumnail.url}}&quot;); background-size: cover; background-position: center center; display: block;"><img src="{{content.thumnail.url}}" class="img-fluid blur-up bg-img lazyloaded" alt="" style="display: none;"></a>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="blog-right">
                             <div>
                                 <h6>{{content.jcreated}}</h6> <a href="{% url 'content:home_detail_content' content.id content.slug %}">
-                                    <h4>{{content.title}}</h4>
+                                    <h4 class="">{{content.title}}</h4>
                                 </a>
                                 <p>{{content.body | truncatewords:50}}</p>
                             </div>

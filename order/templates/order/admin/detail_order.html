@@ -83,14 +83,6 @@
                           <h5>{{order.number}}</h5>
                         </td>
                         <td>
-                          <p>تعداد units</p>
-                          <h5>{{order.number_units}}</h5>
-                        </td>
-                        <td>
-                          <p>ادرس محل</p>
-                          <h5>{{order.addr}}</h5>
-                        </td>
-                        <td>
                           <p>تاریخ ثبت</p>
                           <h5>{{order.jcreated}}</h5>
                         </td>
@@ -98,11 +90,11 @@
                         <td>
                           <p>وضعیت</p>
                         {% if order.status == 'A' %}
-                        <h5 class="order-success">
+                        <h5 class="badge badge-success">
                           <span>{{order.get_status | default:'---'}}</span>
                         </h5>
                         {% else %}
-                        <h5 class="order-cancle">
+                        <h5 class="badge badge-primary">
                           <span>{{order.get_status | default:'---'}}</span>
                         </h5>
                         {% endif %}

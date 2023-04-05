@@ -10,7 +10,7 @@ from extenstions.utils import jalali_converter
 class ContactUs(models.Model):
     full_name = models.CharField(max_length=255, verbose_name="نام و نام خانوادگی")
     email = models.EmailField(verbose_name="ایمیل")
-    phone_number = models.CharField(max_length=11, unique=True, null=True, blank=True, verbose_name="شماره موبایل")
+    phone_number = models.CharField(max_length=11, unique=True, verbose_name="شماره موبایل")
     body = models.TextField(verbose_name="متن")
     status = models.CharField(
         max_length=2, choices=status_content_CHOICES, blank=True, default="B", null=True, verbose_name="ضعیت")

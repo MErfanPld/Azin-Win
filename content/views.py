@@ -85,7 +85,7 @@ class ContentUpdateView(LoginRequiredMixin, UpdateView):
         form = self.form_class(request.POST, request.FILES, instance=post)
         if form.is_valid():
             new_content = form.save(commit=False)
-            new_content.slug = slugify(form.cleaned_data['title'][:30])
+            new_content.slug = slugify(form.cleaned_data['title'],True)
             new_content.user = request.user
             new_content.save()
             return redirect('content:list_content')

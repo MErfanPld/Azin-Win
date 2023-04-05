@@ -1,39 +1,30 @@
-{% extends "base.html" %} {% load static %}{% load crispy_forms_tags %}
+{% extends "base.html" %} {% load static %}{% load crispy_forms_tags %} {% block Styles %} {# <linkrel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/mapp.min.css"/>#} {#<link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/fa/style.css"/>#} {#<style>#}
+      {#        #app {#}
+      {#            width: 100%;#}
+      {#            height: 100%;#}
+      {#        }#}
+      {#</style>#} {% endblock %} {% block content %}
 
-{% block Styles %}
-    {#    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/mapp.min.css">#}
-    {#    <link rel="stylesheet" href="https://cdn.map.ir/web-sdk/1.4.2/css/fa/style.css">#}
+<!-- Home slider -->
 
-    {#    <style>#}
-    {#        #app {#}
-    {#            width: 100%;#}
-    {#            height: 100%;#}
-    {#        }#}
-    {#    </style>#}
-{% endblock %}
-
-{% block content %}
-
-    <!-- Home slider -->
-
-    <section class="small-slider pt-0 home-fashion mt-0">
-        <div class="container container-lg">
-            <div class="slider-animate home-slider slick-initialized slick-slider">
-                <button
-                        class="slick-prev slick-arrow"
-                        aria-label="Previous"
-                        type="button"
-                        style="display: block"
-                >
-                    Previous
-                </button>
-                <div class="slick-list draggable">
-                    <div class="slick-track" style="opacity: 1; width: 2232px">
-                        <div
-                                class="slick-slide"
-                                data-slick-index="0"
-                                aria-hidden="true"
-                                style="
+<section class="small-slider pt-0 home-fashion mt-0">
+  <div class="container container-lg">
+    <div class="slider-animate home-slider slick-initialized slick-slider">
+      <button
+        class="slick-prev slick-arrow"
+        aria-label="Previous"
+        type="button"
+        style="display: block"
+      >
+        Previous
+      </button>
+      <div class="slick-list draggable">
+        <div class="slick-track" style="opacity: 1; width: 2232px">
+          <div
+            class="slick-slide"
+            data-slick-index="0"
+            aria-hidden="true"
+            style="
               width: 1116px;
               position: relative;
               right: 0px;
@@ -42,68 +33,68 @@
               opacity: 0;
               transition: opacity 800ms ease 0s;
             "
-                                tabindex="-1"
-                        >
-                            <div>
-                                <div style="width: 100%; display: inline-block">
-                                    <div
-                                            class="home bg-size blur-up lazyloaded"
-                                            style="
-                                                    background-image: url('{% static 'images/home-banner/58.jpg' %} ');
-                                                    background-size: cover;
-                                                    background-position: center center;
-                                                    display: block;
-                                                    "
-                                    >
-                                        <img
-                                                src="{% static 'images/home-banner/56.jpg' %} "
-                                                alt=""
-                                                class="bg-img blur-up lazyloaded"
-                                                style="display: none"
-                                        />
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="slider-contain px-padding">
-                                                        <div>
-                                                            <h4
-                                                                    class=""
-                                                                    data-animation-in="fadeInUp"
-                                                                    style="opacity: 0"
-                                                            >
-                                                                30% ذخیره
-                                                            </h4>
-                                                            <h1
-                                                                    class=""
-                                                                    data-animation-in="fadeInUp"
-                                                                    data-delay-in="0.3"
-                                                                    style="opacity: 0; animation-delay: 0.3s"
-                                                            >
-                                                                قیمت ویژه
-                                                            </h1>
-                                                            <a
-                                                                    href="#"
-                                                                    class="btn btn-solid"
-                                                                    data-animation-in="fadeInUp"
-                                                                    data-delay-in="0.5"
-                                                                    tabindex="-1"
-                                                                    style="opacity: 0; animation-delay: 0.5s"
-                                                            >خرید کنید
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            tabindex="-1"
+          >
+            <div>
+              <div style="width: 100%; display: inline-block">
+                <div
+                  class="home bg-size blur-up lazyloaded"
+                  style="
+                    background-image: url('{% static 'images/home-banner/58.jpg' %} ');
+                    background-size: cover;
+                    background-position: center center;
+                    display: block;
+                  "
+                >
+                  <img
+                    src="{% static 'images/home-banner/56.jpg' %} "
+                    alt=""
+                    class="bg-img blur-up lazyloaded"
+                    style="display: none"
+                  />
+                  <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <div class="slider-contain px-padding">
+                          <div>
+                            <h4
+                              class=""
+                              data-animation-in="fadeInUp"
+                              style="opacity: 0"
+                            >
+                              30% ذخیره
+                            </h4>
+                            <h1
+                              class=""
+                              data-animation-in="fadeInUp"
+                              data-delay-in="0.3"
+                              style="opacity: 0; animation-delay: 0.3s"
+                            >
+                              قیمت ویژه
+                            </h1>
+                            <a
+                              href="#"
+                              class="btn btn-solid"
+                              data-animation-in="fadeInUp"
+                              data-delay-in="0.5"
+                              tabindex="-1"
+                              style="opacity: 0; animation-delay: 0.5s"
+                              >خرید کنید
+                            </a>
+                          </div>
                         </div>
-                        <div
-                                class="slick-slide slick-current slick-active"
-                                data-slick-index="1"
-                                aria-hidden="false"
-                                style="
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="slick-slide slick-current slick-active"
+            data-slick-index="1"
+            aria-hidden="false"
+            style="
               width: 1116px;
               position: relative;
               right: -1116px;
@@ -111,410 +102,417 @@
               z-index: 999;
               opacity: 1;
             "
-                        >
-                            <div>
-                                <div style="width: 100%; display: inline-block">
-                                    <div
-                                            class="home bg-size blur-up lazyloaded"
-                                            style="
-                                                    background-image: url('{% static 'images/home-banner/57.jpg' %} ');
-                                                    background-size: cover;
-                                                    background-position: center center;
-                                                    display: block;
-                                                    "
-                                    >
-                                        <img
-                                                src="{% static 'images/home-banner/57.jpg' %} "
-                                                alt=""
-                                                class="bg-img blur-up lazyloaded"
-                                                style="display: none"
-                                        />
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="slider-contain px-padding">
-                                                        <div>
-                                                            <h4
-                                                                    class="fadeInUp animated"
-                                                                    data-animation-in="fadeInUp"
-                                                                    style="opacity: 1"
-                                                            >
-                                                                30% ذخیره
-                                                            </h4>
-                                                            <h1
-                                                                    class="fadeInUp animated"
-                                                                    data-animation-in="fadeInUp"
-                                                                    data-delay-in="0.3"
-                                                                    style="opacity: 1; animation-delay: 0.3s"
-                                                            >
-                                                                قیمت ویژه
-                                                            </h1>
-                                                            <a
-                                                                    href="#"
-                                                                    class="btn btn-solid fadeInUp animated"
-                                                                    data-animation-in="fadeInUp"
-                                                                    data-delay-in="0.5"
-                                                                    tabindex="0"
-                                                                    style="opacity: 1; animation-delay: 0.5s"
-                                                            >خرید کنید
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button
-                        class="slick-next slick-arrow"
-                        aria-label="Next"
-                        type="button"
-                        style="display: block"
+          >
+            <div>
+              <div style="width: 100%; display: inline-block">
+                <div
+                  class="home bg-size blur-up lazyloaded"
+                  style="
+                    background-image: url('{% static 'images/home-banner/57.jpg' %} ');
+                    background-size: cover;
+                    background-position: center center;
+                    display: block;
+                  "
                 >
-                    Next
-                </button>
-            </div>
-        </div>
-    </section>
-    <!-- Home slider end -->
-
-    <div class="container">
-        <div class="banner-padding banner-furniture ratio2_1">
-            <div class="col-sm-12">
-                <div class="title2">
-                    <h2 class="title-inner2">ثبت درخواست</h2>
-                </div>
-                <form class="theme-form" action="" method="post">
-                    {% csrf_token %}
-
-                    <div class="form-row row">
-                        <div class="col-md-4">{{ form.type_window|as_crispy_field }}</div>
-                        <div class="col-md-4">{{ form.type_project|as_crispy_field }}</div>
-                        <div class="col-md-4">{{ form.number|as_crispy_field }}</div>
-                        <div class="col-md-4">{{ form.phone_number|as_crispy_field }}</div>
-                        <div class="col-md-4">{{ form.full_name|as_crispy_field }}</div>
-                         <div class="col-md-4">{{ form.city|as_crispy_field }}</div>
-
-                        <div class="col-md-12 p-3">
-                            <button class="btn btn-solid" type="submit">ثبت درخواست</button>
+                  <img
+                    src="{% static 'images/home-banner/57.jpg' %} "
+                    alt=""
+                    class="bg-img blur-up lazyloaded"
+                    style="display: none"
+                  />
+                  <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <div class="slider-contain px-padding">
+                          <div>
+                            <h4
+                              class="fadeInUp animated"
+                              data-animation-in="fadeInUp"
+                              style="opacity: 1"
+                            >
+                              30% ذخیره
+                            </h4>
+                            <h1
+                              class="fadeInUp animated"
+                              data-animation-in="fadeInUp"
+                              data-delay-in="0.3"
+                              style="opacity: 1; animation-delay: 0.3s"
+                            >
+                              قیمت ویژه
+                            </h1>
+                            <a
+                              href="#"
+                              class="btn btn-solid fadeInUp animated"
+                              data-animation-in="fadeInUp"
+                              data-delay-in="0.5"
+                              tabindex="0"
+                              style="opacity: 1; animation-delay: 0.5s"
+                              >خرید کنید
+                            </a>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                </form>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+      <button
+        class="slick-next slick-arrow"
+        aria-label="Next"
+        type="button"
+        style="display: block"
+      >
+        Next
+      </button>
     </div>
+  </div>
+</section>
+<!-- Home slider end -->
 
-    <section class="banner-goggles banner-padding ratio2_1">
-        <div class="container container-lg">
-            <div class="row partition3">
-                <div class="col-md-3">
-                    <a href="#">
-                        <div class="collection-banner p-right text-end">
-                            <div class="img-part">
-                                <img
-                                        src="{% static 'images/fashion/banner/38.jpg' %}"
-                                        class="img-fluid blur-up lazyload bg-img"
-                                        alt=""
-                                />
-                            </div>
-                            <div class="contain-banner banner-3">
-                                <div>
-                                    <h4>50 درصد تخفیف</h4>
-                                    <h2>speaker</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="#">
-                        <div class="collection-banner p-right text-end">
-                            <div class="img-part">
-                                <img
-                                        src="{% static 'images/fashion/banner/39.jpg' %}"
-                                        class="img-fluid blur-up lazyload bg-img"
-                                        alt=""
-                                />
-                            </div>
-                            <div class="contain-banner banner-3">
-                                <div>
-                                    <h4>50 درصد تخفیف</h4>
-                                    <h2>earplug</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="#">
-                        <div class="collection-banner p-right text-end">
-                            <div class="img-part">
-                                <img
-                                        src="{% static 'images/fashion/banner/40.jpg' %}"
-                                        class="img-fluid blur-up lazyload bg-img"
-                                        alt=""
-                                />
-                            </div>
-                            <div class="contain-banner banner-3">
-                                <div>
-                                    <h4>50 درصد تخفیف</h4>
-                                    <h2>best deal</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="#">
-                        <div class="collection-banner p-right text-end">
-                            <div class="img-part">
-                                <img
-                                        src="{% static 'images/fashion/banner/40.jpg' %}"
-                                        class="img-fluid blur-up lazyload bg-img"
-                                        alt=""
-                                />
-                            </div>
-                            <div class="contain-banner banner-3">
-                                <div>
-                                    <h4>50 درصد تخفیف</h4>
-                                    <h2>best deal</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+<div class="container">
+  <div class="banner-padding banner-furniture ratio2_1">
+    <div class="col-sm-12">
+      <div class="title2">
+        <h2 class="title-inner2">ثبت درخواست</h2>
+      </div>
+      <form class="theme-form" action="" method="post">
+        {% csrf_token %}
+
+        <div class="form-row row">
+          <div class="col-md-4">{{ form.type_window|as_crispy_field }}</div>
+          <div class="col-md-4">{{ form.type_project|as_crispy_field }}</div>
+          <div class="col-md-4">{{ form.number|as_crispy_field }}</div>
+          <div class="col-md-4">{{ form.phone_number|as_crispy_field }}</div>
+          <div class="col-md-4">{{ form.full_name|as_crispy_field }}</div>
+          <div class="col-md-4">{{ form.city|as_crispy_field }}</div>
+
+          <div class="col-md-12">
+            <button class="btn btn-solid" type="submit">ثبت درخواست</button>
+          </div>
         </div>
-    </section>
+      </form>
+    </div>
+  </div>
+</div>
 
-    <!-- instagram section -->
-    <section class="instagram ratio_square">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 p-0">
-                    <h2 class="title-borderless"># اینستاگرام</h2>
-                    <div class="slide-7 no-arrow slick-instagram">
-                        <div>
-                            <a href="#">
-                                <div class="instagram-box">
-                                    <img
-                                            alt=""
-                                            src="images/slider/2.jpg"
-                                            class="bg-img"
-                                            style="width: 100%"
-                                    />
-                                    <div class="overlay"><i class="fa fa-instagram"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <div class="instagram-box">
-                                    <img
-                                            alt=""
-                                            src="images/slider/3.jpg"
-                                            class="bg-img"
-                                            style="width: 100%"
-                                    />
-                                    <div class="overlay"><i class="fa fa-instagram"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <div class="instagram-box">
-                                    <img
-                                            alt=""
-                                            src="images/slider/4.jpg"
-                                            class="bg-img"
-                                            style="width: 100%"
-                                    />
-                                    <div class="overlay"><i class="fa fa-instagram"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <div class="instagram-box">
-                                    <img
-                                            alt=""
-                                            src="images/slider/9.jpg"
-                                            class="bg-img"
-                                            style="width: 100%"
-                                    />
-                                    <div class="overlay"><i class="fa fa-instagram"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <div class="instagram-box">
-                                    <img
-                                            alt=""
-                                            src="images/slider/6.jpg"
-                                            class="bg-img"
-                                            style="width: 100%"
-                                    />
-                                    <div class="overlay"><i class="fa fa-instagram"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <div class="instagram-box">
-                                    <img
-                                            alt=""
-                                            src="images/slider/7.jpg"
-                                            class="bg-img"
-                                            style="width: 100%"
-                                    />
-                                    <div class="overlay"><i class="fa fa-instagram"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <div class="instagram-box">
-                                    <img
-                                            alt=""
-                                            src="images/slider/8.jpg"
-                                            class="bg-img"
-                                            style="width: 100%"
-                                    />
-                                    <div class="overlay"><i class="fa fa-instagram"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <div class="instagram-box">
-                                    <img
-                                            alt=""
-                                            src="images/slider/9.jpg"
-                                            class="bg-img"
-                                            style="width: 100%"
-                                    />
-                                    <div class="overlay"><i class="fa fa-instagram"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <div class="instagram-box">
-                                    <img
-                                            alt=""
-                                            src="images/slider/2.jpg"
-                                            class="bg-img"
-                                            style="width: 100%"
-                                    />
-                                    <div class="overlay"><i class="fa fa-instagram"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<section class="banner-goggles banner-padding ratio2_1">
+  <div class="container container-lg">
+    <div class="row partition3">
+      <div class="col-md-3">
+        <a href="#">
+          <div class="collection-banner p-right text-end">
+            <div class="img-part">
+              <img
+                src="{% static 'images/fashion/banner/38.jpg' %}"
+                class="img-fluid blur-up lazyload bg-img"
+                alt=""
+              />
             </div>
+            <div class="contain-banner banner-3">
+              <div>
+                <h4>50 درصد تخفیف</h4>
+                <h2>speaker</h2>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <div class="collection-banner p-right text-end">
+            <div class="img-part">
+              <img
+                src="{% static 'images/fashion/banner/39.jpg' %}"
+                class="img-fluid blur-up lazyload bg-img"
+                alt=""
+              />
+            </div>
+            <div class="contain-banner banner-3">
+              <div>
+                <h4>50 درصد تخفیف</h4>
+                <h2>earplug</h2>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <div class="collection-banner p-right text-end">
+            <div class="img-part">
+              <img
+                src="{% static 'images/fashion/banner/40.jpg' %}"
+                class="img-fluid blur-up lazyload bg-img"
+                alt=""
+              />
+            </div>
+            <div class="contain-banner banner-3">
+              <div>
+                <h4>50 درصد تخفیف</h4>
+                <h2>best deal</h2>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <div class="collection-banner p-right text-end">
+            <div class="img-part">
+              <img
+                src="{% static 'images/fashion/banner/40.jpg' %}"
+                class="img-fluid blur-up lazyload bg-img"
+                alt=""
+              />
+            </div>
+            <div class="contain-banner banner-3">
+              <div>
+                <h4>50 درصد تخفیف</h4>
+                <h2>best deal</h2>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- instagram section -->
+<section class="instagram ratio_square">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <h2 class="title-borderless"># اینستاگرام</h2>
+        <div class="slide-7 no-arrow slick-instagram">
+          <div>
+            <a href="#">
+              <div class="instagram-box">
+                <img
+                  alt=""
+                  src="images/slider/2.jpg"
+                  class="bg-img"
+                  style="width: 100%"
+                />
+                <div class="overlay"><i class="fa fa-instagram"></i></div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="instagram-box">
+                <img
+                  alt=""
+                  src="images/slider/3.jpg"
+                  class="bg-img"
+                  style="width: 100%"
+                />
+                <div class="overlay"><i class="fa fa-instagram"></i></div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="instagram-box">
+                <img
+                  alt=""
+                  src="images/slider/4.jpg"
+                  class="bg-img"
+                  style="width: 100%"
+                />
+                <div class="overlay"><i class="fa fa-instagram"></i></div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="instagram-box">
+                <img
+                  alt=""
+                  src="images/slider/9.jpg"
+                  class="bg-img"
+                  style="width: 100%"
+                />
+                <div class="overlay"><i class="fa fa-instagram"></i></div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="instagram-box">
+                <img
+                  alt=""
+                  src="images/slider/6.jpg"
+                  class="bg-img"
+                  style="width: 100%"
+                />
+                <div class="overlay"><i class="fa fa-instagram"></i></div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="instagram-box">
+                <img
+                  alt=""
+                  src="images/slider/7.jpg"
+                  class="bg-img"
+                  style="width: 100%"
+                />
+                <div class="overlay"><i class="fa fa-instagram"></i></div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="instagram-box">
+                <img
+                  alt=""
+                  src="images/slider/8.jpg"
+                  class="bg-img"
+                  style="width: 100%"
+                />
+                <div class="overlay"><i class="fa fa-instagram"></i></div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="instagram-box">
+                <img
+                  alt=""
+                  src="images/slider/9.jpg"
+                  class="bg-img"
+                  style="width: 100%"
+                />
+                <div class="overlay"><i class="fa fa-instagram"></i></div>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="instagram-box">
+                <img
+                  alt=""
+                  src="images/slider/2.jpg"
+                  class="bg-img"
+                  style="width: 100%"
+                />
+                <div class="overlay"><i class="fa fa-instagram"></i></div>
+              </div>
+            </a>
+          </div>
         </div>
-    </section>
-    <!-- instagram section end -->
-{% endblock content %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- instagram section end -->
+{% endblock content %} {% block Scripts %}
+<script>
+  $("#id_city").select2();
+</script>
 
-{% block Scripts %}
-    <script>
-        $('#id_city').select2();
-    </script>
-
-    {#    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>#}
-    {#    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>#}
-    {#    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.min.js"></script>#}
-
-    {#    <script>#}
-    {##}
-    {#        $(document).ready(function () {#}
-    {#            var app = new Mapp({#}
-    {#                element: '#app',#}
-    {#                presets: {#}
-    {#                    latlng: {#}
-    {#                        {% if form.lat.value %}#}
-    {#                            lat: '{{ form.lat.value }}',#}
-    {#                        {% else %}#}
-    {#                            lat: 35.73249,#}
-    {#                        {% endif %}#}
-    {##}
-    {#                        {% if form.long.value %}#}
-    {#                            lng: '{{ form.long.value }}',#}
-    {#                        {% else %}#}
-    {#                            lng: 51.42268#}
-    {#                        {% endif %}#}
-    {#                    },#}
-    {##}
-    {#                    {% if form.lat.value and form.long.value %}#}
-    {#                        zoom: 16#}
-    {#                    {% else %}#}
-    {#                        zoom: 7#}
-    {#                    {% endif %}#}
-    {#                },#}
-    {#                apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIn0.eyJhdWQiOiIyMTQ5MSIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIiwiaWF0IjoxNjc4NzQ5OTY0LCJuYmYiOjE2Nzg3NDk5NjQsImV4cCI6MTY4MTE2OTE2NCwic3ViIjoiIiwic2NvcGVzIjpbImJhc2ljIl19.AobDdWKizuV0DAL8IFyUb8jLBrx8AzVu21HEOxAUTD8WhMZ-riaPX53e6_A7oj1NbwCBpTc8Jm3w2QAsYsTae2lCDoZB05X2pEcjoAYXpzRV2z-tBLgwairxtJunrKDSjKTIg9LpGzFu93xBQGmUnOfOho-Se4s_vIdUlrl19tdEPaKO763sHFQPnqf4Fbwh-L_ARuKaUV8j8aseg9n-vGbQ4w5juRbtMeNMm9adtt1ZVGWGUOJAHUD83IM4-FCiA7-P3Xincar-BXTY0PN1EK9Yvhn7akGQRudPYBsnU5NGe8ABmAFfXzdMwbSWnx1YO8fSfTmiQc2tHAqf1JmiIg'#}
-    {#            });#}
-    {#            app.addLayers();#}
-    {##}
-    {#            // Show selected location as a marker#}
-    {#            {% if form.lat.value and form.long.value %}#}
-    {#                ShowMarker(app, '{{ form.lat.value }}', '{{ form.long.value }}');#}
-    {#            {% endif %}#}
-    {##}
-    {#            // Implement location picker#}
-    {#            app.map.on('click', function (e) {#}
-    {#                // آدرس یابی و نمایش نتیجه در یک باکس مشخص#}
-    {#                ShowMarker(app, e.latlng.lat, e.latlng.lng);#}
-    {##}
-    {#                $('#id_lat').val(e.latlng.lat);#}
-    {#                $('#id_long').val(e.latlng.lng);#}
-    {##}
-    {#                // برای سفارشی سازی نمایش نتیجه به جای متد بالا از متد زیر میتوان استفاده کرد#}
-    {#            });#}
-    {#        });#}
-    {##}
-    {#        function ShowMarker(app, lat, long) {#}
-    {#            app.showReverseGeocode({#}
-    {#                state: {#}
-    {#                    latlng: {#}
-    {#                        lat: lat,#}
-    {#                        lng: long,#}
-    {#                    },#}
-    {#                    zoom: 16#}
-    {#                }#}
-    {#            });#}
-    {##}
-    {#            app.addMarker({#}
-    {#                name: 'advanced-marker',#}
-    {#                latlng: {#}
-    {#                    lat: lat,#}
-    {#                    lng: long,#}
-    {#                },#}
-    {#                icon: app.icons.red,#}
-    {#                popup: false#}
-    {#            });#}
-    {#        }#}
-    {##}
-    {#    </script>#}
-
-    {% if messages %}
-        {% for item in messages %}
-            <script>
-                Swal.fire({
-                    title: "تبریک ! 🥳",
-                    icon: 'success',
-                    text: '{{ item }}',
-                    type: "success",
-                    cancelButtonColor: 'var(--primary)',
-                    confirmButtonText: 'اوکی',
-                })
-            </script>
-        {% endfor %}
-    {% endif %}
-{% endblock %}
+{% comment %} {#
+<script
+  type="text/javascript"
+  src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"
+></script>
+#} {#
+<script
+  type="text/javascript"
+  src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"
+></script>
+#} {#
+<script
+  type="text/javascript"
+  src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.min.js"
+></script>
+#} {#
+<script> {% endcomment %}
+  {% comment %} #} {% endcomment %}
+      {##}
+      {#        $(document).ready(function () {#}
+      {#            var app = new Mapp({#}
+      {#                element: '#app',#}
+      {#                presets: {#}
+      {#                    latlng: {#}
+      {#                        {% if form.lat.value %}#}
+      {#                            lat: '{{ form.lat.value }}',#}
+      {#                        {% else %}#}
+      {#                            lat: 35.73249,#}
+      {#                        {% endif %}#}
+      {##}
+      {#                        {% if form.long.value %}#}
+      {#                            lng: '{{ form.long.value }}',#}
+      {#                        {% else %}#}
+      {#                            lng: 51.42268#}
+      {#                        {% endif %}#}
+      {#                    },#}
+      {##}
+      {#                    {% if form.lat.value and form.long.value %}#}
+      {#                        zoom: 16#}
+      {#                    {% else %}#}
+      {#                        zoom: 7#}
+      {#                    {% endif %}#}
+      {#                },#}
+      {#                apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIn0.eyJhdWQiOiIyMTQ5MSIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIiwiaWF0IjoxNjc4NzQ5OTY0LCJuYmYiOjE2Nzg3NDk5NjQsImV4cCI6MTY4MTE2OTE2NCwic3ViIjoiIiwic2NvcGVzIjpbImJhc2ljIl19.AobDdWKizuV0DAL8IFyUb8jLBrx8AzVu21HEOxAUTD8WhMZ-riaPX53e6_A7oj1NbwCBpTc8Jm3w2QAsYsTae2lCDoZB05X2pEcjoAYXpzRV2z-tBLgwairxtJunrKDSjKTIg9LpGzFu93xBQGmUnOfOho-Se4s_vIdUlrl19tdEPaKO763sHFQPnqf4Fbwh-L_ARuKaUV8j8aseg9n-vGbQ4w5juRbtMeNMm9adtt1ZVGWGUOJAHUD83IM4-FCiA7-P3Xincar-BXTY0PN1EK9Yvhn7akGQRudPYBsnU5NGe8ABmAFfXzdMwbSWnx1YO8fSfTmiQc2tHAqf1JmiIg'#}
+      {#            });#}
+      {#            app.addLayers();#}
+      {##}
+      {#            // Show selected location as a marker#}
+      {#            {% if form.lat.value and form.long.value %}#}
+      {#                ShowMarker(app, '{{ form.lat.value }}', '{{ form.long.value }}');#}
+      {#            {% endif %}#}
+      {##}
+      {#            // Implement location picker#}
+      {#            app.map.on('click', function (e) {#}
+      {#                // آدرس یابی و نمایش نتیجه در یک باکس مشخص#}
+      {#                ShowMarker(app, e.latlng.lat, e.latlng.lng);#}
+      {##}
+      {#                $('#id_lat').val(e.latlng.lat);#}
+      {#                $('#id_long').val(e.latlng.lng);#}
+      {##}
+      {#                // برای سفارشی سازی نمایش نتیجه به جای متد بالا از متد زیر میتوان استفاده کرد#}
+      {#            });#}
+      {#        });#}
+      {##}
+      {#        function ShowMarker(app, lat, long) {#}
+      {#            app.showReverseGeocode({#}
+      {#                state: {#}
+      {#                    latlng: {#}
+      {#                        lat: lat,#}
+      {#                        lng: long,#}
+      {#                    },#}
+      {#                    zoom: 16#}
+      {#                }#}
+      {#            });#}
+      {##}
+      {#            app.addMarker({#}
+      {#                name: 'advanced-marker',#}
+      {#                latlng: {#}
+      {#                    lat: lat,#}
+      {#                    lng: long,#}
+      {#                },#}
+      {#                icon: app.icons.red,#}
+      {#                popup: false#}
+      {#            });#}
+      {#        }#}
+      {##}
+      {#</script>#} 
+{% if messages %} {% for item in messages %}
+<script>
+  Swal.fire({
+    title: "تبریک ! 🥳",
+    icon: "success",
+    text: "{{ item }}",
+    type: "success",
+    cancelButtonColor: "var(--primary)",
+    confirmButtonText: "اوکی",
+  });
+</script>
+{% endfor %} {% endif %} {% endblock %}
