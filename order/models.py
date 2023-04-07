@@ -1,10 +1,9 @@
 from django.db import models
 from accounts.models import User
-from common.models import City
 from extenstions.utils import jalali_converter
 
 # Create your models here.
-from order.helpers import type_project_CHOICES, status_CHOICES
+from order.helpers import type_project_CHOICES, status_CHOICES, city_CHOICES
 
 
 class TypeWindow(models.Model):
@@ -25,17 +24,18 @@ class Order(models.Model):
     type_project = models.CharField(
         max_length=2, choices=type_project_CHOICES, null=True, verbose_name="نوع پروژه ")
     number = models.FloatField(max_length=1000, null=True, verbose_name="تعداد واحد ")
-    # city = models.CharField(max_length=100, null=True, verbose_name="شهر ")
-    # addr = models.TextField(null=True, blank=True, verbose_name="ادرس محل ")
     phone_number = models.CharField(
         max_length=11, unique=True, null=True, verbose_name="شماره تماس")
     full_name = models.CharField(
         max_length=100, null=True, verbose_name="نام و نام خانوادگی ")
+    # addr = models.TextField(null=True, blank=True, verbose_name="ادرس محل ")
     # lat = models.TextField(null=True, blank=True, verbose_name='latitude')
     # long = models.TextField(null=True, blank=True, verbose_name='longitude')
-    city = models.ForeignKey(
-        to=City, on_delete=models.CASCADE, related_name="orders", null=True, verbose_name="شهر"
-    )
+    # city = models.ForeignKey(
+    #     to=City, on_delete=models.CASCADE, related_name="orders", null=True, verbose_name="شهر"
+    # )
+    citys = models.CharField(
+        max_length=2, choices=city_CHOICES, null=True, verbose_name="شهر")
     status = models.CharField(
         max_length=2, choices=status_CHOICES, blank=True, null=True, default='B', verbose_name="وضعیت درخواست")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")
@@ -57,3 +57,7 @@ class Order(models.Model):
     @property
     def get_status(self):
         return dict(status_CHOICES).get(self.status, '')
+
+    @property
+    def get_city(self):
+        return dict(city_CHOICES).get(self.status, '')
