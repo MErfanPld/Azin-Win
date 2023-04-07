@@ -60,4 +60,4 @@ class Order(models.Model):
 
     @property
     def get_city(self):
-        return dict(city_CHOICES).get(self.status, '')
+        return dict(city_CHOICES).get(self.citys, '')
