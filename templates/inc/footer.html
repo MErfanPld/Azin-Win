@@ -1,46 +1,6 @@
+{% load static %}
 <footer class="footer-light">
-    <div class="light-layout">
-      <div class="container">
-        <section class="small-section border-section border-top-0">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="subscribe">
-                <div>
-                  <h4>اول همه چیز را بدانید</h4>
-                  <p>
-                    با ثبت نام در خبرنامه ما هرگز چیزی را از از دست ندهید.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <form
-                action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"
-                class="form-inline subscribe-form auth-form needs-validation"
-                method="post"
-                id="mc-embedded-subscribe-form"
-                name="mc-embedded-subscribe-form"
-                target="_blank"
-              >
-                <div class="form-group mx-sm-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="EMAIL"
-                    id="mce-EMAIL"
-                    placeholder="ایمیل را وارد کنید "
-                    required=" required"
-                  />
-                </div>
-                <button type="submit" class="btn btn-solid" id="mc-submit">
-                  subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
+
     <section class="section-b-space light-layout">
       <div class="container">
         <div class="row footer-theme partition-f">
@@ -50,7 +10,7 @@
             </div>
             <div class="footer-contant">
               <div class="footer-logo">
-                <img src="../assets/images/icon/logo.png" alt="" />
+                <img src="{% static 'اصلی با نوشته.jpg' %}" alt="" style="height: 35px;"/>
               </div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -160,29 +120,29 @@
               <ul>
                 <li>
                   <a href="#"
-                    ><img src="../assets/images/icon/visa.png" alt=""
+                    ><img src="{% static 'images/icon/visa.png' %}" alt=""
                   /></a>
                 </li>
                 <li>
                   <a href="#"
-                    ><img src="../assets/images/icon/mastercard.png" alt=""
+                    ><img src="{% static 'images/icon/mastercard.png' %}" alt=""
                   /></a>
                 </li>
                 <li>
                   <a href="#"
-                    ><img src="../assets/images/icon/paypal.png" alt=""
+                    ><img src="{% static 'images/icon/paypal.png' %}" alt=""
                   /></a>
                 </li>
                 <li>
                   <a href="#"
                     ><img
-                      src="../assets/images/icon/american-express.png"
+                      src="{% static 'images/icon/american-express.png' %}"
                       alt=""
                   /></a>
                 </li>
                 <li>
                   <a href="#"
-                    ><img src="../assets/images/icon/discover.png" alt=""
+                    ><img src="{% static 'images/icon/discover.png' %}" alt=""
                   /></a>
                 </li>
               </ul>
