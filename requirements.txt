@@ -9,6 +9,7 @@ django-filter==22.1
 django-google-maps==0.13.0
 djangorestframework==3.14.0
 idna==3.4
+kavenegar==1.1.2
 Pillow==9.4.0
 pycodestyle==2.10.0
 python-decouple==3.8
