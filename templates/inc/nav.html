@@ -1,155 +1,178 @@
 {% load static %}
 
 <header>
-    <div class="mobile-fix-option"></div>
-    <div class="top-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="header-contact">
-                        <ul>
-                            <li>خوش آمدید به فروشگاه مالتی کارت</li>
-                            <li>
-                                <i class="fa fa-phone" aria-hidden="true"></i>شماره تماس :
-                                125-520-6520-550
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-end">
-                    <ul class="header-dropdown">
-                        {% if request.user.is_authenticated %}
-                        <li class="onhover-dropdown mobile-account">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <a href="{% url 'order:dashboard' %}">داشبورد</a>
-                        </li>
-                        <li class="onhover-dropdown mobile-account">
-                            <i class="fa fa-sign-out" aria-hidden="true"></i>
-                            <a href="{% url 'logout' %}">خروج</a>
-                        </li>
-                        {% else %}
-                        <li class="onhover-dropdown mobile-account">
-                            <i class="fa fa-sign-in" aria-hidden="true"></i>
-                            <a href="{% url 'login' %}">ورود</a>
-                        </li>
-                        <li class="onhover-dropdown mobile-account">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <a href="{% url 'register' %}">ثبت نام</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="mobile-fix-option"></div>
+  <div class="top-header">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="main-menu">
-                    <div class="menu-left">
-                        <div class="brand-logo">
-                            <a href="index.html"><img src="{% static 'اصلی با نوشته.jpg' %}"
-                                                      class="img-fluid blur-up lazyloaded" alt="" style="height: 35px;"></a>
-                        </div>
-                    </div>
-                    <div class="menu-right pull-right">
-                        <div>
-                            <nav id="main-nav">
-                                <div class="toggle-nav">
-                                    <i class="fa fa-bars sidebar-bar"></i>
-                                </div>
-                                <ul
-                                        id="main-menu"
-                                        class="sm pixelstrap sm-horizontal hover-unset"
-                                        data-smartmenus-id="16784786105365483"
-                                >
-                                    <li>
-                                        <div class="mobile-back text-start ltr">
-                                            برگشت<i
-                                                class="fa fa-angle-right ps-2"
-                                                aria-hidden="true"
-                                        ></i>
-                                        </div>
-                                    </li>
-                                    <li><a href="{% url 'order:order_home' %}">خانه</a></li>
-                                    <li><a href="{% url 'order:order_home' %}">ثبت درخواست
-                                    </a></li>
-                                    <li><a href="{% url 'content:home_list_content' %}?type_content=A">یو پی وی سی
-                                    </a></li>
-                                    <li><a href="{% url 'content:home_list_content' %}?type_content=B">آلومینیوم ترمال
-                                        بریک
-                                    </a></li>
-                                    <li><a href="{% url 'content:home_list_content' %}?type_content=C">شیشه نما</a></li>
-                                    <li><a href="{% url 'top_projects:home_list_top_projects' %}">پروژه های برتر
-                                    </a></li>
-                                    <li><a href="{% url 'about_us' %}">درباره ما
-                                    </a></li>
-                                    <li><a href="{% url 'contact_us:contact_us' %}">تماس با ما
-                                    </a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div>
-                            <div class="icon-nav">
-                                <ul>
-                                    <li class="onhover-div mobile-search">
-
-                                        <div>
-                                            <img
-                                                    src="{% static 'images/icon/search.png' %}"
-                                                    onclick="openSearch()"
-                                                    class="img-fluid blur-up lazyloaded"
-                                                    alt=""
-                                            />
-                                            <i class="ti-search" onclick="openSearch()"></i>
-                                        </div>
-                                        <div id="search-overlay" class="search-overlay">
-                                            <div>
-                        <span
-                                class="closebtn"
-                                onclick="closeSearch()"
-                                title="Close Overlay"
-                        >×</span
-                        >
-                                                <div class="overlay-content">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col-xl-12">
-                                                                <form action="{% url 'content:home_list_content' %}">
-                                                                    {% if request.GET.type_content %}
-                                                                    <input type="hidden"
-                                                                           value="{{ request.GET.type_content }}"
-                                                                           name="type_content">
-                                                                    {% endif %}
-
-                                                                    <div class="form-group">
-                                                                        <input
-                                                                                name="search"
-                                                                                value="{{ request.GET.search }}"
-                                                                                type="text"
-                                                                                class="form-control"
-                                                                                id="exampleInputPassword1"
-                                                                                placeholder="جستجو ... "
-                                                                        />
-                                                                    </div>
-                                                                    <button type="submit" class="btn btn-primary">
-                                                                        <i class="fa fa-search"></i>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="header-contact">
+            <ul>
+              <li>خوش آمدید به فروشگاه مالتی کارت</li>
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>شماره تماس :
+                125-520-6520-550
+              </li>
+            </ul>
+          </div>
         </div>
+        <div class="col-lg-6 text-end">
+          <ul class="header-dropdown">
+            {% if request.user.is_authenticated %}
+            <li class="onhover-dropdown mobile-account">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <a href="{% url 'order:dashboard' %}">داشبورد</a>
+            </li>
+            <li class="onhover-dropdown mobile-account">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <a href="{% url 'logout' %}">خروج</a>
+            </li>
+            {% else %}
+            <li class="onhover-dropdown mobile-account">
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+              <a href="{% url 'login' %}">ورود</a>
+            </li>
+            <li class="onhover-dropdown mobile-account">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <a href="{% url 'register' %}">ثبت نام</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="main-menu">
+          <div class="menu-left">
+            <div class="brand-logo">
+              <a href="/"
+                ><img
+                  src="{% static 'img/zeynb copy.png' %}"
+                  class="img-fluid blur-up lazyloaded"
+                  alt=""
+                  style="height: 44px; margin-right: -47px"
+              /></a>
+            </div>
+          </div>
+          <div class="menu-right pull-right">
+            <div>
+              <nav id="main-nav">
+                <div class="toggle-nav">
+                  <i class="fa fa-bars sidebar-bar"></i>
+                </div>
+                <ul
+                  id="main-menu"
+                  class="sm pixelstrap sm-horizontal hover-unset"
+                  data-smartmenus-id="16784786105365483"
+                >
+                  <li>
+                    <div class="mobile-back text-start ltr">
+                      برگشت<i
+                        class="fa fa-angle-right ps-2"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </li>
+                  <li><a href="{% url 'order:order_home' %}">خانه</a></li>
+                  <li>
+                    <a href="{% url 'order:order_home' %}">ثبت درخواست </a>
+                  </li>
+                  <li>
+                    <a
+                      href="{% url 'content:home_list_content' %}?type_content=A"
+                      >یو پی وی سی
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="{% url 'content:home_list_content' %}?type_content=B"
+                      >آلومینیوم ترمال بریک
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="{% url 'content:home_list_content' %}?type_content=C"
+                      >شیشه نما</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{% url 'top_projects:home_list_top_projects' %}"
+                      >پروژه های برتر
+                    </a>
+                  </li>
+                  <li><a href="{% url 'about_us' %}">درباره ما </a></li>
+                  <li><a href="{% url 'contact_us:contact_us' %}">تماس با ما</a></li>
+                  <!-- <li><a href="{% url 'contact_us:contact_us' %}">تماس با ما
+                                    </a></li> -->
+                </ul>
+              </nav>
+            </div>
+            <div>
+              <div class="icon-nav">
+                <ul>
+                  <li class="onhover-div mobile-search">
+                    <div>
+                      <img
+                        src="{% static 'images/icon/search.png' %}"
+                        onclick="openSearch()"
+                        class="img-fluid blur-up lazyloaded"
+                        alt=""
+                      />
+                      <i class="ti-search" onclick="openSearch()"></i>
+                    </div>
+                    <div id="search-overlay" class="search-overlay">
+                      <div>
+                        <span
+                          class="closebtn"
+                          onclick="closeSearch()"
+                          title="Close Overlay"
+                          >×</span
+                        >
+                        <div class="overlay-content">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-xl-12">
+                                <form
+                                  action="{% url 'content:home_list_content' %}"
+                                >
+                                  {% if request.GET.type_content %}
+                                  <input
+                                    type="hidden"
+                                    value="{{ request.GET.type_content }}"
+                                    name="type_content"
+                                  />
+                                  {% endif %}
+
+                                  <div class="form-group">
+                                    <input
+                                      name="search"
+                                      value="{{ request.GET.search }}"
+                                      type="text"
+                                      class="form-control"
+                                      id="exampleInputPassword1"
+                                      placeholder="جستجو ... "
+                                    />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-search"></i>
+                                  </button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>

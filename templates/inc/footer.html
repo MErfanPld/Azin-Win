@@ -10,7 +10,7 @@
             </div>
             <div class="footer-contant">
               <div class="footer-logo">
-                <img src="{% static 'اصلی با نوشته.jpg' %}" alt="" style="height: 35px;"/>
+                <img src="{% static 'img/zeynb copy.png' %}" alt="" style="height: 44px;"/>
               </div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -51,15 +51,16 @@
           <div class="col offset-xl-1">
             <div class="sub-title">
               <div class="footer-title">
-                <h4>my account</h4>
+                <h4>لینک اسان</h4>
               </div>
               <div class="footer-contant">
                 <ul>
-                  <li><a href="#">mens</a></li>
-                  <li><a href="#">womens</a></li>
-                  <li><a href="#">clothing</a></li>
-                  <li><a href="#">accessories</a></li>
-                  <li><a href="#">featured</a></li>
+                  <li><a href="{% url 'order:order_home' %}">خانه</a></li>
+                  <li><a href="{% url 'order:order_home' %}">ثبت درخواست</a></li>
+                  <li><a href="{% url 'content:home_list_content' %}?type_content=A">یو پی وی سی</a></li>
+                  <li><a href="{% url 'content:home_list_content' %}?type_content=B">آلومینیوم ترمال بریک</a></li>
+                  <li><a href="{% url 'content:home_list_content' %}?type_content=C">شیشه نما</a></li>
+                  <li><a href="{% url 'top_projects:home_list_top_projects' %}">پروژه برتر</a></li>
                 </ul>
               </div>
             </div>
@@ -67,15 +68,12 @@
           <div class="col">
             <div class="sub-title">
               <div class="footer-title">
-                <h4>چرا ما</h4>
+                <h4>اطلاعات</h4>
               </div>
               <div class="footer-contant">
                 <ul>
-                  <li><a href="#">روش ارسال </a></li>
-                  <li><a href="#">خرید مطمئن</a></li>
-                  <li><a href="#">gallary</a></li>
-                  <li><a href="#">affiliates</a></li>
-                  <li><a href="#">contacts</a></li>
+                  <li><a href="{% url 'about_us' %}">درباره ما</a></li>
+                  <li><a href="{% url 'contact_us:contact_us' %}">تماس با ما</a></li>
                 </ul>
               </div>
             </div>
@@ -120,29 +118,23 @@
               <ul>
                 <li>
                   <a href="#"
-                    ><img src="{% static 'images/icon/visa.png' %}" alt=""
+                    ><img src="{% static 'img/آکپا.jpg' %}" alt="" style="height: 90px;"
                   /></a>
                 </li>
                 <li>
                   <a href="#"
-                    ><img src="{% static 'images/icon/mastercard.png' %}" alt=""
+                    ><img src="{% static 'img/Wintech.png' %}" alt="" style="height: 90px;"
                   /></a>
                 </li>
                 <li>
                   <a href="#"
-                    ><img src="{% static 'images/icon/paypal.png' %}" alt=""
+                    ><img src="{% static 'img/201991710178328.png' %}" alt="" style="height: 59px;"
                   /></a>
                 </li>
+
                 <li>
                   <a href="#"
-                    ><img
-                      src="{% static 'images/icon/american-express.png' %}"
-                      alt=""
-                  /></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><img src="{% static 'images/icon/discover.png' %}" alt=""
+                    ><img src="{% static 'img/tuv-nord-vector-logo.png' %}" alt="" style="height: 90px;"
                   /></a>
                 </li>
               </ul>
