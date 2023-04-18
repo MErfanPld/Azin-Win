@@ -51,7 +51,7 @@
                                 <h6>{{content.jcreated}}</h6> <a href="{% url 'content:home_detail_content' content.id content.slug %}">
                                     <h4 class="">{{content.title}}</h4>
                                 </a>
-                                <p>{{content.body | truncatewords:50}}</p>
+                                <p>{{content.body |safe| truncatewords:50}}</p>
                             </div>
                         </div>
                     </div>
