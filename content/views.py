@@ -35,7 +35,7 @@ class ContentDetailView(DetailView):
     template_name = 'content/detail_content.html'
 
     def setup(self, request, *args, **kwargs):
-        self.content_instance = get_object_or_404(Content, pk=kwargs['c_id'], slug=kwargs['c_slug'])
+        self.content_instance = get_object_or_404(Content, pk=kwargs['c_id'], slug=slugify(str(kwargs['c_slug']), True))
         return super().setup(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
