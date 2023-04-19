@@ -10,7 +10,7 @@ class About_us(models.Model):
     desc = models.TextField(verbose_name="توضیحات")
 
     def __str__(self):
-        return f"{self.tel} "
+        return f"{self.tel}"
 
     class Meta:
         verbose_name = "درباره ما"
