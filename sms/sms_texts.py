@@ -25,8 +25,8 @@
 # }
 
 SMS_TEXTS = {
-    'verify_code': '1234',
-    'welcome_message': '1234',
-    'order_message': "1234",
+    'verify_code': '134670',
+    'welcome_message': '134669',
+    'order_message': "134668",
     'order_message_2': "کاربر گرامی {0}\nدرخواست شما با موفقیت ثبت گردید.\nهمکاران ما تا ساعاتی دیگر با شما تماس خواهند گرفت.\nآذین وین",
 }

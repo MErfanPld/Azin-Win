@@ -16,10 +16,6 @@ def send_sms(receiver, body_id):
     # api_key = '6A7A663139434F576369452F385972337444784A637A505374637147524C396F6F7A6B4338614333414F453D'
     # response = requests.get(f'https://api.kavenegar.com/v1/{api_key}/sms/send.json?receptor=09396988720&message=salam')
 
-    print('wwwwwwwwwwwwwwwwwwww')
-    print(response.status_code)
-    print(response.text)
-
     if response.status_code and response.json().get('RetStatus') == 1:
         return False
 
