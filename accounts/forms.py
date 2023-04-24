@@ -72,7 +72,7 @@ class RegisterForm(forms.ModelForm):
 
         # sms_text = SMS_TEXTS['verify_code'].format(code.code)
         sms_text = SMS_TEXTS['welcome_message'].format(user.phone_number)
-        send_sms(user.phone_number, sms_text)
+        send_sms(user.phone_number, sms_text, user.phone_number)
         return user
 
 
@@ -102,7 +102,7 @@ class PasswordResetForm(forms.ModelForm):
         self.request.session['verify_phone_number'] = phone_number
         messages.success(self.request, 'کد تایید حساب کاربری به شماره موبایل شما پیامک شد.')
         sms_text = SMS_TEXTS['verify_code'].format(code.code)
-        send_sms(phone_number, sms_text)
+        send_sms(phone_number, sms_text, code.code)
         return code
 
 

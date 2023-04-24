@@ -27,7 +27,7 @@ class OtpCodeSerializer(serializers.Serializer):
 
         code = OtpCode.objects.create_new_code(user)
         sms_text = SMS_TEXTS['verify_code'].format(code.code)
-        send_sms(user.phone_number, sms_text)
+        send_sms(user.phone_number, sms_text, code.code)
         return code
 
 

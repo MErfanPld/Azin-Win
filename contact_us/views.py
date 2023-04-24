@@ -30,7 +30,7 @@ class ContactUsView(View):
             obj = new_order.save()
 
             sms_text = SMS_TEXTS['order_message'].format(new_order.full_name)
-            send_sms(new_order.phone_number, sms_text)
+            send_sms(new_order.phone_number, sms_text, new_order.full_name)
             messages.success(request,
                              f"کاربر گرامی پیام شما با موفقیت ثبت شد و پس از بررسی با شما تماس گرفته خواهد شد.")
 

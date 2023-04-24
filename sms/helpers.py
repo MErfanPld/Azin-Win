@@ -3,11 +3,11 @@ from django.conf import settings
 from kavenegar import *
 
 
-def send_sms(receiver, body_id):
+def send_sms(receiver, body_id, param):
     data = {
         'username': settings.SMS_USERNAME,
         'password': settings.SMS_PASSWORD,
-        'text': f'{receiver}',
+        'text': f'{param}',
         'to': receiver,
         'bodyId': body_id,
     }
