@@ -51,7 +51,7 @@ class OrderCreateView(View):
             new_order = form.save(commit=False)
             obj = new_order.save()
 
-            sms_text = SMS_TEXTS['order_message'].format(new_order.full_name)
+            sms_text = SMS_TEXTS['order_message']
             send_sms(new_order.phone_number, sms_text, new_order.full_name)
             messages.success(request,
                              f"کاربر گرامی درخواست شما با موفقیت ثبت شد و همکاران ما تا ساعاتی دیگر با شما تماس خواهند گرفت. برای مشاهده سفارشات خود ثبت نام بکنید.")
