@@ -1,0 +1,72 @@
+# ! ======================= Mysql =======================#
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'mysql.connector.django',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
+    }
+}
+
+
+ALLOWED_HOSTS = ['azinwin.com', 'www.azinwin.com']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SECRET_KEY = 'django-insecure-^jk_s__-kis)_hx3jxob7&*p$m(^$_v_l5*3g_8ysjffo908tt'
+DEBUG = True
+
+
+WEBSITE_TILE='موسسه آموزشی سائی'
+
+DB_NAME = 'azin_win_db'
+DB_USER = 'azin_win'
+DB_PASSWORD = 'mNhN(;4ILTAl'
+DB_HOST = 127.0.0.1
+DB_PORT = '3306'
+
+POSTGRES_DB_NAME = 'gsmbartar'
+POSTGRES_DB_USER = 'postgres'
+POSTGRES_DB_PASSWORD = '1'
+POSTGRES_DB_HOST = 'postgres'
+POSTGRES_DB_PORT = '5432'
+
+SMS_USERNAME = '09191259193'
+SMS_PASSWORD = 'Yahaghmadad@1996'
+SMS_FROM_NUMBER = '50004001259193'
+SMS_WEB_SERVICE_URL = https://rest.payamak-panel.com/api/SendSMS/BaseServiceNumber
+SMS_WEB_SERVICE_TOKEN = 
+'6A7A663139434F576369452F385972337444784A637A505374637147524C396F6F7A6B4338614333414F453D'
+
+MERCHANT_CODE = '9bf2bcda-c146-4f0c-b13f-b229503248e7'
+MOBILE_NUMBER = '09121111111'
+EMAIL_ADDRESS = 'test@gmail.com'
+
+LOGIN_URL = '/accounts/login'
