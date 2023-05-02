@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'css/jquery.toast.min.css' %}">
+
+    <!-- latest jquery-->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/angular.min.js' %}"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<form action="">
+    {% csrf_token %}
+
+    {% for field in form %}
+        {% if field.name != 'status' %}
+            {{ field }}
+        {% endif %}
+    {% endfor %}
+    <button type="button" ng-click="SubmitOrder()">ثبت</button>
+</form>
+
+
+<script src="{% static 'js/jquery.toast.min.js' %}"></script>
+<script src="{% static 'js/helpers.js' %}"></script>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.config(function ($interpolateProvider, $httpProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+</script>
+
+<script>
+    app.controller('myCtrl', function ($scope, $http) {
+            $scope.id = null;
+            $scope.data = {};
+            $scope.is_submited = false;
+
+            $scope.SubmitOrder = function () {
+                {% for field in form %}
+                    {% if field.name != 'status' %}
+                        if (!$scope.data['{{ field.name }}']) {
+                            createToast('error', 'لطفا همه مقادیر را وارد کنید.');
+                            return;
+                        }
+                    {% endif %}
+                {% endfor %}
+
+                $scope.is_submited = true;
+
+                $http.post(`/api/order/`, $scope.data).then(res => {
+                    createToast('success', 'کاربر گرامی درخواست شما با موفقیت ثبت شد و همکاران ما تا ساعاتی دیگر با شما تماس خواهند گرفت. برای مشاهده سفارشات خود ثبت نام بکنید.');
+                    $scope.is_submited = false;
+                    $scope.data = {};
+                }).catch(err => {
+                        $scope.loading = false;
+
+                        if (err.data['phone_number']) {
+                            createToast('error', err.data['phone_number'][0]);
+                            return;
+                        }
+
+                        parseError(err, 'خطایی رخ داد');
+                    }
+                )
+                ;
+            }
+        }
+    )
+    ;
+</script>
+
+</body>
+</html>

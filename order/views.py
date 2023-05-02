@@ -34,6 +34,17 @@ def test_show_map_ir(request):
     return render(request, 'test_map_ir.html', context)
 
 
+def test_submit_order_angular_js(request):
+    context = {
+        'form': OrderForm()
+    }
+
+    print('wwwwwwwwwwwwwwwwwwww')
+    print(Order.objects.count())
+
+    return render(request, 'test_submit_order_angular_js.html', context)
+
+
 def home(request):
     return render(request, 'order/home.html')
 

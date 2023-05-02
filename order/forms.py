@@ -13,6 +13,11 @@ class OrderForm(forms.ModelForm):
             'long': forms.HiddenInput(),
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for name, field in self.fields.items():
+            field.widget.attrs.update({'ng-model': 'data.' + name})
+
 
 class OrderChangeStatusForm(forms.ModelForm):
     class Meta:
