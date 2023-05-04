@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 
+from order.forms import OrderForm
 from .filters import ContentFilters
 from .helpers import type_content_CHOICES, status_content_CHOICES
 from .models import Content
@@ -20,6 +21,8 @@ class ContentListView(View):
     def get(self, request, *args, **kwargs):
         contents = Content.objects.filter(status='A')
         context = {}
+
+        context['form'] = OrderForm()
 
         type_content = request.GET.get('type_content')
         if type_content:
