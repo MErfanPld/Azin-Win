@@ -22,7 +22,11 @@
     <title>اذین وین {% block title %}{% endblock title %}</title>
 
     <!--Google font-->
+    <link rel="stylesheet" href="{% static 'css/jquery.toast.min.css' %}">
 
+    <!-- latest jquery-->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/angular.min.js' %}"></script>
     <!-- Icons -->
     {% include './inc/_header.html' %} {% block Styles %}{% endblock %}
   </head>

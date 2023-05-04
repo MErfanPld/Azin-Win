@@ -35,6 +35,18 @@
 
 <!-- This -->
 
+<form action="">
+    {% csrf_token %}
+
+    {% for field in form %}
+        {% if field.name != 'status' %}
+            {{ field }}
+        {% endif %}
+    {% endfor %}
+    <button type="button" ng-click="SubmitOrder()">ثبت</button>
+</form>
+
+
 
 <section class="section-b-space blog-detail-page review-page">
     <div class="container">
@@ -58,35 +70,6 @@
 </section>
 
 
-<!-- This -->
-
-<!-- <section class="section-b-space blog-page ratio2_3">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                {% for content in contents %}
-                <div class="row blog-media">
-                    <div class="col-xl-6">
-                        <div class="blog-left">
-                            <a href="{% url 'content:home_detail_content' content.id content.slug %}" class="bg-size blur-up lazyloaded" style="background-image: url(&quot;{{content.thumnail.url}}&quot;); background-size: cover; background-position: center center; display: block;"><img src="{{content.thumnail.url}}" class="img-fluid blur-up bg-img lazyloaded" alt="" style="display: none;"></a>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="blog-right">
-                            <div>
-                                <h6>{{content.jcreated}}</h6> <a href="{% url 'content:home_detail_content' content.id content.slug %}">
-                                    <h4 class="">{{content.title}}</h4>
-                                </a>
-                                <p>{{content.body |safe| truncatewords:50}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section> -->
 
 {% endblock content %}
 
@@ -105,4 +88,60 @@
             </script>
         {% endfor %}
     {% endif %}
+
+
+    <script src="{% static 'js/jquery.toast.min.js' %}"></script>
+    <script src="{% static 'js/helpers.js' %}"></script>
+    
+    <script>
+        var app = angular.module("myApp", []);
+        app.config(function ($interpolateProvider, $httpProvider) {
+            $interpolateProvider.startSymbol('[[');
+            $interpolateProvider.endSymbol(']]');
+    
+            $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+            $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+        });
+    </script>
+    
+    <script>
+        app.controller('myCtrl', function ($scope, $http) {
+                $scope.id = null;
+                $scope.data = {};
+                $scope.is_submited = false;
+    
+                $scope.SubmitOrder = function () {
+                    {% for field in form %}
+                        {% if field.name != 'status' %}
+                            if (!$scope.data['{{ field.name }}']) {
+                                createToast('error', 'لطفا همه مقادیر را وارد کنید.');
+                                return;
+                            }
+                        {% endif %}
+                    {% endfor %}
+    
+                    $scope.is_submited = true;
+    
+                    $http.post(`/api/order/`, $scope.data).then(res => {
+                        createToast('success', 'کاربر گرامی درخواست شما با موفقیت ثبت شد و همکاران ما تا ساعاتی دیگر با شما تماس خواهند گرفت. برای مشاهده سفارشات خود ثبت نام بکنید.');
+                        $scope.is_submited = false;
+                        $scope.data = {};
+                    }).catch(err => {
+                            $scope.loading = false;
+    
+                            if (err.data['phone_number']) {
+                                createToast('error', err.data['phone_number'][0]);
+                                return;
+                            }
+    
+                            parseError(err, 'خطایی رخ داد');
+                        }
+                    )
+                    ;
+                }
+            }
+        )
+        ;
+    </script>
+
 {% endblock %}
