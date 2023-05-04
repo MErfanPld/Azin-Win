@@ -34,7 +34,30 @@
 
 
 <!-- This -->
-<!-- =========================================== -->
+
+
+<section class="section-b-space blog-detail-page review-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="comment-section">
+                {% for content in contents %}
+                    <li>
+                        <div class="media">
+                            <div class="media-body">
+                                <h4>{{content.title}} <span>({{content.jcreated}})</span></h4>
+                                <p>{{content.body |safe}}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- This -->
 
 <!-- <section class="section-b-space blog-page ratio2_3">

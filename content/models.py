@@ -12,9 +12,9 @@ class Content(models.Model):
                              null=True, verbose_name="عنوان محتوا")
     slug = models.SlugField(max_length=200, unique=True, blank=True, verbose_name="ادرس")
     body = models.TextField(verbose_name="متن")
-    cover = models.ImageField(default="1.png", verbose_name="تصویر بزرگ")
-    thumnail = models.ImageField(
-        default="1.png", verbose_name="تصویر بندانگشتی")
+    # cover = models.ImageField(default="1.png", verbose_name="تصویر بزرگ")
+    # thumnail = models.ImageField(
+    #     default="1.png", verbose_name="تصویر بندانگشتی")
     status = models.CharField(
         max_length=2, choices=status_content_CHOICES, blank=True, null=True, verbose_name="ضعیت")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")
