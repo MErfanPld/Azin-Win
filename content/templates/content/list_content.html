@@ -34,18 +34,27 @@
 
 
 <!-- This -->
-
-<form action="">
-    {% csrf_token %}
-
-    {% for field in form %}
-        {% if field.name != 'status' %}
-            {{ field }}
-        {% endif %}
-    {% endfor %}
-    <button type="button" ng-click="SubmitOrder()">ثبت</button>
-</form>
-
+<div class="container" id="order">
+    <div class="banner-padding banner-furniture ratio2_1">
+      <div class="col-sm-12">
+        <div class="title2">
+          <h2 class="title-inner2">ثبت درخواست</h2>
+        </div>
+        <form class="theme-form" action="">
+            {% csrf_token %}
+            <div class="form-row row">
+            {% for field in form %}
+                {% if field.name != 'status' %}
+                <div class="col-md-4">{{ field|as_crispy_field  }}</div>
+                {% endif %}
+            {% endfor %}
+            <div class="col-md-12">
+            <button type="button" class="btn btn-solid" ng-click="SubmitOrder()">ثبت</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>        
 
 
 <section class="section-b-space blog-detail-page review-page">
