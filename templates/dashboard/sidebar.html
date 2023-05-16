@@ -121,6 +121,32 @@
                 </ul>
             </li>
 
+
+            <li>
+                <a class="sidebar-header" href="javascript:void(0)">
+                    <i data-feather="pen-tool"></i>
+                    <span>سوالات متداول</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="{% url 'faq:list_faq' %}">
+                            <i class="fa fa-circle"></i>
+                            <span>لیست سوالات
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'faq:create_faq' %}">
+                            <i class="fa fa-circle"></i>
+                            <span>ساخت سوال جدید</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
             <li>
                 <a class="sidebar-header" href="javascript:void(0)">
                     <svg

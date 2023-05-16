@@ -25,6 +25,7 @@ urlpatterns = [
     path('top/projects/', include('top_projects.urls', namespace='top_projects')),
     path('', include('order.urls', namespace='order')),
     path('about_us/', include('about_us.urls')),
+    path('faq/', include('faq.urls')),
     path('contact_us/', include('contact_us.urls', namespace='contact_us')),
 ]
 
