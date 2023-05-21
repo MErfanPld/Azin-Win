@@ -1,6 +1,12 @@
 {% extends "base.html" %} {% load static %}{% load crispy_forms_tags %} 
 {% block content %}
 
+{% block Styles %}
+<style>
+    /* @media(min-width: 350px) {.slider-1{display: none;}}; */
+</style>
+{% endblock %}
+
 <!-- Home slider -->
 
 <section class="p-5 w-5">
@@ -68,7 +74,9 @@
   <div class="banner-padding banner-furniture ratio2_1">
     <div class="col-sm-12">
       <div class="title2">
-        <h2 class="title-inner2">ثبت درخواست</h2>
+        <h2 class="title-inner2" style="margin-bottom: 25px;">ثبت درخواست</h2>
+        <br>
+        <p>UPVC (یو پی وی سی) , ترمال بریک , 	شیشه نما</p>
       </div>
       <form class="theme-form" action="" method="post">
         {% csrf_token %}

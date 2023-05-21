@@ -33241,3 +33241,5 @@ body.rtl .account-setting {
     direction: rtl !important;
     text-align: right !important;
 }
+
+@media(min-width: 350px) {.slider-1{display: none;}}
