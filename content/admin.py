@@ -6,6 +6,6 @@ from .models import Content
 class ContentAdmin(admin.ModelAdmin):
     list_display = ['title', 'slug', 'created', 'status']
     search_fields = ('slug', 'created')
-    prepopulated_fields = {"slug": ('title',)}
+    # prepopulated_fields = {"slug": ('title',)}
 
 admin.site.register(Content, ContentAdmin)
