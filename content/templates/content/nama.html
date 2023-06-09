@@ -34,29 +34,8 @@
 
 
 <!-- This -->
-<div class="container" id="order">
-    <div class="banner-padding banner-furniture ratio2_1">
-      <div class="col-sm-12">
-        <div class="title2">
-          <h2 class="title-inner2">ثبت درخواست</h2>
-        </div>
-        <form class="theme-form" action="">
-            {% csrf_token %}
-            <div class="form-row row">
-            {% for field in form %}
-                {% if field.name != 'status' %}
-                <div class="col-md-4">{{ field|as_crispy_field  }}</div>
-                {% endif %}
-            {% endfor %}
-            <div class="col-md-12">
-            <button type="button" class="btn btn-solid" ng-click="SubmitOrder()">ثبت</button>
-            </div>
-        </form>
-    </div>
-</div>
-</div>        
 
-
+  
 <section class="section-b-space blog-detail-page review-page">
     <div class="container">
         <div class="row">
@@ -65,8 +44,20 @@
                     <li>
                         <div class="media">
                             <div class="media-body">
-                                <h1 style="font-size: 30px;font-family: IRANSans;">Test<span></span></h1>
-                                <p style="font-family: IRANSans;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut nulla in accusamus asperiores odit officiis illum ipsa accusantium ex! Quidem, distinctio quo. Sequi soluta voluptatibus accusamus eos impedit fugiat et!</p>
+                                <h1 style="font-size: 30px;font-family: IRANSans; color: orange;">نمای شیشه ای<span></span></h1>
+                                <p style="font-family: IRANSans;">
+                                    نمای شیشه‌ای، نوعی نمای ساختمانی است که اساساً از شیشه ساخته شده است. به دلیل ظاهر مدرن و زیبایی که دارد و همچنین توانایی برای تأمین نور طبیعی و فراهم کردن دید بی‌مانع، این نوع نمای ساختمانی یک گزینه محبوب برای ساختمان‌های مدرن است. نمای شیشه‌ای روی ساختمان‌های مختلفی مانند ساختمان‌های اداری، فضاهای خرده‌فروشی، هتل‌ها و ساختمان‌های مسکونی قابل مشاهده هستند. نماهای شیشه‌ای دارای چند نوع مختلفی مانند سیستم واحد، سیستم چوبکی و سیستم با پشتیبانی نقطه‌ای هستند. سیستم واحد پیش‌تولید شده و در خارج از سایت جمع آوری شده است؛ این باعث می‌شود که نصب آن آسان‌تر و سریع‌تر باشد. سیستم چوبکی، قطعه به قطعه در سایت جمع آوری می‌شود و معمولاً برای ساختمان‌های کوچکتر استفاده می‌شود. سیستم با پشتیبانی نقطه‌ای با استفاده از کابل‌ها یا چوب‌های فولادی برای نگه داشتن پنل‌های شیشه‌ای استفاده می‌شود و تأثیر بصری زیبایی را به ارمغان می‌آورد. یکی از مزایای نمای شیشه‌ای این است که می‌تواند به کاهش هزینه‌های انرژی کمک کند، با اجازه دادن به نور طبیعی که وارد ساختمان می‌شود و کاهش نیاز به روشنایی مصنوعی، می‌توان به راحتی در بسیاری از هزینه‌های مصرفی در زمینه گرما و روشنایی صرفه‌جویی کرد. با این حال، مهم است که شیشه با کیفیت بالا انتخاب شود که خواص حفاظت حرارتی خوبی داشت
+به علاوه، نمای شیشه‌ای می‌توانند باعث افزایش ارزش ساختمان شوند و به شکل بصری سازه جذابیت اضافه کند. همچنین، از طریق استفاده از شیشه‌های مقاوم در برابر ضربه، مقاوم در برابر آتش و سایر ویژگی‌های مهم، می‌توان به افزایش ایمنی ساختمان کمک کرد. به عنوان یک راه حل طراحی ساختمان با شیشه، نماهای شیشه‌ای برای ساختمان‌های مسکونی و تجاری مورد استفاده قرار می‌گیرند. با این حال، در هنگام انتخاب نمای شیشه‌ای، باید به جنبه‌هایی مانند طراحی، ایمنی، حفاظت حرارتی و هزینه توجه کرد تا بهترین راه حل را برای ساختمان خود پیدا کنید.
+
+                                </p>
+                                <h1 style="font-size: 30px;font-family: IRANSans; color: orange;">قیمت نمای شیشه‌ای<span></span></h1>
+                                <p style="font-family: IRANSans;">
+                                    نمای شیشه‌ای، که در آن از شیشه به عنوان عنصر اصلی استفاده می‌شود، به عنوان نمای بیرونی شناخته می‌شود. به دلیل ظاهر مدرن و شیک آن، انتخاب شیشه به عنوان پوشش نمای بیرونی، در طراحی ساختمان‌های مدرن، محبوبیت زیادی دارد. هزینه پوشش شیشه‌ای به بیرون ساختمان به میزان قابل توجهی به عواملی مانند اندازه ساختمان، نوع شیشه استفاده شده و پیچیدگی طراحی بستگی دارد.در مورد هزینه پوشش شیشه‌ای به بیرون ساختمان، یکی از عوامل مهمتر، نوع شیشه مورد استفاده است. انواع مختلفی از شیشه وجود دارد که از شیشه شفاف ساده تا شیشه با عملکرد بالا بازاریابی می‌شود. شیشه‌های پیشرفته‌تر، گرانتر هستند. علاوه بر این، ضخامت شیشه نیز بر هزینه تاثیر می‌گذارد و شیشه‌های با ضخامت بیشتر، گرانتر هستند.اندازه و پیچیدگی ساختمان همچنین نقش قابل توجهی در تعیین قیمت پوشش شیشه‌ای دارد. ساختمان‌های بزرگ، نیاز به شیشه بیشتری دارند که می‌تواند هزینه را به طور قابل توجهی افزایش دهد. همچنین، اگر طراحی پیچیده با شکل‌ها و زوایای پیچیده‌ای باشد، می‌تواند هزینه را افزایش دهد.کلیاً، هزینه پوشش شیشه‌ای به بیرون ساختمان می‌تواند از متوسط تا بسیار گران باشد و به میزان مشخصی از نیازهای پروژه مشخص شود. لذا مهم است که با یک تأمین کننده و نصاب شیشه با سابقه کاری مطمئن همکاری شود تا از بهترین ارزش هزینه برای پروژه خود برخوردار شوید
+                                </p>
+                                <h1 style="font-size: 30px;font-family: IRANSans; color: orange; ">خرید نمای شیشه ای<span> </span></h1>
+                                <p style="font-family: IRANSans;">
+                                    اگر شما قصد خرید پنجره ترمال بریک را دارید، مهم است که از مزایا و ویژگی‌های این نوع پنجره‌ها آگاه شوید. پنجره‌های با سیستم ترمال بریک به‌طور خاص برای کاهش انتقال حرارت و افزایش کارایی انرژی طراحی شده‌اند. موانع حرارتی در این پنجره‌ها بخشی از چارچوب هستند که داخل و خارج از آن را از هم جدا می‌کنند و از گرمایی که در زمستان از داخل خارج می‌شود و در تابستان وارد محیط می‌شود، جلوگیری می‌کنند. این موضوع می‌تواند به صرفه‌جویی قابل توجه در صورت هزینه‌های انرژی و افزایش راحتی در محیط زندگی منجر شود. در هنگام خرید پنجره ترمال بریک، چندین عامل باید بررسی و ارزیابی شود. این عوامل شامل نوع ماده ای که برای چارچوب پنجره استفاده می‌شود، سبک پنجره، و مقادیر U-Factor و Solar Heat Gain Coefficient هستند. مواد مورد استفاده برای ساخت پنجره‌های با سیستم ترمال بریک عبارتند از آلومینیوم و وینیل که هر دو دارای مقاومت و نگهداری کمی هستند. سبک پنجره ای که انتخاب می‌کنید به تفضیلات شما و نیازهای ساختمان شما بستگی دارد. انواع پنجره ترمال بریک شامل پنجره‌های دو قابلمه، کاسمانت، پرده‌ای و غیره هستند. مقادیر U-Factor و Solar Heat Gain Coefficient از مهمترین عواملی هستند که باید در هنگام خرید پنجره ترمال بریک بررسی شود. مقدار U-Factor کارایی حرارتی پنجره را نشان می‌دهد و به عنوان معیاری برای انتخاب پنجره با کارایی بالاتر به‌کار می‌رود. عددی کمتر برای U-Factor به معنی این است که پنجره کمترین حرارت را از داخل به خارج و بالعکس منتقل می‌کند و در نتیجه به‌طور کلی موجب کاهش هزینه‌های انرژی می‌شود. Solar Heat Gain Coefficient یک معیار دیگر برای انتخاب پنجره با کارایی بالاتر است و نشان می‌دهد که چقدر از گرمای خورشیدی به داخل ساختمان وارد می‌شود. در نتیجه، با انتخاب پنجره‌ای با مقدار کمتر برای این معیار، می‌توانید از گرمای خورشیدی بیشتری در تابستان جلوگیری کنید و محیط زندگی خود را راحت‌تر کنید.در کل، خرید پنجره با سیستم ترمال بریک به شما کمک می‌کند تا در صرفه‌جویی در هزینه‌های انرژی و افزایش کارایی انرژی ساختمانتان دست یابید. در انتخاب پنجره، بررسی و مقایسه مزایا و ویژگی‌های مختلف پنجره‌های با سیستم ترمال بریک می‌تواند به شما در انتخاب بهتر و مناسب‌تر کمک کند.
+                                </p>
                             </div>
                         </div>
                     </li>
@@ -77,10 +68,12 @@
 </section>
 
 <section class="faq-section section-b-space">
-    <div class="container">
+    <div class="container"   style="text-decoration: none !important;">
       <div class="row">
         <div class="col-sm-12">
           <div class="accordion theme-accordion" id="accordionExample">
+
+            <!--card one-->
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
@@ -92,8 +85,7 @@
                     aria-expanded="false"
                     aria-controls="collapseOne"
                   >
-                    آیا می توانم برخی از بلوک های صفحه را روشن/خاموش کنم؟
-                  </button>
+                  نمای شیشه‌ای چیست و چه استفاده‌ای دارد؟</button>
                 </h5>
               </div>
               <div
@@ -105,29 +97,240 @@
               >
                 <div class="card-body">
                   <p>
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-                    با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
-                    مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                    تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای
-                    کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
-                    آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم
-                    افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص
-                    طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
-                    صورت می توان امید داشت که تمام و دشواری موجود در ارائه
-                    راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-                    حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای
-                    موجود طراحی اساسا مورد استفاده قرار گیرد.
+                    •	نمای شیشه‌ای یک سیستم نمای بیرونی است که از طریق استفاده از شیشه‌های بزرگ در قسمت‌های نمای ساختمان، به ساختمان ظاهر زیبا و شفافیت بیشتری می‌بخشد. این نوع نما علاوه بر ایجاد ظاهر زیبا، به داخلی‌های ساختمان نیز نور طبیعی بیشتری را وارد می‌کند.
                   </p>
                 </div>
               </div>
             </div>
+     <!--card two-->
+     <div class="card">
+        <div class="card-header" id="headingtwo">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsetwo"
+              aria-expanded="false"
+              aria-controls="collapsetwo">
+              چه مزایایی در استفاده از نمای شیشه‌ای وجود دارد؟‌
+            </button>
+          </h5>
+        </div>
+        <div
+          id="collapsetwo"
+          class="collapse"
+          aria-labelledby="headingtwo"
+          data-bs-parent="#accordionExample"
+          style="">
+          <div class="card-body">
+            <p>
+                •	استفاده از نمای شیشه‌ای دارای مزایای زیادی است، از جمله: <br>
+                خ	ظاهر زیبا و مدرن: نمای شیشه‌ای به ساختمان ظاهری زیبا و مدرن می‌بخشد. <br>
+                ش	نورپذیری بیشتر: با استفاده از شیشه‌های بزرگ، نور طبیعی بیشتری به داخل ساختمان وارد می‌شود. <br>
+                د	ایجاد ارتباط با محیط خارجی: نمای شیشه‌ای به ساکنان امکان ارتباط بیشتر با محیط خارجی را می‌دهد. <br>
+                •	افزایش انرژی خورشیدی: با استفاده از نمای شیشه‌ای، امکان استفاده از انرژی خورشیدی برای تولید برق و گرما وجود دارد. <br>
+                •	عمر طولانی و دوام: شیشه‌های مورد استفاده در نمای شیشه‌ای عمر طولانی و دوام بالایی دارند. <br>
+                
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  
+          <!--card three-->
+          <div class="card">
+            <div class="card-header" id="headingthree">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsethree"
+                  aria-expanded="false"
+                  aria-controls="collapsethree">
+                  . آیا نمای شیشه‌ای مقاوم در برابر شرایط آب و هوایی است؟         </button>
+              </h5>
+            </div>
+            <div
+              id="collapsethree"
+              class="collapse"
+              aria-labelledby="headingthree"
+              data-bs-parent="#accordionExample"
+              style="">
+              <div class="card-body">
+                <p>
+                    قاوم در برابر شرایط آب و هوایی مانند باران، برف و آفتاب طراحی می‌شود. همچنین، سیستم‌های جداسازی و روانکاری مناسب نیز در نماهای شیشه‌ای استفاده می‌شود تا از نفوذ آب جلوگیری شود.
+            
+                </p>
+              </div>
+            </div>
+          </div>
+           <!--card four-->
+           <div class="card">
+            <div class="card-header" id="headingfive">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsefive"
+                  aria-expanded="false"
+                  aria-controls="collapsefive">
+                  آیا نمای شیشه‌ای قابلیت عایق حرارتی دارد؟        </button>
+              </h5>
+            </div>
+            <div
+              id="collapsefive"
+              class="collapse"
+              aria-labelledby="headingfive"
+              data-bs-parent="#accordionExample"
+              style="">
+              <div class="card-body">
+                <p>
+                    •	بله، نمای شیشه‌ای معمولاً دارای قابلیت عایق حرارتی است. با استفاده از شیشه‌های دو جداره، یا شیشه‌های با پوشش‌های حرارتی، از انتقال حرارت از داخل به بیرون و بالعکس جلوگیری می‌شود. این قابلیت عایق حرارتی باعث صرفه‌جویی در مصرف انرژی برای سیستم‌های تهویه می‌شود.
+                </p>
+              </div>
+            </div>
+          </div>
+           <!--card five-->
+           <div class="card">
+            <div class="card-header" id="headingsix">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsesix"
+                  aria-expanded="false"
+                  aria-controls="collapsesix">
+                  آیا نمای شیشه‌ای قابلیت جلوگیری از نفوذ صدا را دارد؟              </button>
+              </h5>
+            </div>
+            <div
+              id="collapsesix"
+              class="collapse"
+              aria-labelledby="headingsix"
+              data-bs-parent="#accordionExample"
+              style="">
+              <div class="card-body">
+                <p>
+                    •	بله، نمای شیشه‌ای با استفاده از شیشه‌های با ویژگی‌های عایق صوتی، قابلیت جلوگیری از نفوذ صدا را دارد. این نماها می‌توانند به خلق محیطی آرام و ساکت در داخل ساختمان کمک کنند و صداهای خارجی را کاهش دهند.
+                </p>
+              </div>
+            </div>
+          </div>
+           <!--card six-->
+           <div class="card">
+            <div class="card-header" id="headingseven">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseseven"
+                  aria-expanded="false"
+                  aria-controls="collapseseven">
+                  آیا نمای شیشه‌ای قابلیت انعطاف‌پذیری در طراحی دارد؟         </button>
+              </h5>
+            </div>
+            <div
+              id="collapseseven"
+              class="collapse"
+              aria-labelledby="headingseven"
+              data-bs-parent="#accordionExample"
+              style="">
+              <div class="card-body">
+                <p>
+                    •	بله، نمای شیشه‌ای انعطاف‌ پذیری بالایی در طراحی دارد. شیشه‌های قابل انعطاف و ماژولاریته بالا، به طراحان امکان می‌دهد تا نماهای منحصر به فرد و با الگوها و اشکال مختلف را ایجاد کنند. این انعطاف‌پذیری در طراحی، به نماهای شیشه‌ای زیبا و هنری ترتیب می‌دهد.
+                </p>
+              </div>
+            </div>
+          </div>
+           <!--card seven-->
 
+           <!--card eight-->
+           <div class="card">
+            <div class="card-header" id="headingeight">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseeight"
+                  aria-expanded="false"
+                  aria-controls="collapseeight">
+                  آیا نمای شیشه‌ای قابلیت پاک شدن آسان را دارد؟           </h5>
+            </div>
+            <div
+              id="collapseeight"
+              class="collapse"
+              aria-labelledby="headingeight"
+              data-bs-parent="#accordionExample"
+              style="">
+              <div class="card-body">
+                <p>
+                    •	بله، نمای شیشه‌ای قابلیت پاک شدن آسان را دارد. شیشه‌های مورد استفاده در نماهای شیشه‌ای اکثراً دارای پوشش‌های ضد لکه و ضد گرد و غبار هستند. این پوشش‌ها باعث می‌شوند که شیشه‌ها به راحتی تمیز شوند و لکه‌ها و آلودگی‌ها به سطح شیشه چسبیده و در طولانی مدت نگهداری نشوند.
+                </p>
+              </div>
+            </div>
+          </div>
+           <!--card nine-->
+           <div class="card">
+            <div class="card-header" id="headingnine">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsenine"
+                  aria-expanded="false"
+                  aria-controls="collapsenine">
+                  آیا نمای شیشه‌ای مقاوم در برابر خوردگی و آبشارهای شیمیایی است؟
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapsenine"
+              class="collapse"
+              aria-labelledby="headingenine"
+              data-bs-parent="#accordionExample"
+              style="">
+              <div class="card-body">
+                <p>
+                    •	بله، نمای شیشه‌ای معمولاً مقاوم در برابر خوردگی و آبشارهای شیمیایی است. شیشه‌های مورد استفاده در نماهای شیشه‌ای معمولاً دارای مقاومت شیمیایی بالا هستند و می‌توانند در برابر اثرات مخرب مواد شیمیایی مانند اسیدها، قلیاها و حلال‌ها مقاومت کنند. اما در برخی موارد خاص، نیاز به استفاده از شیشه‌های خاص با مقاومت بالاتر ممکن است.
+                </p>
+              </div>
+            </div>
+          </div>
+           <!--card ten-->
+           <div class="card">
+            <div class="card-header" id="headingten">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseten"
+                  aria-expanded="false"
+                  aria-controls="collapseten">
+                  آیا نمای شیشه‌ای قابلیت جلوگیری از نفوذ آب و باد را دارد؟           </button>
+              </h5>
+            </div>
+            <div
+              id="collapseten"
+              class="collapse"
+              aria-labelledby="headingten"
+              data-bs-parent="#accordionExample"
+              style="">
+              <div class="card-body">
+                <p>
+                    •	بله، نمای شیشه‌ای معمولاً قابلیت جلوگیری از نفوذ آب و باد را دارد. سیستم‌های نصب مناسب و استفاده از جوشکاری، گرچه، مهم برای جلوگیری از نفوذ آب و باد هستند. در صورت نصب صحیح و با کیفیت، نمای شیشه‌ای می‌تواند به خوبی در برابر نفوذ آب و باد مقاومت کند و از نشت و نفوذ آنها جلوگیری کند.
+
+
+                </p>
+              </div>
+            </div>
+          </div>
+      
 
 <!-- <section class="section-b-space blog-detail-page review-page">
     <div class="container">
