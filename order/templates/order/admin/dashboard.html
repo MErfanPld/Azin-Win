@@ -91,59 +91,6 @@
             </div>
         </div>
 
-        <!-- {% if request.user.is_admin %}
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 xl-100">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>آخرین محتوا</h5>
-                                <div class="card-header-right">
-                                    <ul class="list-unstyled card-option">
-                                        <li><i class="icofont icofont-simple-left"></i></li>
-                                        <li><i class="view-html fa fa-code"></i></li>
-                                        <li><i class="icofont icofont-maximize full-card"></i></li>
-                                        <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                        <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                        <li><i class="icofont icofont-error close-card"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="user-status table-responsive latest-order-table">
-                                    <table class="table table-bordernone">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col">شناسه محتوا</th>
-                                            <th scope="col">نوع محتوا</th>
-                                            <th scope="col">عنوان</th>
-                                            <th scope="col">ادرس</th>
-                                            <th scope="col">تاریخ ثبت</th>
-                                            <th scope="col">وضعیت</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {% for content in contents %}
-                                            <tr>
-                                                <td>{{ content.id }}</td>
-                                                <td class="digits">{{ content.get_type_content | default:'---' }}</td>
-                                                <td class="digits">{{ content.title }}</td>
-                                                <td class="digits">{{ content.slug }}</td>
-                                                <td class="digits">{{ content.jcreated }}</td>
-                                                <td class="digits">{{ content.get_status | default:'---' }}</td>
-                                            </tr>
-                                        {% endfor %}
-                                        </tbody>
-                                    </table>
-                                    <a href="{% url 'content:list_content' %}" class="btn btn-primary mt-4"
-                                    >مشاهده همه محتوا</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endif %} -->
+
     </div>
 {% endblock content %}
