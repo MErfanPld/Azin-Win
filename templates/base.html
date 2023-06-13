@@ -3,13 +3,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DEK0TEH18X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DEK0TEH18X");
+    </script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="multikart" />
     <meta name="keywords" content="multikart" />
     <meta name="author" content="multikart" />
-    <meta name="google-site-verification" content="-VZIfmLYgoJsrmKXxyN18Ndj4n7lkMxVKuO6XGWPB3o" />
+    <meta
+      name="google-site-verification"
+      content="-VZIfmLYgoJsrmKXxyN18Ndj4n7lkMxVKuO6XGWPB3o"
+    />
     <link
       rel="icon"
       href="{% static 'new_img/cut.png' %}"
@@ -23,18 +41,23 @@
     <title>آذین وین {% block title %}{% endblock title %}</title>
 
     <!--Google font-->
-    <link rel="stylesheet" href="{% static 'css/jquery.toast.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.toast.min.css' %}" />
 
     <!-- latest jquery-->
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/angular.min.js' %}"></script>
+
+    <script>
+      !function (t, e, n) { t.yektanetAnalyticsObject = n, t[n] = t[n]  function () { t[n].q.push(arguments) }, t[n].q = t[n].q  []; var a = new Date, r = a.getFullYear().toString() + "0" + a.getMonth() + "0" + a.getDate() + "0" + a.getHours(), c = e.getElementsByTagName("script")[0], s = e.createElement("script"); s.id = "ua-script-vX2SQ4tP"; s.dataset.analyticsobject = n; s.async = 1; s.type = "text/javascript"; s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v3/vX2SQ4tP/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c) }(window, document, "yektanet");
+    </script>
+
     <!-- Icons -->
     {% include './inc/_header.html' %} {% block Styles %}{% endblock %}
   </head>
 
   <body class="theme-color-12 rtl" ng-app="myApp" ng-controller="myCtrl">
     <!-- loader start -->
-   
+
     <!-- loader end -->
 
     <!-- header start -->
@@ -50,18 +73,24 @@
     {% include './inc/_footer.html' %}
 
     <!-- cookie bar start -->
-    <div class="cookie-bar left-bottom" id="id01" style="margin-bottom: 50px;">
+    <div class="cookie-bar left-bottom" id="id01" style="margin-bottom: 50px">
       <img
         src="{% static 'svg/icons8-wechat-50.png' %}"
         class="img-fluid"
         alt="cookie"
       />
       <p>برای ارتباط با ما می توانید با پلتفرم های زیر با ما در ارتباط باشید</p>
-      <a href="
-https://eitaa.com/Azinwindow" class="btn btn-solid btn-xs">ایتا </a>
-      <a href="https://t.me/@Azinwindoww" class="btn btn-solid btn-xs"> تلگرام</a>
+      <a
+        href="
+https://eitaa.com/Azinwindow"
+        class="btn btn-solid btn-xs"
+        >ایتا
+      </a>
+      <a href="https://t.me/@Azinwindoww" class="btn btn-solid btn-xs">
+        تلگرام</a
+      >
       <a href="https://wa.link/mu6gx7" class="btn btn-solid btn-xs">واتساپ </a>
-      <span 
+      <span
         onclick="document.getElementById('id01').style.display='none'"
         class="btn-close"
         ><i class="fa fa-times" aria-hidden="true"></i
@@ -74,7 +103,9 @@ https://eitaa.com/Azinwindow" class="btn btn-solid btn-xs">ایتا </a>
 
     <div class="cookie-bar show">
       <p>برای ثبت سریع درخواست مشاوره و خرید محصولات کلیک کنید</p>
-      <a href="{% url 'order:order_home' %}#order" class="btn btn-solid btn-xs">ثبت درخواست</a>
+      <a href="{% url 'order:order_home' %}#order" class="btn btn-solid btn-xs"
+        >ثبت درخواست</a
+      >
     </div>
 
     <script>
