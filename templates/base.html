@@ -28,6 +28,42 @@
       name="google-site-verification"
       content="-VZIfmLYgoJsrmKXxyN18Ndj4n7lkMxVKuO6XGWPB3o"
     />
+
+    <meta name="title" content="آذین وین - پنجره یو پی وی سی و ترمال بریک" />
+    <meta
+      name="description"
+      content="آذین وین، ارائه دهنده انواع پنجره یو پی وی سی، ترمال بریک و شیشه نما با بالاترین کیفیت"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://azinwin.com" />
+    <meta
+      property="og:title"
+      content="آذین وین - پنجره یو پی وی سی و ترمال بریک"
+    />
+    <meta
+      property="og:description"
+      content="آذین وین، ارائه دهنده انواع پنجره یو پی وی سی، ترمال بریک و شیشه نما با بالاترین کیفیت"
+    />
+    <meta property="og:image" content="{% static 'new_img/zeynb_2.png' %}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://azinwin.com" />
+    <meta
+      property="twitter:title"
+      content="آذین وین - پنجره یو پی وی سی و ترمال بریک"
+    />
+    <meta
+      property="twitter:description"
+      content="آذین وین، ارائه دهنده انواع پنجره یو پی وی سی، ترمال بریک و شیشه نما با بالاترین کیفیت"
+    />
+    <meta
+      property="twitter:image"
+      content="{% static 'new_img/zeynb_2.png' %}"
+    />
+
     <link
       rel="icon"
       href="{% static 'new_img/cut.png' %}"
@@ -48,26 +84,45 @@
     <script src="{% static 'js/angular.min.js' %}"></script>
 
     <script>
-      !function (t, e, n) {
-          t.yektanetAnalyticsObject = n, t[n] = t[n] || function () {
-              t[n].q.push(arguments)
-          }, t[n].q = t[n].q || [];
-          var a = new Date, r = a.getFullYear().toString() + "0" + a.getMonth() + "0" + a.getDate() + "0" + a.getHours(),
-              c = e.getElementsByTagName("script")[0], s = e.createElement("script");
-          s.id = "ua-script-vX2SQ4tP"; s.dataset.analyticsobject = n;
-          s.async = 1; s.type = "text/javascript";
-          s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v3/vX2SQ4tP/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c)
-      }(window, document, "yektanet");
-  </script>
+      !(function (t, e, n) {
+        (t.yektanetAnalyticsObject = n),
+          (t[n] =
+            t[n] ||
+            function () {
+              t[n].q.push(arguments);
+            }),
+          (t[n].q = t[n].q || []);
+        var a = new Date(),
+          r =
+            a.getFullYear().toString() +
+            "0" +
+            a.getMonth() +
+            "0" +
+            a.getDate() +
+            "0" +
+            a.getHours(),
+          c = e.getElementsByTagName("script")[0],
+          s = e.createElement("script");
+        s.id = "ua-script-vX2SQ4tP";
+        s.dataset.analyticsobject = n;
+        s.async = 1;
+        s.type = "text/javascript";
+        (s.src =
+          "https://cdn.yektanet.com/rg_woebegone/scripts_v3/vX2SQ4tP/rg.complete.js?v=" +
+          r),
+          c.parentNode.insertBefore(s, c);
+      })(window, document, "yektanet");
+    </script>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WSZHV7V');</script>
-  <!-- End Google Tag Manager -->
-  
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WSZHV7V');
+    </script>
+    <!-- End Google Tag Manager -->
 
     <!-- Icons -->
     {% include './inc/_header.html' %} {% block Styles %}{% endblock %}
@@ -91,7 +146,7 @@
     {% include './inc/_footer.html' %}
 
     <!-- cookie bar start -->
-    <div class="cookie-bar left-bottom " id="id01" style="margin-bottom: 50px">
+    <div class="cookie-bar left-bottom" id="id01" style="margin-bottom: 50px">
       <img
         src="{% static 'svg/icons8-wechat-50.png' %}"
         class="img-fluid"
@@ -138,11 +193,12 @@ https://eitaa.com/Azinwindow"
     {% block Scripts %}{% endblock %}
   </body>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WSZHV7V');</script>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WSZHV7V');
+  </script>
   <!-- End Google Tag Manager -->
-  
 </html>
