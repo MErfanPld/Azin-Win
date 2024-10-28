@@ -1,0 +1,117 @@
+{% extends "dashboard/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="page-header-left">
+                        <h3>لیست دسته‌بندی‌ها</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ol class="breadcrumb pull-right">
+                        <li class="breadcrumb-item">دسته‌بندی</li>
+                        <li class="breadcrumb-item active">لیست دسته‌بندی</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <form class="form-inline search-form search-box">
+                            <div class="d-flex">
+                                <div class="mt-2 d-flex" style="width: 200px; margin-left:2%">
+                                    <select name="status" onchange="this.form.submit()" class="form-control">
+                                        <option value="">انتخاب وضعیت</option>
+                                        {% for item in status_types %}
+                                            <option {% if item.0 == request.GET.status %} selected {% endif %} value="{{ item.0 }}">
+                                                {{ item.1 }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive table-desi">
+                            <table class="table all-package" id="editableTable">
+                                <thead>
+                                <tr>
+                                    <th>شناسه</th>
+                                    <th>عنوان</th>
+                                    <th>وضعیت</th>
+                                    <th>عملیات</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for category in categories %}
+                                    <tr>
+                                        <td>{{ category.id }}</td>
+                                        <td>{{ category.title }}</td>
+                                        <td>{{ category.get_status_display }}</td>
+                                        <td>
+                                            <a href="{% url 'content:dashboard_category_edit' category.id %}">
+                                                <i class="fa fa-edit" title="ویرایش"></i>
+                                            </a>
+                                            <form action="{% url 'content:dashboard_category_delete' category.id %}"
+                                                  style="display: none" id="delete_form_{{ category.id }}"
+                                                  method="post">
+                                                {% csrf_token %}
+                                            </form>
+                                            <a onclick="DeleteConfirm('{{ category.id }}')">
+                                                <i class="fa fa-trash" title="حذف"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block Scripts %}
+    <script>
+        function DeleteConfirm(id) {
+            Swal.fire({
+                title: "هشدار!",
+                icon: 'warning',
+                text: "آیا از حذف این آیتم اطمینان دارید؟",
+                showCancelButton: true,
+                confirmButtonColor: '#00aced',
+                cancelButtonColor: '#e6294b',
+                confirmButtonText: 'حذف',
+                cancelButtonText: 'انصراف'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('delete_form_' + id).submit();
+                }
+            });
+        }
+    </script>
+
+    {% if messages %}
+        {% for item in messages %}
+            <script>
+                Swal.fire({
+                    title: "تبریک! 🥳",
+                    icon: 'success',
+                    text: '{{ item }}',
+                    confirmButtonText: 'اوکی',
+                });
+            </script>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

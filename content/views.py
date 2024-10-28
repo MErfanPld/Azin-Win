@@ -5,137 +5,160 @@ from django.views.generic import UpdateView, DetailView, DeleteView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
-
+from django.utils.text import slugify
+from unidecode import unidecode
 from order.forms import OrderForm
-from .filters import ContentFilters
+from .filters import CategoryFilters, ContentFilters
 from .helpers import type_content_CHOICES, status_content_CHOICES
-from .models import Content
-from .forms import ContentForm
+from .models import Category, Content
+from .forms import CategoryForm, ContentForm
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.core.paginator import Paginator
 
 
 # Create your views here.
 
 class ContentUPVC(View):
     template_name = 'content/upvc.html'
-    def get(self, request,*args, **kwargs):
+
+    def get(self, request, *args, **kwargs):
         context = {}
         context['form'] = OrderForm()
         return render(request, self.template_name, context)
+
 
 class ContentTermal(View):
     template_name = 'content/termal.html'
-    def get(self, request,*args, **kwargs):
+
+    def get(self, request, *args, **kwargs):
         context = {}
         context['form'] = OrderForm()
         return render(request, self.template_name, context)
-    
+
+
 class Contentnama(View):
     template_name = 'content/nama.html'
-    def get(self, request,*args, **kwargs):
+
+    def get(self, request, *args, **kwargs):
         context = {}
         context['form'] = OrderForm()
         return render(request, self.template_name, context)
 
-# class ContentListView(View):
-#     template_name = 'content/list_content.html'
 
-#     def get(self, request, *args, **kwargs):
-#         contents = Content.objects.filter(status='A')
-#         context = {}
+class ContentListView(View):
+    template_name = 'content/list_content.html'
 
-#         context['form'] = OrderForm()
+    def get(self, request, *args, **kwargs):
+        contents = Content.objects.filter(status='A')
+        context = {
+            'form': OrderForm(),
+            'type_content_name': '',
+        }
 
-#         type_content = request.GET.get('type_content')
-#         if type_content:
-#             contents = contents.filter(type_content=type_content)
-#             context['type_content_name'] = dict(type_content_CHOICES).get(type_content, '')
-#         contents = ContentFilters(data=self.request.GET, queryset=contents).qs
-#         context['contents'] = contents
-#         return render(request, self.template_name, context)
+        type_content = request.GET.get('type_content')
+        if type_content:
+            contents = contents.filter(type_content=type_content)
+            context['type_content_name'] = dict(
+                type_content_CHOICES).get(type_content, '')
 
+        contents = ContentFilters(data=self.request.GET, queryset=contents).qs
 
-# class ContentDetailView(DetailView):
-#     model = Content
-#     template_name = 'content/detail_content.html'
+        # Pagination
+        paginator = Paginator(contents, 5)  # 10 محتوا در هر صفحه
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
 
-#     def setup(self, request, *args, **kwargs):
-#         self.content_instance = get_object_or_404(Content, pk=kwargs['c_id'], slug=slugify(str(kwargs['c_slug']), True))
-#         return super().setup(request, *args, **kwargs)
+        context['contents'] = page_obj
+        context['paginator'] = paginator
+        context['page_obj'] = page_obj
 
-#     def get(self, request, *args, **kwargs):
-#         contents = Content.objects.filter(status='A')
-#         return render(request, self.template_name,
-#                       {'content': self.content_instance})
-
-
-# class ContentCreateView(View):
-#     form_class = ContentForm
-#     template_name = 'content/admin/create_edit.html'
-
-#     def get(self, request, *args, **kwargs):
-#         form = self.form_class
-#         return render(request, self.template_name, {'form': form})
-
-#     def post(self, request, *args, **kwargs):
-#         form = self.form_class(request.POST)
-#         if form.is_valid():
-#             new_content = form.save(commit=False)
-#             new_content.slug = slugify(form.cleaned_data['title'], True)
-#             new_content.save()
-#             messages.success(request, 'محتوا با موفقیت ثبت شد.', 'success')
-#             return redirect('content:list_content')
-#         return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, context)
 
 
-# class ContentUpdateView(LoginRequiredMixin, UpdateView):
-#     form_class = ContentForm
-#     template_name = 'content/admin/create_edit.html'
+class ContentDetailView(View):
+    template_name = 'content/detail_content.html'
 
-#     def setup(self, request, *args, **kwargs):
-#         self.content_instance = get_object_or_404(Content, pk=kwargs['pk'])
-#         return super().setup(request, *args, **kwargs)
-
-#     def dispatch(self, request, *args, **kwargs):
-#         post = self.content_instance
-#         return super().dispatch(request, *args, **kwargs)
-
-#     def get(self, request, *args, **kwargs):
-#         post = self.content_instance
-#         form = self.form_class(instance=post)
-#         return render(request, self.template_name, {'form': form})
-
-#     def post(self, request, *args, **kwargs):
-#         post = self.content_instance
-#         form = self.form_class(request.POST, request.FILES, instance=post)
-#         if form.is_valid():
-#             new_content = form.save(commit=False)
-#             new_content.slug = slugify(form.cleaned_data['title'],True)
-#             new_content.user = request.user
-#             new_content.save()
-#             return redirect('content:list_content')
-#         return render(request, self.template_name, {'form': form})
+    def get(self, request, c_id, c_slug):
+        content = get_object_or_404(Content, id=c_id, slug=c_slug)
+        context = {
+            'content': content,
+        }
+        return render(request, self.template_name, context)
 
 
-# class ContentDashboardList(LoginRequiredMixin, View):
-#     template_name = 'content/admin/list.html'
+class ContentDashboardListView(ListView):
+    model = Content
+    template_name = 'content/admin/list.html'
+    context_object_name = 'contents'
 
-#     def get(self, request, *args, **kwargs):
-#         context = {}
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        contents = Content.objects.all()
+        filtered_contents = ContentFilters(
+            data=self.request.GET, queryset=contents).qs
+        context['contents'] = filtered_contents
+        # context['categories'] = Category.objects.all()
+        context['status_types'] = status_content_CHOICES
+        return context
 
-#         contents = Content.objects.all()
-#         contents = ContentFilters(data=self.request.GET, queryset=contents).qs
-#         context['type_contents'] = type_content_CHOICES
-#         context['status_types'] = status_content_CHOICES
-#         context['contents'] = contents
-#         return render(request, self.template_name, context)
+
+class ContentDashboardCreateView(CreateView):
+    model = Content
+    template_name = 'content/admin/create_edit.html'
+    form_class = ContentForm
+    success_url = reverse_lazy('content:dashboard_content_list')
 
 
-# class ContentDashboardDelete(DeleteView):
-#     model = Content
-#     template_name = 'content/admin/list.html'
-#     success_url = reverse_lazy('content:list_content')
+class ContentDashboardUpdateView(UpdateView):
+    model = Content
+    template_name = 'content/admin/create_edit.html'
+    form_class = ContentForm
+    success_url = reverse_lazy('content:dashboard_content_list')
 
-#     def dispatch(self, *args, **kwargs):
-#         resp = super().dispatch(*args, **kwargs)
-#         messages.success(self.request, 'آیتم مورد نظر با موفقیت حدف شد.')
-#         return resp
+
+class ContentDashboardDeleteView(DeleteView):
+    model = Content
+    template_name = 'content/admin/create_edit.html'
+    success_url = reverse_lazy('content:dashboard_content_list')
+
+# ========================= Category =========================
+
+
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'content/admin/category/list.html'
+    context_object_name = 'categories'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        contents = Category.objects.all()
+        filtered_contents = CategoryFilters(
+            data=self.request.GET, queryset=contents).qs
+        context['categories'] = filtered_contents
+        context['status_types'] = status_content_CHOICES
+        return context
+
+
+class CategoryCreateView(CreateView):
+    model = Category
+    template_name = 'content/admin/category/create_edit.html'
+    fields = ['title', 'status']
+    success_url = reverse_lazy('content:dashboard_category_list')
+
+
+class CategoryUpdateView(UpdateView):
+    model = Category
+    template_name = 'content/admin/category/create_edit.html'
+    fields = ['title', 'status']
+    success_url = reverse_lazy('content:dashboard_category_list')
+
+
+class CategoryDeleteView(DeleteView):
+    model = Category
+    template_name = 'content/admin/category/list.html'
+    success_url = reverse_lazy('content:dashboard_category_list')
+
+    def dispatch(self, *args, **kwargs):
+        resp = super().dispatch(*args, **kwargs)
+        messages.success(self.request, 'آیتم مورد نظر با موفقیت حدف شد.')
+        return resp

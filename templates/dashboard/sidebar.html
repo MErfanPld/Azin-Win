@@ -1,152 +1,153 @@
 {% load static %}
 <div class="page-sidebar">
   <div class="main-header-left d-none d-lg-block">
-
     <p class="mt-4 text-white">
-      پنل کاربری <b>{{ request.user.full_name | default:'---'}}</b>
+      پنل کاربری <b>{{ request.user.full_name|default:'---' }}</b>
     </p>
   </div>
   <div class="sidebar custom-scrollbar">
-    <a href="javascript:void(0)" class="sidebar-back d-lg-none d-block"
-      ><i class="fa fa-times" aria-hidden="true"></i
-    ></a>
+    <a href="javascript:void(0)" class="sidebar-back d-lg-none d-block"><i class="fa fa-times" aria-hidden="true"></i></a>
     <div class="sidebar-user">
       <a href="{% url 'profile' %}">
-        <!--                <img-->
-        <!--                        class="img-60"-->
-        <!--                        src="{% static 'admin/images/dashboard/user3.jpg' %}"-->
-        <!--                        alt="#"-->
-        <!--                />-->
+        <!-- <img -->
+        <!-- class="img-60" -->
+        <!-- src="{% static 'admin/images/dashboard/user3.jpg' %}" -->
+        <!-- alt="#" -->
+        <!-- /> -->
       </a>
       <div>
-        <a href="{% url 'profile' %}"
-          ><h6 class="f-14">{{request.user.fullname}}</h6></a
-        >
+        <a href="{% url 'profile' %}"><h6 class="f-14">{{ request.user.fullname }}</h6></a>
       </div>
     </div>
     <ul class="sidebar-menu">
       <li>
         <a class="sidebar-header" href="{% url 'order:dashboard' %}">
           <i data-feather="home"></i>
-          <span>داشبورد </span>
+          <span>داشبورد</span>
         </a>
       </li>
 
       <li>
         <a class="sidebar-header" href="{% url 'profile' %}">
           <i data-feather="user"></i>
-          <span>پروفایل </span>
+          <span>پروفایل</span>
         </a>
       </li>
 
       {% if request.user.is_staff %}
-      <li>
-        <a class="sidebar-header" href="{% url 'order:dashboard_order_list' %}">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-archive"
-          >
-            <polyline points="21 8 21 21 3 21 3 8"></polyline>
-            <rect x="1" y="3" width="22" height="5"></rect>
-            <line x1="10" y1="12" x2="14" y2="12"></line>
-          </svg>
-          <span>درخواست ها</span>
-        </a>
-      </li>
+        <li>
+          <a class="sidebar-header" href="{% url 'order:dashboard_order_list' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive">
+              <polyline points="21 8 21 21 3 21 3 8"></polyline>
+              <rect x="1" y="3" width="22" height="5"></rect>
+              <line x1="10" y1="12" x2="14" y2="12"></line>
+            </svg>
+            <span>درخواست ها</span>
+          </a>
+        </li>
 
-      <li>
-        <a class="sidebar-header" href="javascript:void(0)">
-          <i data-feather="pen-tool"></i>
-          <span>سوالات متداول</span>
-          <i class="fa fa-angle-left pull-right"></i>
-        </a>
+        <li>
+          <a class="sidebar-header" href="javascript:void(0)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+            </svg>
+            <span>مدیریت دسته بندی</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <li>
+              <a href="{% url 'content:dashboard_category_list' %}"><i class="fa fa-circle"></i>لیست دسته بندی</a>
+            </li>
+            <li>
+              <a href="{% url 'content:dashboard_category_create' %}"><i class="fa fa-circle"></i>ساخت دسته بندی جدید</a>
+            </li>
+          </ul>
+        </li>
 
-        <ul class="sidebar-submenu">
-          <li>
-            <a href="{% url 'faq:list_faq' %}">
-              <i class="fa fa-circle"></i>
-              <span>لیست سوالات </span>
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'faq:create_faq' %}">
-              <i class="fa fa-circle"></i>
-              <span>ساخت سوال جدید</span>
-            </a>
-          </li>
-        </ul>
-      </li>
+        <li>
+          <a class="sidebar-header" href="javascript:void(0)">
+            <i data-feather="pen-tool"></i>
+            <span>مدیریت محتوا</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
 
-      <li>
-        <a class="sidebar-header" href="javascript:void(0)">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-user-plus"
-          >
-            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="8.5" cy="7" r="4"></circle>
-            <line x1="20" y1="8" x2="20" y2="14"></line>
-            <line x1="23" y1="11" x2="17" y2="11"></line>
-          </svg>
-          <span>کاربران </span>
-          <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="sidebar-submenu">
-          <li>
-            <a href="{% url 'list_user' %}">
-              <i class="fa fa-circle"></i>لیست کاربران
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'create_user' %}">
-              <i class="fa fa-circle"></i>افزودن کاربر
-            </a>
-          </li>
-        </ul>
-      </li>
+          <ul class="sidebar-submenu">
+            <li>
+              <a href="{% url 'content:dashboard_content_list' %}">
+                <i class="fa fa-circle"></i>
+                <span>لیست محتوا</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'content:dashboard_content_create' %}">
+                <i class="fa fa-circle"></i>
+                <span>ساخت محتوا جدید</span>
+              </a>
+            </li>
+          </ul>
+        </li>
 
-      <li>
-        <a
-          class="sidebar-header"
-          href="{% url 'contact_us:dashboard_contact_us' %}"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-align-left"
-          >
-            <line x1="17" y1="10" x2="3" y2="10"></line>
-            <line x1="21" y1="6" x2="3" y2="6"></line>
-            <line x1="21" y1="14" x2="3" y2="14"></line>
-            <line x1="17" y1="18" x2="3" y2="18"></line>
-          </svg>
-          <span>تماس با ما </span>
-        </a>
-      </li>
+        <li>
+          <a class="sidebar-header" href="javascript:void(0)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chrome">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="4"></circle>
+              <line x1="21.17" y1="8" x2="12" y2="8"></line>
+              <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+              <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+            </svg> <span>سوالات متداول</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
 
+          <ul class="sidebar-submenu">
+            <li>
+              <a href="{% url 'faq:list_faq' %}">
+                <i class="fa fa-circle"></i>
+                <span>لیست سوالات</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'faq:create_faq' %}">
+                <i class="fa fa-circle"></i>
+                <span>ساخت سوال جدید</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="sidebar-header" href="javascript:void(0)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+            <span>کاربران</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <li>
+              <a href="{% url 'list_user' %}"><i class="fa fa-circle"></i>لیست کاربران</a>
+            </li>
+            <li>
+              <a href="{% url 'create_user' %}"><i class="fa fa-circle"></i>افزودن کاربر</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="sidebar-header" href="{% url 'contact_us:dashboard_contact_us' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-left">
+              <line x1="17" y1="10" x2="3" y2="10"></line>
+              <line x1="21" y1="6" x2="3" y2="6"></line>
+              <line x1="21" y1="14" x2="3" y2="14"></line>
+              <line x1="17" y1="18" x2="3" y2="18"></line>
+            </svg>
+            <span>تماس با ما</span>
+          </a>
+        </li>
       {% endif %}
       <li>
         <a class="sidebar-header" href="{% url 'logout' %}">
@@ -179,11 +180,7 @@
         <div class="people-list friend-list">
           <ul class="list">
             <li class="clearfix">
-              <img
-                class="rounded-circle user-image blur-up lazyloaded"
-                src="{% static 'admin/images/dashboard/user.jpg' %}"
-                alt=""
-              />
+              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user.jpg' %}" alt="" />
               <div class="status-circle online"></div>
               <div class="about">
                 <div class="name">اریکا هیوز</div>
@@ -191,11 +188,7 @@
               </div>
             </li>
             <li class="clearfix">
-              <img
-                class="rounded-circle user-image blur-up lazyloaded"
-                src="{% static 'admin/images/dashboard/user1.jpg' %}"
-                alt=""
-              />
+              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user1.jpg' %}" alt="" />
               <div class="status-circle away"></div>
               <div class="about">
                 <div class="name">اریکا هیوز</div>
@@ -203,11 +196,7 @@
               </div>
             </li>
             <li class="clearfix">
-              <img
-                class="rounded-circle user-image blur-up lazyloaded"
-                src="{% static 'admin/images/dashboard/user2.jpg' %}"
-                alt=""
-              />
+              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user2.jpg' %}" alt="" />
               <div class="status-circle online"></div>
               <div class="about">
                 <div class="name">اریکا هیوز</div>
@@ -215,11 +204,7 @@
               </div>
             </li>
             <li class="clearfix">
-              <img
-                class="rounded-circle user-image blur-up lazyloaded"
-                src="{% static 'admin/images/dashboard/user3.jpg' %}"
-                alt=""
-              />
+              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user3.jpg' %}" alt="" />
               <div class="status-circle online"></div>
               <div class="about">
                 <div class="name">عین چاوز</div>
@@ -227,11 +212,7 @@
               </div>
             </li>
             <li class="clearfix">
-              <img
-                class="rounded-circle user-image blur-up lazyloaded"
-                src="{% static 'admin/images/dashboard/user3.jpg' %}"
-                alt=""
-              />
+              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user3.jpg' %}" alt="" />
               <div class="status-circle offline"></div>
               <div class="about">
                 <div class="name">عین چاوز</div>
@@ -239,11 +220,7 @@
               </div>
             </li>
             <li class="clearfix">
-              <img
-                class="rounded-circle user-image blur-up lazyloaded"
-                src="{% static 'admin/images/dashboard/user5.jpg' %}"
-                alt=""
-              />
+              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user5.jpg' %}" alt="" />
               <div class="status-circle away"></div>
               <div class="about">
                 <div class="name">عین چاوز</div>
@@ -251,11 +228,7 @@
               </div>
             </li>
             <li class="clearfix">
-              <img
-                class="rounded-circle user-image blur-up lazyloaded"
-                src="{% static 'admin/images/dashboard/designer.jpg' %}"
-                alt=""
-              />
+              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/designer.jpg' %}" alt="" />
               <div class="status-circle online"></div>
               <div class="about">
                 <div class="name">عین چاوز</div>

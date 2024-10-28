@@ -1,173 +1,138 @@
-{% extends "dashboard/base.html" %} {% load crispy_forms_tags %}
+{% extends "dashboard/base.html" %} 
+{% load crispy_forms_tags %}
 {% block content %}
 
-    <div class="container-fluid">
-        <div class="page-header">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="page-header-left">
-                        <h3>لیست محتوا</h3>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <ol class="breadcrumb pull-right">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">
-                                <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-home"
-                                >
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item">محتوا</li>
-                        <li class="breadcrumb-item active">لیست محتوا</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
+<div class="container-fluid">
+    <div class="page-header">
         <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <form class="form-inline search-form search-box">
-                            <div class="d-flex">
-                                <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
-                                    <select name="type_content" onchange="submit()" class="form-control">
-                                        <option value="">انتخاب نوع محتوا</option>
-                                        {% for item in type_contents %}
-                                            <option {% if item.0 == request.GET.type_content %}
-                                                selected {% endif %}
-                                                value="{{ item.0 }}">{{ item.1 }}
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
+            <div class="col-lg-6">
+                <div class="page-header-left">
+                    <h3>لیست محتوا</h3>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <ol class="breadcrumb pull-right">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-home">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">محتوا</li>
+                    <li class="breadcrumb-item active">لیست محتوا</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
-                                <div class=" mt-2 d-flex w-25" style="width: 150px!important; margin-left:2%">
-                                    <select name="status" onchange="submit()" class="form-control">
-                                        <option value="">انتخاب وضعیت</option>
-                                        {% for item in status_types %}
-                                            <option {% if item.0 == request.GET.status %}
-                                                selected {% endif %}
-                                                value="{{ item.0 }}">{{ item.1 }}
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <form class="form-inline search-form search-box" method="get">
+                        <div class="d-flex">
+                            <div class=" mt-2 d-flex w-25" style="width: 250px!important; margin-left:2%">
+                                <input name="search" value="{{ request.GET.search }}"
+                                       class="form-control-plaintext"
+                                       type="search"
+                                       placeholder="جستجو..."
+                                />
                             </div>
-                        </form>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive table-desi">
-                            <table class="table all-package" id="editableTable">
-                                <thead>
-                                <tr>
-                                    <th>شناسه محتوا</th>
-                                    <th>نوع محتوا</th>
-                                    <th>عنوان</th>
-                                    <th>ادرس</th>
-                                    <th>وضعیت</th>
-                                    <th>عملیات</th>
-                                </tr>
-                                </thead>
-
-                                <tbody>
-                                {% for content in contents %}
-                                    <tr>
-                                        <td data-field="date">{{ content.id }}</td>
-                                        <td data-field="number">{{ content.get_type_content | default:'---' }}</td>
-                                        <td data-field="text">{{ content.title }}</td>
-                                        <td data-field="text">{{ content.slug }}</td>
-
-                                        {% if content.status == 'A' %}
-                                            <td class="order-success">
-                                                <span>{{ content.get_status | default:'---' }}</span>
-                                            </td>
-                                        {% else %}
-                                            <td class="order-cancle">
-                                                <span>{{ content.get_status | default:'---' }}</span>
-                                            </td>
-                                        {% endif %}
-                                        <td>
-                                            <!-- <a href="{% url 'content:home_detail_content' content.id content.slug %}">
-                                                <i class="fa fa-eye" title="جزییات محتوا"></i>
-                                            </a> -->
-
-                                            <a href="{% url 'content:update_content' content.id %}">
-                                                <i class="fa fa-edit" title="ویرایش"></i>
-                                            </a>
-
-                                            <form action="{% url 'content:delete_content' content.id %}"
-                                                  style="display: none"
-                                                  id="delete_form_{{ content.id }}"
-                                                  method="post">
-                                                {% csrf_token %}
-                                            </form>
-                                            <a onclick="DeleteConfirm('{{ content.id }}')">
-                                                <i class="fa fa-trash" title="حذف"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
+                            <div class="mt-2 d-flex" style="width: 150px; margin-left: 2%;">
+                                <select name="status" onchange="this.form.submit()" class="form-control">
+                                    <option value="">انتخاب وضعیت</option>
+                                    {% for item in status_types %}
+                                        <option {% if item.0 == request.GET.status %} selected {% endif %}
+                                                value="{{ item.0 }}">{{ item.1 }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
                         </div>
+                    </form>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive table-desi">
+                        <table class="table all-package" id="editableTable">
+                            <thead>
+                            <tr>
+                                <th>شناسه محتوا</th>
+                                <th>دسته بندی </th>
+                                <th>عنوان</th>
+                                <th>آدرس</th>
+                                <th>وضعیت</th>
+                                <th>عملیات</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for content in contents %}
+                                <tr class="{% if content.status == 'A' %}order-success{% else %}order-cancel{% endif %}">
+                                    <td>{{ content.id }}</td>
+                                    <td>{{ content.category|default:'---' }}</td>
+                                    <td>{{ content.title }}</td>
+                                    <td>{{ content.slug }}</td>
+                                    <td>
+                                        <span>{{ content.get_status|default:'---' }}</span>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'content:dashboard_content_edit' content.id %}">
+                                            <i class="fa fa-edit" title="ویرایش"></i>
+                                        </a>
+                                        <form action="{% url 'content:dashboard_content_delete' content.id %}" style="display: none"
+                                              id="delete_form_{{ content.id }}" method="post">
+                                            {% csrf_token %}
+                                        </form>
+                                        <a onclick="DeleteConfirm('{{ content.id }}')">
+                                            <i class="fa fa-trash" title="حذف"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock content %}
 
-
 {% block Scripts %}
-    <script>
-        function DeleteConfirm(id) {
-            Swal.fire({
-                title: "هشدار ! ",
-                icon: 'warning',
-                text: "آیا از حذف این آیتم اطمینان دارید؟",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: '#00aced',
-                cancelButtonColor: '#e6294b',
-                confirmButtonText: 'حذف',
-                cancelButtonText: 'انصراف'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $('#delete_form_' + id).submit();
-                }
-            })
-        }
-
-    </script>
+<script>
+    function DeleteConfirm(id) {
+        Swal.fire({
+            title: "هشدار !",
+            icon: 'warning',
+            text: "آیا از حذف این آیتم اطمینان دارید؟",
+            showCancelButton: true,
+            confirmButtonColor: '#00aced',
+            cancelButtonColor: '#e6294b',
+            confirmButtonText: 'حذف',
+            cancelButtonText: 'انصراف'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $('#delete_form_' + id).submit();
+            }
+        });
+    }
 
     {% if messages %}
-        {% for item in messages %}
-            <script>
-                Swal.fire({
-                    title: "تبریک ! 🥳",
-                    icon: 'success',
-                    text: '{{ item }}',
-                    type: "success",
-                    cancelButtonColor: 'var(--primary)',
-                    confirmButtonText: 'اوکی',
-                })
-            </script>
+        {% for message in messages %}
+            Swal.fire({
+                title: "تبریک ! 🥳",
+                icon: 'success',
+                text: '{{ message }}',
+                confirmButtonText: 'اوکی',
+            });
         {% endfor %}
     {% endif %}
+</script>
 {% endblock %}
