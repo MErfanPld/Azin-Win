@@ -36,18 +36,17 @@ class Category(models.Model):
 class Content(models.Model):
     # type_content = models.CharField(
     #     max_length=2, choices=type_content_CHOICES, blank=True, null=True, verbose_name="نوع محتوا")
-    title = models.CharField(max_length=225, blank=False,
-                             null=True, verbose_name="عنوان محتوا")
+    title = models.CharField(max_length=225,verbose_name="عنوان محتوا")
     slug = models.SlugField(max_length=200, unique=True,
                             blank=True, verbose_name="ادرس")
-    category = models.ForeignKey(Category, blank=True, null=True,
+    category = models.ForeignKey(Category,
                                  on_delete=models.CASCADE, related_name="content", verbose_name="دسته بندی")
     body = models.TextField(verbose_name="متن")
     cover = models.ImageField(upload_to=upload_image_content, verbose_name="تصویر بزرگ")
     thumbnail = models.ImageField(
-        upload_to=upload_image_content, blank=True, null=True, verbose_name="تصویر بندانگشتی")
+        upload_to=upload_image_content, verbose_name="تصویر بندانگشتی")
     status = models.CharField(
-        max_length=2, choices=status_content_CHOICES, blank=True, null=True, verbose_name="ضعیت")
+        max_length=2, choices=status_content_CHOICES, verbose_name="ضعیت")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")
 
     def __str__(self):

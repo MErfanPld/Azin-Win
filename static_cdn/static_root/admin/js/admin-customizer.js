@@ -1,5 +1,5 @@
 // RTl & Ltr
-$('<ul class="custom-theme"><li class="demo-li"><a href="../front-end/index.html" target="_blank">سایت</a></li><li class="btn-dark-setting">تیره</li></ul>').appendTo($('body'));
+$('<ul class="custom-theme"><li class="demo-li"><a href="http://azinwin.com/" target="_blank">سایت</a></li><li class="btn-dark-setting">تیره</li></ul>').appendTo($('body'));
 (function () {
 })();
 //live customizer js

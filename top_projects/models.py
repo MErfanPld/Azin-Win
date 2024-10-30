@@ -18,7 +18,7 @@ class TopProject(models.Model):
     images_4 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 4")
     images_5 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 5")
     status = models.CharField(
-        max_length=2, choices=status_CHOICES, blank=True, null=True, default='B', verbose_name="وضعیت درخواست")
+        max_length=2, choices=status_CHOICES, default='A', verbose_name="وضعیت درخواست")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")
 
     def __str__(self):
