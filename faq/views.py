@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views import View
+
+from order.forms import OrderForm
 from .models import FAQ
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
@@ -18,7 +20,7 @@ class FAQListView(View):
 
     def get(self, request, *args, **kwargs):
         faqs = FAQ.objects.all()
-        context = {'faqs': faqs}
+        context = {'faqs': faqs, 'form': OrderForm()}
 
         return render(request, self.template_name, context)
 

@@ -3,6 +3,7 @@ from django.utils import timezone
 
 # Create your models here.
 from content.helpers import type_content_CHOICES, status_content_CHOICES
+from content.utils import upload_image_content
 from extenstions.utils import jalali_converter
 from django.utils.text import slugify
 
@@ -42,9 +43,9 @@ class Content(models.Model):
     category = models.ForeignKey(Category, blank=True, null=True,
                                  on_delete=models.CASCADE, related_name="content", verbose_name="دسته بندی")
     body = models.TextField(verbose_name="متن")
-    cover = models.ImageField(default="1.png", verbose_name="تصویر بزرگ")
+    cover = models.ImageField(upload_to=upload_image_content, verbose_name="تصویر بزرگ")
     thumbnail = models.ImageField(
-        upload_to='thumbnails/', blank=True, null=True, verbose_name="تصویر بندانگشتی")
+        upload_to=upload_image_content, blank=True, null=True, verbose_name="تصویر بندانگشتی")
     status = models.CharField(
         max_length=2, choices=status_content_CHOICES, blank=True, null=True, verbose_name="ضعیت")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")

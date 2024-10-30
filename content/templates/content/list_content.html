@@ -10,7 +10,8 @@
                     {% if type_content_name %}
                     <h2>{{ type_content_name }}</h2>
                     {% else %}
-                         لیست ها محتوا
+<h2>                        وبلاگ 
+</h2>
                     {% endif %}
                 </div>
             </div>
@@ -22,8 +23,7 @@
                             {% if type_content_name %}
                                 {{ type_content_name }}
                             {% else %}
-                                لیست ها محتوا
-                            {% endif %}
+وبلاگ                            {% endif %}
                         </li>
                     </ol>
                 </nav>
@@ -59,6 +59,9 @@
 <section class="section-b-space blog-page ratio2_3">
     <div class="container">
         <div class="row">
+            <div class="title2">
+                <h2 class="title-inner2">وبلاگ</h2>
+              </div>
             <div class="col-12">
                 {% for content in contents %}
                 <div class="row blog-media">

@@ -6,6 +6,8 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 
+from order.forms import OrderForm
+
 from .filters import TopFilters
 from .helpers import status_content_CHOICES
 from .models import TopProject
@@ -19,7 +21,8 @@ class TopProjectListView(View):
 
     def get(self, request, *args, **kwargs):
         top_projects = TopProject.objects.filter(status='A')
-        context = {'top_projects': top_projects}
+        context = {'top_projects': top_projects,'form': OrderForm(),
+                   }
 
         return render(request, self.template_name, context)
 
@@ -65,7 +68,8 @@ class TopProjectUpdateView(LoginRequiredMixin, UpdateView):
         form = self.form_class(request.POST, request.FILES, instance=post)
         if form.is_valid():
             new_top_projects = form.save(commit=False)
-            new_top_projects.slug = slugify(form.cleaned_data['project_name'][:30])
+            new_top_projects.slug = slugify(
+                form.cleaned_data['project_name'][:30])
             new_top_projects.user = request.user
             new_top_projects.save()
             return redirect('top_projects:list_top_projects')

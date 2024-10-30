@@ -62,7 +62,6 @@
                                     <th>شناسه پروژه</th>
                                     <th>نام مهندس</th>
                                     <th>نام پروژه</th>
-                                    <th>ادرس</th>
                                     <th>وضعیت</th>
                                     <th>عملیات</th>
                                 </tr>
@@ -74,7 +73,6 @@
                                         <td data-field="date">{{ top_project.id }}</td>
                                         <td data-field="number">{{ top_project.eng_name }}</td>
                                         <td data-field="text">{{ top_project.project_name }}</td>
-                                        <td data-field="text">{{ top_project.slug }}</td>
 
                                         {% if top_project.status == 'A' %}
                                             <td class="order-success">

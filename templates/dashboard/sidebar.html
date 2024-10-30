@@ -90,6 +90,29 @@
 
         <li>
           <a class="sidebar-header" href="javascript:void(0)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            <span>پروژه های برتر</span>
+            <i class="fa fa-angle-left  pull-right"></i>
+        </a>
+
+          <ul class="sidebar-submenu">
+            <li>
+              <a href="{% url 'top_projects:list_top_projects' %}">
+                <i class="fa fa-circle"></i>
+                <span>لیست پروژه ها</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'top_projects:create_top_projects' %}">
+                <i class="fa fa-circle"></i>
+                <span>ساخت پروژه جدید</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="sidebar-header" href="javascript:void(0)">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chrome">
               <circle cx="12" cy="12" r="10"></circle>
               <circle cx="12" cy="12" r="4"></circle>
@@ -156,88 +179,5 @@
         </a>
       </li>
     </ul>
-  </div>
-</div>
-
-<div class="right-sidebar" id="right_side_bar">
-  <div>
-    <div class="container p-0">
-      <div class="modal-header p-l-20 p-r-20">
-        <div class="col-sm-8 p-0">
-          <h6 class="modal-title font-weight-bold">لیست دوستان</h6>
-        </div>
-        <div class="col-sm-4 text-end p-0">
-          <i class="me-2" data-feather="settings"></i>
-        </div>
-      </div>
-    </div>
-    <div class="friend-list-search mt-0">
-      <input type="text" placeholder="جستجوی دوست " />
-      <i class="fa fa-search"></i>
-    </div>
-    <div class="p-l-30 p-r-30 friend-list-name">
-      <div class="chat-box">
-        <div class="people-list friend-list">
-          <ul class="list">
-            <li class="clearfix">
-              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user.jpg' %}" alt="" />
-              <div class="status-circle online"></div>
-              <div class="about">
-                <div class="name">اریکا هیوز</div>
-                <div class="status">آنلاین</div>
-              </div>
-            </li>
-            <li class="clearfix">
-              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user1.jpg' %}" alt="" />
-              <div class="status-circle away"></div>
-              <div class="about">
-                <div class="name">اریکا هیوز</div>
-                <div class="status">20 دقیقه قبل</div>
-              </div>
-            </li>
-            <li class="clearfix">
-              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user2.jpg' %}" alt="" />
-              <div class="status-circle online"></div>
-              <div class="about">
-                <div class="name">اریکا هیوز</div>
-                <div class="status">آنلاین</div>
-              </div>
-            </li>
-            <li class="clearfix">
-              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user3.jpg' %}" alt="" />
-              <div class="status-circle online"></div>
-              <div class="about">
-                <div class="name">عین چاوز</div>
-                <div class="status">آنلاین</div>
-              </div>
-            </li>
-            <li class="clearfix">
-              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user3.jpg' %}" alt="" />
-              <div class="status-circle offline"></div>
-              <div class="about">
-                <div class="name">عین چاوز</div>
-                <div class="status">20 دقیقه قبل</div>
-              </div>
-            </li>
-            <li class="clearfix">
-              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/user5.jpg' %}" alt="" />
-              <div class="status-circle away"></div>
-              <div class="about">
-                <div class="name">عین چاوز</div>
-                <div class="status">20 دقیقه قبل</div>
-              </div>
-            </li>
-            <li class="clearfix">
-              <img class="rounded-circle user-image blur-up lazyloaded" src="{% static 'admin/images/dashboard/designer.jpg' %}" alt="" />
-              <div class="status-circle online"></div>
-              <div class="about">
-                <div class="name">عین چاوز</div>
-                <div class="status">آنلاین</div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
