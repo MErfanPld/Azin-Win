@@ -37,6 +37,7 @@
 
               <div class="form-group row">
                 <div class="col-md-6">{{ form.title|as_crispy_field }}</div>
+                <div class="col-md-6">{{ form.slug|as_crispy_field }}</div>
                 {% if form.status %}
                   <div class="col-md-6">{{ form.status|as_crispy_field }}</div>
                 {% endif %}

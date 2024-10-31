@@ -142,14 +142,14 @@ class CategoryListView(ListView):
 class CategoryCreateView(CreateView):
     model = Category
     template_name = 'content/admin/category/create_edit.html'
-    fields = ['title', 'status']
+    fields = ['title', 'slug','status']
     success_url = reverse_lazy('content:dashboard_category_list')
 
 
 class CategoryUpdateView(UpdateView):
     model = Category
     template_name = 'content/admin/category/create_edit.html'
-    fields = ['title', 'status']
+    fields = ['title', 'slug','status']
     success_url = reverse_lazy('content:dashboard_category_list')
 
 
