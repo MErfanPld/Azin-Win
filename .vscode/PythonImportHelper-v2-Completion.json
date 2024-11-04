@@ -16,6 +16,126 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -88,14 +208,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -137,174 +249,6 @@
     },
     {
         "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -329,6 +273,14 @@
     },
     {
         "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
         "importPath": "django.contrib",
         "description": "django.contrib",
         "isExtraImport": true,
@@ -557,6 +509,78 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "template",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -657,6 +681,14 @@
     },
     {
         "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse_lazy",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -784,15 +816,7 @@
         "documentation": {}
     },
     {
-        "label": "reverse_lazy",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "path",
+        "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -808,31 +832,7 @@
         "documentation": {}
     },
     {
-        "label": "include",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
         "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "include",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -872,6 +872,46 @@
         "documentation": {}
     },
     {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse_lazy",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -881,6 +921,14 @@
     },
     {
         "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -904,54 +952,6 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -1000,6 +1000,54 @@
         "documentation": {}
     },
     {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -1056,6 +1104,30 @@
         "documentation": {}
     },
     {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -1125,6 +1197,398 @@
         "description": "django.views",
         "isExtraImport": true,
         "detail": "django.views",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views",
+        "description": "django.views",
+        "isExtraImport": true,
+        "detail": "django.views",
+        "documentation": {}
+    },
+    {
+        "label": "View",
+        "importPath": "django.views",
+        "description": "django.views",
+        "isExtraImport": true,
+        "detail": "django.views",
+        "documentation": {}
+    },
+    {
+        "label": "AboutForm",
+        "importPath": "about_us.forms",
+        "description": "about_us.forms",
+        "isExtraImport": true,
+        "detail": "about_us.forms",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "CreateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "FormView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "ListView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "CreateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "ListView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "CreateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "ListView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DetailView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "UserPassesTestMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequiredMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "UserPassesTestMixin",
+        "importPath": "django.contrib.auth.mixins",
+        "description": "django.contrib.auth.mixins",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.mixins",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
+        "documentation": {}
+    },
+    {
+        "label": "slugify",
+        "importPath": "django.utils.text",
+        "description": "django.utils.text",
+        "isExtraImport": true,
+        "detail": "django.utils.text",
         "documentation": {}
     },
     {
@@ -1826,70 +2290,6 @@
         "documentation": {}
     },
     {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "template",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
         "label": "random",
         "kind": 6,
         "isExtraImport": true,
@@ -2092,203 +2492,11 @@
         "documentation": {}
     },
     {
-        "label": "CreateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
         "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "FormView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "UpdateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DeleteView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "ListView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "CreateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "UpdateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DeleteView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DeleteView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "UpdateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DetailView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DeleteView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "ListView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "CreateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "UpdateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DeleteView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "UpdateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DetailView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DeleteView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DetailView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DeleteView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "ListView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "UpdateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DetailView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DeleteView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
+        "detail": "django.http",
         "documentation": {}
     },
     {
@@ -2409,70 +2617,6 @@
         "description": "ACL.permissions",
         "isExtraImport": true,
         "detail": "ACL.permissions",
-        "documentation": {}
-    },
-    {
-        "label": "LoginRequiredMixin",
-        "importPath": "django.contrib.auth.mixins",
-        "description": "django.contrib.auth.mixins",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.mixins",
-        "documentation": {}
-    },
-    {
-        "label": "UserPassesTestMixin",
-        "importPath": "django.contrib.auth.mixins",
-        "description": "django.contrib.auth.mixins",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.mixins",
-        "documentation": {}
-    },
-    {
-        "label": "LoginRequiredMixin",
-        "importPath": "django.contrib.auth.mixins",
-        "description": "django.contrib.auth.mixins",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.mixins",
-        "documentation": {}
-    },
-    {
-        "label": "LoginRequiredMixin",
-        "importPath": "django.contrib.auth.mixins",
-        "description": "django.contrib.auth.mixins",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.mixins",
-        "documentation": {}
-    },
-    {
-        "label": "LoginRequiredMixin",
-        "importPath": "django.contrib.auth.mixins",
-        "description": "django.contrib.auth.mixins",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.mixins",
-        "documentation": {}
-    },
-    {
-        "label": "LoginRequiredMixin",
-        "importPath": "django.contrib.auth.mixins",
-        "description": "django.contrib.auth.mixins",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.mixins",
-        "documentation": {}
-    },
-    {
-        "label": "LoginRequiredMixin",
-        "importPath": "django.contrib.auth.mixins",
-        "description": "django.contrib.auth.mixins",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.mixins",
-        "documentation": {}
-    },
-    {
-        "label": "UserPassesTestMixin",
-        "importPath": "django.contrib.auth.mixins",
-        "description": "django.contrib.auth.mixins",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.mixins",
         "documentation": {}
     },
     {
@@ -2645,6 +2789,23 @@
         "documentation": {}
     },
     {
+        "label": "content.utils",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "content.utils",
+        "description": "content.utils",
+        "detail": "content.utils",
+        "documentation": {}
+    },
+    {
+        "label": "upload_image_content",
+        "importPath": "content.utils",
+        "description": "content.utils",
+        "isExtraImport": true,
+        "detail": "content.utils",
+        "documentation": {}
+    },
+    {
         "label": "Category",
         "importPath": "content.models",
         "description": "content.models",
@@ -2661,51 +2822,28 @@
         "documentation": {}
     },
     {
-        "label": "slugify",
-        "importPath": "django.utils.text",
-        "description": "django.utils.text",
+        "label": "time",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "django.utils.text",
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
         "documentation": {}
     },
     {
-        "label": "slugify",
-        "importPath": "django.utils.text",
-        "description": "django.utils.text",
+        "label": "OrderForm",
+        "importPath": "order.forms",
+        "description": "order.forms",
         "isExtraImport": true,
-        "detail": "django.utils.text",
+        "detail": "order.forms",
         "documentation": {}
     },
     {
-        "label": "slugify",
-        "importPath": "django.utils.text",
-        "description": "django.utils.text",
+        "label": "OrderForm",
+        "importPath": "order.forms",
+        "description": "order.forms",
         "isExtraImport": true,
-        "detail": "django.utils.text",
-        "documentation": {}
-    },
-    {
-        "label": "slugify",
-        "importPath": "django.utils.text",
-        "description": "django.utils.text",
-        "isExtraImport": true,
-        "detail": "django.utils.text",
-        "documentation": {}
-    },
-    {
-        "label": "slugify",
-        "importPath": "django.utils.text",
-        "description": "django.utils.text",
-        "isExtraImport": true,
-        "detail": "django.utils.text",
-        "documentation": {}
-    },
-    {
-        "label": "slugify",
-        "importPath": "django.utils.text",
-        "description": "django.utils.text",
-        "isExtraImport": true,
-        "detail": "django.utils.text",
+        "detail": "order.forms",
         "documentation": {}
     },
     {
@@ -2814,6 +2952,15 @@
         "documentation": {}
     },
     {
+        "label": "openpyxl",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "openpyxl",
+        "description": "openpyxl",
+        "detail": "openpyxl",
+        "documentation": {}
+    },
+    {
         "label": "RestPermissionMixin",
         "importPath": "acl.rest_mixin",
         "description": "acl.rest_mixin",
@@ -2852,6 +2999,23 @@
         "description": "kavenegar",
         "isExtraImport": true,
         "detail": "kavenegar",
+        "documentation": {}
+    },
+    {
+        "label": "top_projects.utils",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "top_projects.utils",
+        "description": "top_projects.utils",
+        "detail": "top_projects.utils",
+        "documentation": {}
+    },
+    {
+        "label": "upload_image_top_project",
+        "importPath": "top_projects.utils",
+        "description": "top_projects.utils",
+        "isExtraImport": true,
+        "detail": "top_projects.utils",
         "documentation": {}
     },
     {
@@ -2930,6 +3094,33 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "about_us.migrations.0002_rename_addr_about_us_body_remove_about_us_desc_and_more",
+        "description": "about_us.migrations.0002_rename_addr_about_us_body_remove_about_us_desc_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('about_us', '0001_initial'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='about_us',\n            old_name='addr',\n            new_name='body',\n        ),",
+        "detail": "about_us.migrations.0002_rename_addr_about_us_body_remove_about_us_desc_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "about_us.migrations.0003_alter_about_us_body",
+        "description": "about_us.migrations.0003_alter_about_us_body",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('about_us', '0002_rename_addr_about_us_body_remove_about_us_desc_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='about_us',\n            name='body',\n            field=models.TextField(verbose_name='متن'),\n        ),",
+        "detail": "about_us.migrations.0003_alter_about_us_body",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "about_us.migrations.0004_remove_about_us_image",
+        "description": "about_us.migrations.0004_remove_about_us_image",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('about_us', '0003_alter_about_us_body'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='about_us',\n            name='image',\n        ),\n    ]",
+        "detail": "about_us.migrations.0004_remove_about_us_image",
+        "documentation": {}
+    },
+    {
         "label": "AboutUsConfig",
         "kind": 6,
         "importPath": "about_us.apps",
@@ -2939,12 +3130,30 @@
         "documentation": {}
     },
     {
+        "label": "AboutForm",
+        "kind": 6,
+        "importPath": "about_us.forms",
+        "description": "about_us.forms",
+        "peekOfCode": "class AboutForm(forms.ModelForm):\n    class Meta:\n        model = About_us\n        fields = '__all__'\n        widgets = {\n            'body': forms.Textarea(attrs={'class': 'form-control'})\n        }",
+        "detail": "about_us.forms",
+        "documentation": {}
+    },
+    {
         "label": "About_us",
         "kind": 6,
         "importPath": "about_us.models",
         "description": "about_us.models",
-        "peekOfCode": "class About_us(models.Model):\n    image = models.ImageField(upload_to='1.png', verbose_name=\"تصویر\")\n    addr = models.TextField(verbose_name=\"ادرس\")\n    tel = models.CharField(max_length=150, verbose_name=\"تلفن\")\n    desc = models.TextField(verbose_name=\"توضیحات\")\n    def __str__(self):\n        return f\"{self.tel}\"\n    class Meta:\n        verbose_name = \"درباره ما\"\n        verbose_name_plural = \"درباره ما\"",
+        "peekOfCode": "class About_us(models.Model):\n    body = models.TextField(verbose_name=\"متن\")\n    class Meta:\n        verbose_name = \"درباره ما\"\n        verbose_name_plural = \"درباره ما\"",
         "detail": "about_us.models",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "about_us.urls",
+        "description": "about_us.urls",
+        "peekOfCode": "app_name = \"about_us\"\nurlpatterns = [\n    path('', views.AboutUsView.as_view(), name=\"about_us\"),\n    path('dashboard/create', views.AboutUsCreateView.as_view(), name='create_about'),\n    path('dashboard/list', views.AboutUsDashboardList.as_view(), name='list_about'),\n    path('dashboard/edit/<int:pk>', views.AboutUsUpdateView.as_view(), name='update_about'),\n    path('dashboard/delete/<int:pk>', views.AboutUsDashboardDelete.as_view(), name='delete_about'),\n]",
+        "detail": "about_us.urls",
         "documentation": {}
     },
     {
@@ -2952,7 +3161,7 @@
         "kind": 5,
         "importPath": "about_us.urls",
         "description": "about_us.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.AboutUsView.as_view(), name=\"about_us\")\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.AboutUsView.as_view(), name=\"about_us\"),\n    path('dashboard/create', views.AboutUsCreateView.as_view(), name='create_about'),\n    path('dashboard/list', views.AboutUsDashboardList.as_view(), name='list_about'),\n    path('dashboard/edit/<int:pk>', views.AboutUsUpdateView.as_view(), name='update_about'),\n    path('dashboard/delete/<int:pk>', views.AboutUsDashboardDelete.as_view(), name='delete_about'),\n]",
         "detail": "about_us.urls",
         "documentation": {}
     },
@@ -2961,7 +3170,43 @@
         "kind": 6,
         "importPath": "about_us.views",
         "description": "about_us.views",
-        "peekOfCode": "class AboutUsView(View):\n    template_name = 'about_us/about_us.html'\n    def get(self, request, *args, **kwargs):\n        about_us = About_us.objects.all()\n        context = {'about_us': about_us}\n        return render(request, self.template_name, context)",
+        "peekOfCode": "class AboutUsView(View):\n    template_name = 'about_us/about_us.html'\n    def get(self, request, *args, **kwargs):\n        about_us = About_us.objects.all()\n        context = {'about_us': about_us}\n        return render(request, self.template_name, context)\nclass AboutUsCreateView(View):\n    form_class = AboutForm\n    template_name = 'about_us/admin/create_edit.html'\n    def get(self, request, *args, **kwargs):",
+        "detail": "about_us.views",
+        "documentation": {}
+    },
+    {
+        "label": "AboutUsCreateView",
+        "kind": 6,
+        "importPath": "about_us.views",
+        "description": "about_us.views",
+        "peekOfCode": "class AboutUsCreateView(View):\n    form_class = AboutForm\n    template_name = 'about_us/admin/create_edit.html'\n    def get(self, request, *args, **kwargs):\n        form = self.form_class\n        return render(request, self.template_name, {'form': form})\n    def post(self, request, *args, **kwargs):\n        form = self.form_class(request.POST)\n        if form.is_valid():\n            new_AboutUs = form.save(commit=False)",
+        "detail": "about_us.views",
+        "documentation": {}
+    },
+    {
+        "label": "AboutUsUpdateView",
+        "kind": 6,
+        "importPath": "about_us.views",
+        "description": "about_us.views",
+        "peekOfCode": "class AboutUsUpdateView(LoginRequiredMixin, UpdateView):\n    form_class = AboutForm\n    template_name = 'about_us/admin/create_edit.html'\n    def setup(self, request, *args, **kwargs):\n        self.AboutUss = get_object_or_404(About_us, pk=kwargs['pk'])\n        return super().setup(request, *args, **kwargs)\n    def dispatch(self, request, *args, **kwargs):\n        post = self.AboutUss\n        return super().dispatch(request, *args, **kwargs)\n    def get(self, request, *args, **kwargs):",
+        "detail": "about_us.views",
+        "documentation": {}
+    },
+    {
+        "label": "AboutUsDashboardDelete",
+        "kind": 6,
+        "importPath": "about_us.views",
+        "description": "about_us.views",
+        "peekOfCode": "class AboutUsDashboardDelete(DeleteView):\n    model = About_us\n    template_name = 'about_us/admin/list.html'\n    success_url = reverse_lazy('AboutUs:list_AboutUs')\n    def dispatch(self, *args, **kwargs):\n        resp = super().dispatch(*args, **kwargs)\n        messages.success(self.request, 'آیتم مورد نظر با موفقیت حدف شد.')\n        return resp\nclass AboutUsDashboardList(LoginRequiredMixin, View):\n    template_name = 'about_us/admin/list.html'",
+        "detail": "about_us.views",
+        "documentation": {}
+    },
+    {
+        "label": "AboutUsDashboardList",
+        "kind": 6,
+        "importPath": "about_us.views",
+        "description": "about_us.views",
+        "peekOfCode": "class AboutUsDashboardList(LoginRequiredMixin, View):\n    template_name = 'about_us/admin/list.html'\n    def get(self, request, *args, **kwargs):\n        AboutUss = About_us.objects.all()\n        context = {'AboutUss': AboutUss}\n        return render(request, self.template_name, context)",
         "detail": "about_us.views",
         "documentation": {}
     },
@@ -4419,53 +4664,8 @@
         "kind": 6,
         "importPath": "content.migrations.0001_initial",
         "description": "content.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Content',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('type_content', models.CharField(blank=True, choices=[('A', 'UPVC (یو پی وی سی)'), ('B', ' آلومینیوم ترمال بریک'), ('C', ' شیشه نما')], max_length=2, null=True, verbose_name='نوع محتوا')),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(max_length=225, null=True, verbose_name='نام دسته بندی')),",
         "detail": "content.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "content.migrations.0002_content_cover_content_thumnail",
-        "description": "content.migrations.0002_content_cover_content_thumnail",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('content', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='content',\n            name='cover',\n            field=models.ImageField(default='1.png', upload_to='', verbose_name='تصویر بزرگ'),\n        ),",
-        "detail": "content.migrations.0002_content_cover_content_thumnail",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "content.migrations.0003_category_content_category",
-        "description": "content.migrations.0003_category_content_category",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('content', '0002_content_cover_content_thumnail'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('title', models.CharField(max_length=225, null=True, verbose_name='نام دسته بندی')),",
-        "detail": "content.migrations.0003_category_content_category",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "content.migrations.0004_remove_content_thumnail_content_thumbnail",
-        "description": "content.migrations.0004_remove_content_thumnail_content_thumbnail",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('content', '0003_category_content_category'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='content',\n            name='thumnail',\n        ),\n        migrations.AddField(",
-        "detail": "content.migrations.0004_remove_content_thumnail_content_thumbnail",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "content.migrations.0005_remove_content_type_content",
-        "description": "content.migrations.0005_remove_content_type_content",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('content', '0004_remove_content_thumnail_content_thumbnail'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='content',\n            name='type_content',\n        ),\n    ]",
-        "detail": "content.migrations.0005_remove_content_type_content",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "content.migrations.0006_alter_content_thumbnail",
-        "description": "content.migrations.0006_alter_content_thumbnail",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('content', '0005_remove_content_type_content'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='content',\n            name='thumbnail',\n            field=models.ImageField(blank=True, null=True, upload_to='thumbnails/', verbose_name='تصویر بندانگشتی'),\n        ),",
-        "detail": "content.migrations.0006_alter_content_thumbnail",
         "documentation": {}
     },
     {
@@ -4518,7 +4718,7 @@
         "kind": 6,
         "importPath": "content.forms",
         "description": "content.forms",
-        "peekOfCode": "class ContentForm(forms.ModelForm):\n    class Meta:\n        model = Content\n        fields = ['title', 'slug','category', 'body', 'cover', 'thumbnail', 'status']\n    def clean_slug(self):\n        slug = self.cleaned_data['slug']\n        if Content.objects.filter(slug=slug).exists():\n            raise forms.ValidationError(\"این slug قبلاً استفاده شده است.\")\n        return slug\nclass CategoryForm(forms.ModelForm):",
+        "peekOfCode": "class ContentForm(forms.ModelForm):\n    class Meta:\n        model = Content\n        fields = ['title', 'slug', 'category',\n                  'body', 'cover', 'thumbnail', 'status']\n    def clean_slug(self):\n        slug = self.cleaned_data['slug']\n        if Content.objects.filter(slug=slug).exists():\n            raise forms.ValidationError(\"این slug قبلاً استفاده شده است.\")\n        return slug",
         "detail": "content.forms",
         "documentation": {}
     },
@@ -4527,7 +4727,7 @@
         "kind": 6,
         "importPath": "content.forms",
         "description": "content.forms",
-        "peekOfCode": "class CategoryForm(forms.ModelForm):\n    class Meta:\n        model = Category\n        fields = ['title', 'status']",
+        "peekOfCode": "class CategoryForm(forms.ModelForm):\n    class Meta:\n        model = Category\n        fields = ['title', 'slug', 'status']\n    def clean_slug(self):\n        slug = self.cleaned_data['slug']\n        if Content.objects.filter(slug=slug).exists():\n            raise forms.ValidationError(\"این slug قبلاً استفاده شده است.\")\n        return slug",
         "detail": "content.forms",
         "documentation": {}
     },
@@ -4563,7 +4763,7 @@
         "kind": 6,
         "importPath": "content.models",
         "description": "content.models",
-        "peekOfCode": "class Content(models.Model):\n    # type_content = models.CharField(\n    #     max_length=2, choices=type_content_CHOICES, blank=True, null=True, verbose_name=\"نوع محتوا\")\n    title = models.CharField(max_length=225, blank=False,\n                             null=True, verbose_name=\"عنوان محتوا\")\n    slug = models.SlugField(max_length=200, unique=True,\n                            blank=True, verbose_name=\"ادرس\")\n    category = models.ForeignKey(Category, blank=True, null=True,\n                                 on_delete=models.CASCADE, related_name=\"content\", verbose_name=\"دسته بندی\")\n    body = models.TextField(verbose_name=\"متن\")",
+        "peekOfCode": "class Content(models.Model):\n    # type_content = models.CharField(\n    #     max_length=2, choices=type_content_CHOICES, blank=True, null=True, verbose_name=\"نوع محتوا\")\n    title = models.CharField(max_length=225,verbose_name=\"عنوان محتوا\")\n    slug = models.SlugField(max_length=200, unique=True,\n                            blank=True, verbose_name=\"ادرس\")\n    category = models.ForeignKey(Category,\n                                 on_delete=models.CASCADE, related_name=\"content\", verbose_name=\"دسته بندی\")\n    body = models.TextField(verbose_name=\"متن\")\n    cover = models.ImageField(upload_to=upload_image_content, verbose_name=\"تصویر بزرگ\")",
         "detail": "content.models",
         "documentation": {}
     },
@@ -4583,6 +4783,15 @@
         "description": "content.urls",
         "peekOfCode": "urlpatterns = [\n    path('upvc/', views.ContentUPVC.as_view(), name='home_upvc'),\n    path('thermal_break/', views.ContentTermal.as_view(), name='home_termal'),\n    path('curtain_wall/', views.Contentnama.as_view(), name='home_nama'),\n    path('contents/', views.ContentListView.as_view(), name='home_list_content'),\n    path('contents/<int:c_id>/<slug:c_slug>/',views.ContentDetailView.as_view(), name='home_detail_content'),\n    path('dashboard/contents/', views.ContentDashboardListView.as_view(),\n         name='dashboard_content_list'),\n    path('dashboard/contents/create/', views.ContentDashboardCreateView.as_view(),\n         name='dashboard_content_create'),",
         "detail": "content.urls",
+        "documentation": {}
+    },
+    {
+        "label": "upload_image_content",
+        "kind": 2,
+        "importPath": "content.utils",
+        "description": "content.utils",
+        "peekOfCode": "def upload_image_content(instance, filename):\n    path = 'uploads/' + 'content/' + \\\n        slugify(instance.title, allow_unicode=True)\n    name = str(time.time()) + '-' + str(instance.title) + '-' + filename\n    return path + '/' + name",
+        "detail": "content.utils",
         "documentation": {}
     },
     {
@@ -4608,7 +4817,7 @@
         "kind": 6,
         "importPath": "content.views",
         "description": "content.views",
-        "peekOfCode": "class Contentnama(View):\n    template_name = 'content/nama.html'\n    def get(self, request, *args, **kwargs):\n        context = {}\n        context['form'] = OrderForm()\n        return render(request, self.template_name, context)\nclass ContentListView(View):\n    template_name = 'content/list_content.html'\n    def get(self, request, *args, **kwargs):\n        contents = Content.objects.filter(status='A')",
+        "peekOfCode": "class Contentnama(View):\n    template_name = 'content/nama.html'\n    def get(self, request, *args, **kwargs):\n        context = {}\n        context['form'] = OrderForm()\n        return render(request, self.template_name, context)\nclass ContentListView(View):\n    template_name = 'content/list_content.html'\n    def get(self, request, *args, **kwargs):\n        contents = Content.objects.filter(status='A').order_by('-created')",
         "detail": "content.views",
         "documentation": {}
     },
@@ -4617,7 +4826,7 @@
         "kind": 6,
         "importPath": "content.views",
         "description": "content.views",
-        "peekOfCode": "class ContentListView(View):\n    template_name = 'content/list_content.html'\n    def get(self, request, *args, **kwargs):\n        contents = Content.objects.filter(status='A')\n        context = {\n            'form': OrderForm(),\n            'type_content_name': '',\n        }\n        type_content = request.GET.get('type_content')\n        if type_content:",
+        "peekOfCode": "class ContentListView(View):\n    template_name = 'content/list_content.html'\n    def get(self, request, *args, **kwargs):\n        contents = Content.objects.filter(status='A').order_by('-created')\n        context = {\n            'form': OrderForm(),\n            'type_content_name': '',\n        }\n        type_content = request.GET.get('type_content')\n        if type_content:",
         "detail": "content.views",
         "documentation": {}
     },
@@ -4680,7 +4889,7 @@
         "kind": 6,
         "importPath": "content.views",
         "description": "content.views",
-        "peekOfCode": "class CategoryCreateView(CreateView):\n    model = Category\n    template_name = 'content/admin/category/create_edit.html'\n    fields = ['title', 'status']\n    success_url = reverse_lazy('content:dashboard_category_list')\nclass CategoryUpdateView(UpdateView):\n    model = Category\n    template_name = 'content/admin/category/create_edit.html'\n    fields = ['title', 'status']\n    success_url = reverse_lazy('content:dashboard_category_list')",
+        "peekOfCode": "class CategoryCreateView(CreateView):\n    model = Category\n    template_name = 'content/admin/category/create_edit.html'\n    fields = ['title', 'slug','status']\n    success_url = reverse_lazy('content:dashboard_category_list')\nclass CategoryUpdateView(UpdateView):\n    model = Category\n    template_name = 'content/admin/category/create_edit.html'\n    fields = ['title', 'slug','status']\n    success_url = reverse_lazy('content:dashboard_category_list')",
         "detail": "content.views",
         "documentation": {}
     },
@@ -4689,7 +4898,7 @@
         "kind": 6,
         "importPath": "content.views",
         "description": "content.views",
-        "peekOfCode": "class CategoryUpdateView(UpdateView):\n    model = Category\n    template_name = 'content/admin/category/create_edit.html'\n    fields = ['title', 'status']\n    success_url = reverse_lazy('content:dashboard_category_list')\nclass CategoryDeleteView(DeleteView):\n    model = Category\n    template_name = 'content/admin/category/list.html'\n    success_url = reverse_lazy('content:dashboard_category_list')\n    def dispatch(self, *args, **kwargs):",
+        "peekOfCode": "class CategoryUpdateView(UpdateView):\n    model = Category\n    template_name = 'content/admin/category/create_edit.html'\n    fields = ['title', 'slug','status']\n    success_url = reverse_lazy('content:dashboard_category_list')\nclass CategoryDeleteView(DeleteView):\n    model = Category\n    template_name = 'content/admin/category/list.html'\n    success_url = reverse_lazy('content:dashboard_category_list')\n    def dispatch(self, *args, **kwargs):",
         "detail": "content.views",
         "documentation": {}
     },
@@ -4748,24 +4957,6 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "faq.migrations.0002_faq_type_faq",
-        "description": "faq.migrations.0002_faq_type_faq",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('content', '0001_initial'),\n        ('faq', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='faq',\n            name='type_faq',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='faqs', to='content.content', verbose_name='نوع سوال'),",
-        "detail": "faq.migrations.0002_faq_type_faq",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "faq.migrations.0003_remove_faq_type_faq",
-        "description": "faq.migrations.0003_remove_faq_type_faq",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('faq', '0002_faq_type_faq'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='faq',\n            name='type_faq',\n        ),\n    ]",
-        "detail": "faq.migrations.0003_remove_faq_type_faq",
-        "documentation": {}
-    },
-    {
         "label": "FaqConfig",
         "kind": 6,
         "importPath": "faq.apps",
@@ -4815,7 +5006,7 @@
         "kind": 6,
         "importPath": "faq.views",
         "description": "faq.views",
-        "peekOfCode": "class FAQListView(View):\n    template_name = 'faq/faq.html'\n    def get(self, request, *args, **kwargs):\n        faqs = FAQ.objects.all()\n        context = {'faqs': faqs}\n        return render(request, self.template_name, context)\nclass FAQCreateView(View):\n    form_class = FAQForm\n    template_name = 'faq/admin/create_edit.html'\n    def get(self, request, *args, **kwargs):",
+        "peekOfCode": "class FAQListView(View):\n    template_name = 'faq/faq.html'\n    def get(self, request, *args, **kwargs):\n        faqs = FAQ.objects.all()\n        context = {'faqs': faqs, 'form': OrderForm()}\n        return render(request, self.template_name, context)\nclass FAQCreateView(View):\n    form_class = FAQForm\n    template_name = 'faq/admin/create_edit.html'\n    def get(self, request, *args, **kwargs):",
         "detail": "faq.views",
         "documentation": {}
     },
@@ -4941,7 +5132,7 @@
         "kind": 5,
         "importPath": "order.helpers",
         "description": "order.helpers",
-        "peekOfCode": "type_project_CHOICES = (\n    ('A', 'نوساز'),\n    ('B', 'بازسازی'),\n)\nstatus_CHOICES = (\n    ('A', 'پیگیری شده'),\n    ('B', 'پیگیره نشده'),\n)\ncity_CHOICES = (\n    ('1', 'آذربایجان شرقی'),",
+        "peekOfCode": "type_project_CHOICES = (\n    ('A', 'نوساز'),\n    ('B', 'بازسازی'),\n)\nstatus_CHOICES = (\n    ('A', 'پیگیری شده'),\n    ('B', 'پیگیری نشده'),\n)\ncity_CHOICES = (\n    ('1', 'آذربایجان شرقی'),",
         "detail": "order.helpers",
         "documentation": {}
     },
@@ -4950,7 +5141,7 @@
         "kind": 5,
         "importPath": "order.helpers",
         "description": "order.helpers",
-        "peekOfCode": "status_CHOICES = (\n    ('A', 'پیگیری شده'),\n    ('B', 'پیگیره نشده'),\n)\ncity_CHOICES = (\n    ('1', 'آذربایجان شرقی'),\n    ('2', 'آذربایجان غربی'),\n    ('3', 'اردبیل'),\n    ('4', 'اصفهان'),\n    ('5', 'البرز'),",
+        "peekOfCode": "status_CHOICES = (\n    ('A', 'پیگیری شده'),\n    ('B', 'پیگیری نشده'),\n)\ncity_CHOICES = (\n    ('1', 'آذربایجان شرقی'),\n    ('2', 'آذربایجان غربی'),\n    ('3', 'اردبیل'),\n    ('4', 'اصفهان'),\n    ('5', 'البرز'),",
         "detail": "order.helpers",
         "documentation": {}
     },
@@ -5058,7 +5249,16 @@
         "kind": 6,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "class OrderPDFView(LoginRequiredMixin, ListView):\n    model = Order\n    template_name = 'order/pdf.html'\n    queryset = Order.objects.all()",
+        "peekOfCode": "class OrderPDFView(LoginRequiredMixin, ListView):\n    model = Order\n    template_name = 'order/pdf.html'\n    queryset = Order.objects.all()\nimport openpyxl\nfrom django.http import HttpResponse\nfrom django.views import View\nfrom .models import Order\nclass ExportOrdersToExcelView(View):\n    def get(self, request, *args, **kwargs):",
+        "detail": "order.views",
+        "documentation": {}
+    },
+    {
+        "label": "ExportOrdersToExcelView",
+        "kind": 6,
+        "importPath": "order.views",
+        "description": "order.views",
+        "peekOfCode": "class ExportOrdersToExcelView(View):\n    def get(self, request, *args, **kwargs):\n        workbook = openpyxl.Workbook()\n        sheet = workbook.active\n        sheet.title = \"Orders\"\n        headers = [\n            \"نام و نام خانوادگی\", \n            \"شماره تماس\", \n            \"نوع پنجره\", \n            \"نوع پروژه\", ",
         "detail": "order.views",
         "documentation": {}
     },
@@ -5200,10 +5400,10 @@
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "top_projects.migrations.0002_remove_topproject_slug",
-        "description": "top_projects.migrations.0002_remove_topproject_slug",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('top_projects', '0001_initial'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='topproject',\n            name='slug',\n        ),\n    ]",
-        "detail": "top_projects.migrations.0002_remove_topproject_slug",
+        "importPath": "top_projects.migrations.0002_alter_topproject_images_1_alter_topproject_images_2_and_more",
+        "description": "top_projects.migrations.0002_alter_topproject_images_1_alter_topproject_images_2_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('top_projects', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='topproject',\n            name='images_1',\n            field=models.ImageField(default='1.png', upload_to='', verbose_name='تصویر شماره 1'),\n        ),",
+        "detail": "top_projects.migrations.0002_alter_topproject_images_1_alter_topproject_images_2_and_more",
         "documentation": {}
     },
     {
@@ -5247,7 +5447,7 @@
         "kind": 6,
         "importPath": "top_projects.models",
         "description": "top_projects.models",
-        "peekOfCode": "class TopProject(models.Model):\n    eng_name = models.CharField(max_length=255, verbose_name=\"نام مهندس\")\n    project_name = models.CharField(max_length=255, verbose_name=\"نام پروژه\")\n    # slug = models.SlugField(max_length=200, unique=True, blank=True, null=True, verbose_name=\"ادرس\")\n    body = models.TextField(verbose_name=\"توضیحاتی درباره پروژه\")\n    images_1 = models.ImageField(default='1.png', verbose_name=\"تصویر شماره 1\")\n    images_2 = models.ImageField(default='1.png', verbose_name=\"تصویر شماره 2\")\n    images_3 = models.ImageField(default='1.png', verbose_name=\"تصویر شماره 3\")\n    images_4 = models.ImageField(default='1.png', verbose_name=\"تصویر شماره 4\")\n    images_5 = models.ImageField(default='1.png', verbose_name=\"تصویر شماره 5\")",
+        "peekOfCode": "class TopProject(models.Model):\n    eng_name = models.CharField(max_length=255, verbose_name=\"نام مهندس\")\n    project_name = models.CharField(max_length=255, verbose_name=\"نام پروژه\")\n    body = models.TextField(verbose_name=\"توضیحاتی درباره پروژه\")\n    # images_1 = models.ImageField(upload_to=upload_image_top_project, verbose_name=\"تصویر شماره 1\")\n    # images_2 = models.ImageField(upload_to=upload_image_top_project, verbose_name=\"تصویر شماره 2\")\n    # images_3 = models.ImageField(upload_to=upload_image_top_project, verbose_name=\"تصویر شماره 3\")\n    # images_4 = models.ImageField(upload_to=upload_image_top_project, verbose_name=\"تصویر شماره 4\")\n    # images_5 = models.ImageField(upload_to=upload_image_top_project, verbose_name=\"تصویر شماره 5\")\n    images_1 = models.ImageField(default='1.png', verbose_name=\"تصویر شماره 1\")",
         "detail": "top_projects.models",
         "documentation": {}
     },
@@ -5270,11 +5470,20 @@
         "documentation": {}
     },
     {
+        "label": "upload_image_top_project",
+        "kind": 2,
+        "importPath": "top_projects.utils",
+        "description": "top_projects.utils",
+        "peekOfCode": "def upload_image_top_project(instance, filename):\n    path = 'uploads/' + 'top_project/' + \\\n        slugify(instance.project_name, allow_unicode=True)\n    name = str(time.time()) + '-' + str(instance.project_name) + '-' + filename\n    return path + '/' + name",
+        "detail": "top_projects.utils",
+        "documentation": {}
+    },
+    {
         "label": "TopProjectListView",
         "kind": 6,
         "importPath": "top_projects.views",
         "description": "top_projects.views",
-        "peekOfCode": "class TopProjectListView(View):\n    template_name = 'top_projects/list_top_project.html'\n    def get(self, request, *args, **kwargs):\n        top_projects = TopProject.objects.filter(status='A')\n        context = {'top_projects': top_projects}\n        return render(request, self.template_name, context)\nclass TopProjectCreateView(View):\n    form_class = TopProjectForm\n    template_name = 'top_projects/admin/create_edit.html'\n    def get(self, request, *args, **kwargs):",
+        "peekOfCode": "class TopProjectListView(View):\n    template_name = 'top_projects/list_top_project.html'\n    def get(self, request, *args, **kwargs):\n        top_projects = TopProject.objects.filter(status='A')\n        context = {'top_projects': top_projects,'form': OrderForm(),\n                   }\n        return render(request, self.template_name, context)\nclass TopProjectCreateView(View):\n    form_class = TopProjectForm\n    template_name = 'top_projects/admin/create_edit.html'",
         "detail": "top_projects.views",
         "documentation": {}
     },

@@ -55,8 +55,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
+                    
                     <div class="card">
+                        
                         <div class="card-header">
+                            
                             <form class="form-inline search-form search-box">
 
 
@@ -100,11 +103,18 @@
 
 
                             </form>
-
-                            <a href="{% url 'order:dashboard_order_pdf' %}" target="_blank" class="btn btn-success">خروجی pdf</a>
-
+                            
+                            <div class="d-flex mt-md-0 mt-2">
+                                <a href="{% url 'order:dashboard_order_pdf' %}" target="_blank" class="btn btn-primary ">خروجی PDF</a>
+                                <span class="mx-2"></span> 
+                                <a href="{% url 'order:dashboard_order_excel' %}" target="_blank" class="btn btn-primary ml-2">خروجی Excel</a>
+                            </div>
                         </div>
+
+
+
                         <div class="card-body">
+
                             <div class="table-responsive table-desi">
                                 <table class="table all-package" id="editableTable">
                                     <thead>
@@ -273,41 +283,6 @@
         }
 
     </script>
-
-{#    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/jquery-3.2.1.min.js"></script>#}
-{#    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.env.js"></script>#}
-{#    <script type="text/javascript" src="https://cdn.map.ir/web-sdk/1.4.2/js/mapp.min.js"></script>#}
-{##}
-{#    <script>#}
-{#        var app#}
-{##}
-{#        $(document).ready(function () {#}
-{#            app = new Mapp({#}
-{#                element: '#app',#}
-{#                presets: {#}
-{#                    latlng: {#}
-{#                        lat: 35.73249,#}
-{#                        lng: 51.42268#}
-{#                    },#}
-{#                    zoom: 16#}
-{#                },#}
-{#                apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIn0.eyJhdWQiOiIyMTQ5MSIsImp0aSI6IjhiN2EwNjYwODY2YTMxZDAyNTA5NmZiYmIzZGVhZDQ4NDg4Y2VjYjQ0YTM5NTQxNzE3OTk4YjVjMTI1MGZjMDUxYjIxYmFmNDJkYjA2ZDMyIiwiaWF0IjoxNjc4NzQ5OTY0LCJuYmYiOjE2Nzg3NDk5NjQsImV4cCI6MTY4MTE2OTE2NCwic3ViIjoiIiwic2NvcGVzIjpbImJhc2ljIl19.AobDdWKizuV0DAL8IFyUb8jLBrx8AzVu21HEOxAUTD8WhMZ-riaPX53e6_A7oj1NbwCBpTc8Jm3w2QAsYsTae2lCDoZB05X2pEcjoAYXpzRV2z-tBLgwairxtJunrKDSjKTIg9LpGzFu93xBQGmUnOfOho-Se4s_vIdUlrl19tdEPaKO763sHFQPnqf4Fbwh-L_ARuKaUV8j8aseg9n-vGbQ4w5juRbtMeNMm9adtt1ZVGWGUOJAHUD83IM4-FCiA7-P3Xincar-BXTY0PN1EK9Yvhn7akGQRudPYBsnU5NGe8ABmAFfXzdMwbSWnx1YO8fSfTmiQc2tHAqf1JmiIg'#}
-{#            });#}
-{#        })#}
-{##}
-{#        function ShowLocation(app, lat, long) {#}
-{#            app.addLayers();#}
-{#            app.markReverseGeocode({#}
-{#                state: {#}
-{#                    latlng: {#}
-{#                        lat: lat,#}
-{#                        lng: long#}
-{#                    },#}
-{#                    zoom: 16,#}
-{#                },#}
-{#            });#}
-{#        }#}
-{#    </script>#}
 
     <script>
         app.controller('myCtrl', function ($scope, $http) {

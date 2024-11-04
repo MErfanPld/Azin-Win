@@ -12,11 +12,18 @@ class TopProject(models.Model):
     eng_name = models.CharField(max_length=255, verbose_name="نام مهندس")
     project_name = models.CharField(max_length=255, verbose_name="نام پروژه")
     body = models.TextField(verbose_name="توضیحاتی درباره پروژه")
-    images_1 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 1")
-    images_2 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 2")
-    images_3 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 3")
-    images_4 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 4")
-    images_5 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 5")
+    # images_1 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 1")
+    # images_2 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 2")
+    # images_3 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 3")
+    # images_4 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 4")
+    # images_5 = models.ImageField(upload_to=upload_image_top_project, verbose_name="تصویر شماره 5")
+    
+    images_1 = models.ImageField(default='1.png', verbose_name="تصویر شماره 1")
+    images_2 = models.ImageField(default='1.png', verbose_name="تصویر شماره 2")
+    images_3 = models.ImageField(default='1.png', verbose_name="تصویر شماره 3")
+    images_4 = models.ImageField(default='1.png', verbose_name="تصویر شماره 4")
+    images_5 = models.ImageField(default='1.png', verbose_name="تصویر شماره 5")
+    
     status = models.CharField(
         max_length=2, choices=status_CHOICES, default='A', verbose_name="وضعیت درخواست")
     created = models.DateTimeField(auto_now=True, verbose_name="زمان ساخت")

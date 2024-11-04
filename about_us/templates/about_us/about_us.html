@@ -66,30 +66,11 @@
         <div class="container">
             {% for item in about_us %}
                 <div class="row">
-                    <div class="col-lg-12" style="padding: 10px">
-                        <div class="banner-section"><img src="{{ item.image.url }}" class="img-fluid blur-up lazyloaded"
-                                                         alt="">
-                        </div>
-                    </div>
-                    <br>
-
                     <div class="col-sm-12">
                         <p>
-                            {{ item.desc }}
+                            {{ item.body | safe }}
                         </p>
                         <br>
-                        <div class="testimonial small-section">
-                            <p class="m-2">
-                                آدرس : {{ item.addr }}
-                            </p>
-                            <p class="m-2">
-                                تلفن : {{ item.tel }}
-                            </p>
-                            <div class="m-2" style="width: 100%!important; height: 500px;">
-                                <div id="app" style="padding-left: 18px !important;"></div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             {% endfor %}

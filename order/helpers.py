@@ -4,7 +4,7 @@ type_project_CHOICES = (
 )
 status_CHOICES = (
     ('A', 'پیگیری شده'),
-    ('B', 'پیگیره نشده'),
+    ('B', 'پیگیری نشده'),
 )
 
 city_CHOICES = (

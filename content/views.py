@@ -49,7 +49,7 @@ class ContentListView(View):
     template_name = 'content/list_content.html'
 
     def get(self, request, *args, **kwargs):
-        contents = Content.objects.filter(status='A')
+        contents = Content.objects.filter(status='A').order_by('-created')
         context = {
             'form': OrderForm(),
             'type_content_name': '',

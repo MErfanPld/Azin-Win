@@ -131,3 +131,44 @@ class OrderPDFView(LoginRequiredMixin, ListView):
     model = Order
     template_name = 'order/pdf.html'
     queryset = Order.objects.all()
+
+
+
+import openpyxl
+from django.http import HttpResponse
+from django.views import View
+from .models import Order
+
+class ExportOrdersToExcelView(View):
+    def get(self, request, *args, **kwargs):
+        workbook = openpyxl.Workbook()
+        sheet = workbook.active
+        sheet.title = "Orders"
+        headers = [
+            "نام و نام خانوادگی", 
+            "شماره تماس", 
+            "نوع پنجره", 
+            "نوع پروژه", 
+            "تعداد واحد", 
+            "شهر", 
+            "وضعیت درخواست", 
+            "زمان ساخت"
+        ]
+        sheet.append(headers)
+        orders = Order.objects.all()
+        for order in orders:
+            row = [
+                order.full_name,
+                order.phone_number,
+                order.type_window.name if order.type_window else "",
+                order.get_type_project_display(),
+                order.number,
+                order.get_citys_display(),
+                order.get_status_display(),
+                order.created.strftime("%Y-%m-%d %H:%M:%S"),
+            ]
+            sheet.append(row)
+        response = HttpResponse(content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        response["Content-Disposition"] = "attachment; filename=orders.xlsx"
+        workbook.save(response)
+        return response
