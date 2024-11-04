@@ -4,108 +4,83 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-DEK0TEH18X"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEK0TEH18X"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || []
       function gtag() {
-        dataLayer.push(arguments);
+        dataLayer.push(arguments)
       }
-      gtag("js", new Date());
-
-      gtag("config", "G-DEK0TEH18X");
+      gtag('js', new Date())
+      
+      gtag('config', 'G-DEK0TEH18X')
     </script>
 
-    <meta
-      name="google-site-verification"
-      content="-VZIfmLYgoJsrmKXxyN18Ndj4n7lkMxVKuO6XGWPB3o"
-    />
+    <meta name="google-site-verification" content="-VZIfmLYgoJsrmKXxyN18Ndj4n7lkMxVKuO6XGWPB3o" />
 
     <meta name="title" content="آذین وین - پنجره یو پی وی سی و ترمال بریک" />
-    <meta
-      name="description"
-      content="آذین وین، ارائه دهنده انواع پنجره یو پی وی سی، ترمال بریک و شیشه نما با بالاترین کیفیت"
-    />
+    <meta name="description" content="آذین وین، ارائه دهنده انواع پنجره یو پی وی سی، ترمال بریک و شیشه نما با بالاترین کیفیت" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://azinwin.com" />
-    <meta
-      property="og:title"
-      content="آذین وین - پنجره یو پی وی سی و ترمال بریک"
-    />
-    <meta
-      property="og:description"
-      content="آذین وین، ارائه دهنده انواع پنجره یو پی وی سی، ترمال بریک و شیشه نما با بالاترین کیفیت"
-    />
+    <meta property="og:title" content="آذین وین - پنجره یو پی وی سی و ترمال بریک" />
+    <meta property="og:description" content="آذین وین، ارائه دهنده انواع پنجره یو پی وی سی، ترمال بریک و شیشه نما با بالاترین کیفیت" />
     <meta property="og:image" content="{% static 'new_img/zeynb_2.png' %}" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://azinwin.com" />
-    <meta
-      property="twitter:title"
-      content="آذین وین - پنجره یو پی وی سی و ترمال بریک"
-    />
-    <meta
-      property="twitter:description"
-      content="آذین وین، ارائه دهنده انواع پنجره یو پی وی سی، ترمال بریک و شیشه نما با بالاترین کیفیت"
-    />
-    <meta
-      property="twitter:image"
-      content="{% static 'new_img/zeynb_2.png' %}"
-    />
+    <meta property="twitter:title" content="آذین وین - پنجره یو پی وی سی و ترمال بریک" />
+    <meta property="twitter:description" content="آذین وین، ارائه دهنده انواع پنجره یو پی وی سی، ترمال بریک و شیشه نما با بالاترین کیفیت" />
+    <meta property="twitter:image" content="{% static 'new_img/zeynb_2.png' %}" />
 
-    <link
-      rel="icon"
-      href="{% static 'new_img/zeynb_2.png' %}"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="{% static 'new_img/zeynb_2.png' %}"
-      type="image/x-icon"
-    />
-    <title>آذین وین {% block title %}{% endblock title %}</title>
+    <link rel="icon" href="{% static 'new_img/zeynb_2.png' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'new_img/zeynb_2.png' %}" type="image/x-icon" />
+    <title>
+      آذین وین{% block title %}
+      {% endblock %}
+    </title>
 
-    <!--Google font-->
+    <!-- Google font -->
     <link rel="stylesheet" href="{% static 'css/jquery.toast.min.css' %}" />
 
-    <!-- latest jquery-->
+    <!-- latest jquery -->
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/angular.min.js' %}"></script>
 
+<!-- styles Amin -->
+<style>
+  #id01 .all{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #id01 .item{
+    text-decoration: none;
+    color: white;
+    padding: 4px 10px;
+    background: var(--theme-color);
+  }
+</style>
+
     <script>
       !(function (t, e, n) {
-        (t.yektanetAnalyticsObject = n),
+        ;(t.yektanetAnalyticsObject = n),
           (t[n] =
             t[n] ||
             function () {
-              t[n].q.push(arguments);
+              t[n].q.push(arguments)
             }),
-          (t[n].q = t[n].q || []);
+          (t[n].q = t[n].q || [])
         var a = new Date(),
-          r =
-            a.getFullYear().toString() +
-            "0" +
-            a.getMonth() +
-            "0" +
-            a.getDate() +
-            "0" +
-            a.getHours(),
-          c = e.getElementsByTagName("script")[0],
-          s = e.createElement("script");
-        s.id = "ua-script-vX2SQ4tP";
-        s.dataset.analyticsobject = n;
-        s.async = 1;
-        s.type = "text/javascript";
-        (s.src =
-          "https://cdn.yektanet.com/rg_woebegone/scripts_v3/vX2SQ4tP/rg.complete.js?v=" +
-          r),
-          c.parentNode.insertBefore(s, c);
-      })(window, document, "yektanet");
+          r = a.getFullYear().toString() + '0' + a.getMonth() + '0' + a.getDate() + '0' + a.getHours(),
+          c = e.getElementsByTagName('script')[0],
+          s = e.createElement('script')
+        s.id = 'ua-script-vX2SQ4tP'
+        s.dataset.analyticsobject = n
+        s.async = 1
+        s.type = 'text/javascript'
+        ;(s.src = 'https://cdn.yektanet.com/rg_woebegone/scripts_v3/vX2SQ4tP/rg.complete.js?v=' + r), c.parentNode.insertBefore(s, c)
+      })(window, document, 'yektanet')
     </script>
 
     <!-- Google Tag Manager -->
@@ -119,7 +94,8 @@
     <!-- End Google Tag Manager -->
 
     <!-- Icons -->
-    {% include './inc/_header.html' %} {% block Styles %}{% endblock %}
+    {% include './inc/_header.html' %} {% block Styles %}
+    {% endblock %}
   </head>
 
   <body class="theme-color-12 rtl" ng-app="myApp" ng-controller="myCtrl">
@@ -131,7 +107,8 @@
     {% include './inc/nav.html' %}
     <!-- header end -->
 
-    {% block content %}{% endblock content %}
+    {% block content %}
+    {% endblock %}
 
     <!-- footer -->
     {% include './inc/footer.html' %}
@@ -141,27 +118,14 @@
 
     <!-- cookie bar start -->
     <div class="cookie-bar left-bottom" id="id01" style="margin-bottom: 50px">
-      <img
-        src="{% static 'svg/icons8-wechat-50.png' %}"
-        class="img-fluid"
-        alt="cookie"
-      />
+      <img src="{% static 'svg/icons8-wechat-50.png' %}" class="img-fluid" alt="cookie" />
       <p>برای ارتباط با ما می توانید با پلتفرم های زیر با ما در ارتباط باشید</p>
-      <a
-        href="
-https://eitaa.com/Azinwindow"
-        class="btn btn-solid btn-xs"
-        >ایتا
-      </a>
-      <a href="https://t.me/@Azinwindoww" class="btn btn-solid btn-xs">
-        تلگرام</a
-      >
-      <a href="https://wa.link/mu6gx7" class="btn btn-solid btn-xs">واتساپ </a>
-      <span
-        onclick="document.getElementById('id01').style.display='none'"
-        class="btn-close"
-        ><i class="fa fa-times" aria-hidden="true"></i
-      ></span>
+      <div class="all">
+        <a href="https://eitaa.com/Azinwindow" class="item">ایتا</a>
+        <a href="https://t.me/@Azinwindoww" class="item">تلگرام</a>
+        <a href="https://wa.link/mu6gx7" class="item">واتساپ </a>
+      </div>
+      <span onclick="document.getElementById('id01').style.display='none'" class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></span>
     </div>
     <!-- cookie bar end -->
 
@@ -170,9 +134,7 @@ https://eitaa.com/Azinwindow"
 
     <div class="cookie-bar show d-none d-md-flex">
       <p>برای ثبت سریع درخواست مشاوره و خرید محصولات کلیک کنید</p>
-      <a href="{% url 'order:order_home' %}#order" class="btn btn-solid btn-xs"
-        >ثبت درخواست</a
-      >
+      <a href="{% url 'order:order_home' %}#order" class="btn btn-solid btn-xs">ثبت درخواست</a>
     </div>
 
     <script>
@@ -184,7 +146,8 @@ https://eitaa.com/Azinwindow"
       };
     </script>
 
-    {% block Scripts %}{% endblock %}
+    {% block Scripts %}
+    {% endblock %}
   </body>
   <!-- Google Tag Manager -->
   <script>
